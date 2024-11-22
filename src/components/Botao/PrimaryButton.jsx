@@ -1,27 +1,43 @@
 import { Button, Typography } from '@mui/material';
-import React from 'react';
 
-
-export const Primary = ({ children, ...props }) => {
+export const Primary = ({ page, text, onClick }) => {
 	return (
 		<Button
-			variant='contained'
+			variant='outlined'
+			onClick={onClick}
 			sx={{
-				px: 4,
+				px: 6,
 				py: 1.5,
+				border: '2px solid #AD61FF',
+				background: '#030012',
+				borderRadius: '99px',
 				transition: 'all 200ms ease-in-out',
 				'&:hover': {
-					border: 0,
 					transform: 'scale(1.1)',
+					border: '2px solid #AD61FF',
+					borderRadius: '99px',
 				},
 				'&:focus': {
 					outline: 'none',
+					border: '2px solid #AD61FF',
+					borderRadius: '99px',
 				},
 			}}
-			{...props}
 		>
-			<Typography variant='p' color={'#FFF'}>
-				{children}
+			<Typography
+				variant='body1'
+				sx={{
+					fontFamily: 'Tektur, sans-serif',
+					backgroundImage: 'linear-gradient(to bottom, #AD61FF, #14F194)',
+					color: 'transparent',
+					backgroundClip: 'text',
+					WebkitBackgroundClip: 'text',
+					WebkitTextFillColor: 'transparent',
+					textAlign: 'center',
+					fontWeight: 'bold',
+				}}
+			>
+				{text}
 			</Typography>
 		</Button>
 	);
