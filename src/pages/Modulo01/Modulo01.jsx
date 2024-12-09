@@ -14,25 +14,15 @@ import IframePlayer from '../../components/Iframe/Iframe';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [block1, setBlock1] = useState(false);
-	const [block2, setBlock2] = useState(false);
-	const [block3, setBlock3] = useState(false);
+	const [blocks, setBlocks] = useState([false, false, false]); 
 
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
-
-	const handleUnlockBlock = () => {
-		setBlock1(true);
-	};
-	const handleAnswerCallback = () => {
-		setBlock2(true);
-	};
-	const handleVideoEnded = () => {
-		setBlock3(true);
-	};
-
+ const handleUnlockBlock = (index) => {
+    setBlocks((prev) => prev.map((block, i) => (i === index ? true : block)));
+  };
 	return (
 		<Box
 			sx={{
@@ -84,7 +74,7 @@ const Modulo01 = () => {
 						Vamos embarcar nessa jornada e entender melhor como funciona tudo isso
 					</Typography>
 				</Box>
-				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
+				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock(1)} />
 			</Box>
 
 			{block1 && (

@@ -5,7 +5,6 @@ import Title from '../../components/Texts/title';
 import backgorund from '../../assets/img/Finalizacao.png';
 import Subtitle from '../../components/Texts/subtitle';
 import { CardExpanded } from '../../components/Cards/CardExpanded';
-import { Slider } from '../../components/Slider/slider';
 
 const Modulo02 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -152,7 +151,7 @@ const Modulo02 = () => {
 						confiança, a curiosidade e, muitas vezes, a falta de atenção do alvo. Conheça os 5
 						pilares da engenharia social:
 					</Typography>
-					<Slider isEnded={SlideIsEnded} />
+					{/* <Slider isEnded={SlideIsEnded} /> */}
 				</Box>
 			)}
 			{block2 && (
