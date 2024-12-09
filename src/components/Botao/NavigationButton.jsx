@@ -1,12 +1,12 @@
-import { Button, Typography } from '@mui/material';
-import useNavigationButton from '../../hooks/useHandleNavigation';
+import { Button, Typography } from '@mui/material'; 
+import { useNavigation } from '../../hooks/NavigationContext';
 
 export const Navigation = ({ page, text }) => {
-	const { handleNavigationClick } = useNavigationButton(page);
+	const { navigateTo } = useNavigation(); 
 	return (
 		<Button
 			variant='oulined'
-			onClick={handleNavigationClick}
+			onClick={() => navigateTo(page)}
 			sx={{
 				px: 6,
 				py: 1.5,

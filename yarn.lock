@@ -179,10 +179,10 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-  version "7.23.1"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@babel/runtime/-/@babel/runtime-7.23.1.tgz"
-  integrity sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g== sha1-cnQdxNQTM4qR3LBEqG88C8QCZG0=
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.23.9", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+  version "7.26.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@babel/runtime/-/@babel/runtime-7.26.0.tgz"
+  integrity sha1-hgDC9ZXyd8YIFSVkGLhTVqZRc8E=
   dependencies:
     regenerator-runtime "^0.14.0"
 
@@ -376,33 +376,6 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@eslint/js/-/@eslint/js-8.50.0.tgz"
   integrity sha512-NCC3zz2+nvYd+Ckfh87rA47zfu2QsQpvc6k1yzTk+b9KzRj0wkGa8LSoGOXN6Zv4lRf/EIoZ80biDh9HOI+RNQ== sha1-npO4UPDz+jX1+lmt/QOtroSI5IQ=
 
-"@floating-ui/core@^1.4.2":
-  version "1.5.0"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@floating-ui/core/-/@floating-ui/core-1.5.0.tgz"
-  integrity sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg== sha1-XAXGDVri0FEBwwIcGio1DdwCf4w=
-  dependencies:
-    "@floating-ui/utils" "^0.1.3"
-
-"@floating-ui/dom@^1.5.1":
-  version "1.5.3"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@floating-ui/dom/-/@floating-ui/dom-1.5.3.tgz"
-  integrity sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA== sha1-VOUO/LQywGwjzTPeK1dRAgBUNvo=
-  dependencies:
-    "@floating-ui/core" "^1.4.2"
-    "@floating-ui/utils" "^0.1.3"
-
-"@floating-ui/react-dom@^2.0.2":
-  version "2.0.2"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@floating-ui/react-dom/-/@floating-ui/react-dom-2.0.2.tgz"
-  integrity sha512-5qhlDvjaLmAst/rKb3VdlCinwTF4EYMiVxuuc/HVUjs46W0zgtbMmAZ1UTsDrRTxRmUEzl92mOtWbeeXL26lSQ== sha1-+rJE1k2wjmvte+S1/M5lMV70TSA=
-  dependencies:
-    "@floating-ui/dom" "^1.5.1"
-
-"@floating-ui/utils@^0.1.3":
-  version "0.1.4"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@floating-ui/utils/-/@floating-ui/utils-0.1.4.tgz"
-  integrity sha512-qprfWkn82Iw821mcKofJ5Pk9wgioHicxcQMxx+5zt5GSKoqdWvgG5AxVmpmUUjzTLPVSH5auBrhI93Deayn/DA== sha1-GWVNECbMQQl11GRFGA5wpQibPn0=
-
 "@humanwhocodes/config-array@^0.11.11":
   version "0.11.11"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@humanwhocodes/config-array/-/@humanwhocodes/config-array-0.11.11.tgz"
@@ -454,23 +427,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mui/base@5.0.0-beta.17":
-  version "5.0.0-beta.17"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/base/-/@mui/base-5.0.0-beta.17.tgz"
-  integrity sha512-xNbk7iOXrglNdIxFBN0k3ySsPIFLWCnFxqsAYl7CIcDkD9low4kJ7IUuy6ctwx/HAy2fenrT3KXHr1sGjAMgpQ== sha1-mLfvajF2t6r1msiGLTJxrLaHa8A=
-  dependencies:
-    "@babel/runtime" "^7.22.15"
-    "@floating-ui/react-dom" "^2.0.2"
-    "@mui/types" "^7.2.4"
-    "@mui/utils" "^5.14.11"
-    "@popperjs/core" "^2.11.8"
-    clsx "^2.0.0"
-    prop-types "^15.8.1"
-
-"@mui/core-downloads-tracker@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/core-downloads-tracker/-/@mui/core-downloads-tracker-5.14.11.tgz"
-  integrity sha512-uY8FLQURhXe3f3O4dS5OSGML9KDm9+IE226cBu78jarVIzdQGPlXwGIlSI9VJR8MvZDA6C0+6XfWDhWCHruC5Q== sha1-6Cms61wLv8M4PtkKaoVEU0TdZac=
+"@mui/core-downloads-tracker@^5.16.7":
+  version "5.16.7"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/core-downloads-tracker/-/@mui/core-downloads-tracker-5.16.7.tgz"
+  integrity sha1-GCoyWlIPfr113gUfzqv8AxTP0AQ=
 
 "@mui/icons-material@^5.14.11":
   version "5.14.11"
@@ -480,70 +440,72 @@
     "@babel/runtime" "^7.22.15"
 
 "@mui/material@^5.0.0", "@mui/material@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/material/-/@mui/material-5.14.11.tgz"
-  integrity sha512-DnSdJzcR7lwG12JA5L2t8JF+RDzMygu5rCNW+logWb/KW2/TRzwLyVWO+CorHTBjBRd38DBxnwOCDiYkDd+N3A== sha1-dTfwfDg6bPoyoA+ryZWVk0eLxcQ=
+  version "5.16.7"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/material/-/@mui/material-5.16.7.tgz"
+  integrity sha1-boFOLu/a8GWnac7PVJw1aeEHpQs=
   dependencies:
-    "@babel/runtime" "^7.22.15"
-    "@mui/base" "5.0.0-beta.17"
-    "@mui/core-downloads-tracker" "^5.14.11"
-    "@mui/system" "^5.14.11"
-    "@mui/types" "^7.2.4"
-    "@mui/utils" "^5.14.11"
-    "@types/react-transition-group" "^4.4.6"
-    clsx "^2.0.0"
-    csstype "^3.1.2"
+    "@babel/runtime" "^7.23.9"
+    "@mui/core-downloads-tracker" "^5.16.7"
+    "@mui/system" "^5.16.7"
+    "@mui/types" "^7.2.15"
+    "@mui/utils" "^5.16.6"
+    "@popperjs/core" "^2.11.8"
+    "@types/react-transition-group" "^4.4.10"
+    clsx "^2.1.0"
+    csstype "^3.1.3"
     prop-types "^15.8.1"
-    react-is "^18.2.0"
+    react-is "^18.3.1"
     react-transition-group "^4.4.5"
 
-"@mui/private-theming@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/private-theming/-/@mui/private-theming-5.14.11.tgz"
-  integrity sha512-MSnNNzTu9pfKLCKs1ZAKwOTgE4bz+fQA0fNr8Jm7NDmuWmw0CaN9Vq2/MHsatE7+S0A25IAKby46Uv1u53rKVQ== sha1-FUO00T1csyAYxb1BtRbbHDP3A0Q=
+"@mui/private-theming@^5.16.6":
+  version "5.16.6"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/private-theming/-/@mui/private-theming-5.16.6.tgz"
+  integrity sha1-VHZx564/hraNEomguQrwTfzByMk=
   dependencies:
-    "@babel/runtime" "^7.22.15"
-    "@mui/utils" "^5.14.11"
+    "@babel/runtime" "^7.23.9"
+    "@mui/utils" "^5.16.6"
     prop-types "^15.8.1"
 
-"@mui/styled-engine@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/styled-engine/-/@mui/styled-engine-5.14.11.tgz"
-  integrity sha512-jdUlqRgTYQ8RMtPX4MbRZqar6W2OiIb6J5KEFbIu4FqvPrk44Each4ppg/LAqp1qNlBYq5i+7Q10MYLMpDxX9A== sha1-IssAR/IRvk28EzpdEBU2kpO9/wA=
+"@mui/styled-engine@^5.16.6":
+  version "5.16.6"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/styled-engine/-/@mui/styled-engine-5.16.6.tgz"
+  integrity sha1-YBEMEG3Ugt/bfiqpT9ZJCgo/iFI=
   dependencies:
-    "@babel/runtime" "^7.22.15"
+    "@babel/runtime" "^7.23.9"
     "@emotion/cache" "^11.11.0"
-    csstype "^3.1.2"
+    csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/system@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/system/-/@mui/system-5.14.11.tgz"
-  integrity sha512-yl8xV+y0k7j6dzBsHabKwoShmjqLa8kTxrhUI3JpqLG358VRVMJRW/ES0HhvfcCi4IVXde+Tc2P3K1akGL8zoA== sha1-TzqvPj1tA55Bpg+TkFaqX9Nx0pE=
+"@mui/system@^5.16.7":
+  version "5.16.7"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/system/-/@mui/system-5.16.7.tgz"
+  integrity sha1-RYPKW/OziULgLBWh5iK6hprFE5M=
   dependencies:
-    "@babel/runtime" "^7.22.15"
-    "@mui/private-theming" "^5.14.11"
-    "@mui/styled-engine" "^5.14.11"
-    "@mui/types" "^7.2.4"
-    "@mui/utils" "^5.14.11"
-    clsx "^2.0.0"
-    csstype "^3.1.2"
+    "@babel/runtime" "^7.23.9"
+    "@mui/private-theming" "^5.16.6"
+    "@mui/styled-engine" "^5.16.6"
+    "@mui/types" "^7.2.15"
+    "@mui/utils" "^5.16.6"
+    clsx "^2.1.0"
+    csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/types@^7.2.4":
-  version "7.2.4"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/types/-/@mui/types-7.2.4.tgz"
-  integrity sha512-LBcwa8rN84bKF+f5sDyku42w1NTxaPgPyYKODsh01U1fVstTClbUoSA96oyRBnSNyEiAVjKm6Gwx9vjR+xyqHA== sha1-tvreGTI7dUxcbeZ5o48Gj9ULkyg=
+"@mui/types@^7.2.15":
+  version "7.2.19"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/types/-/@mui/types-7.2.19.tgz"
+  integrity sha1-yUGVTdJDk/3OXweDDUREDPSrbIA=
 
-"@mui/utils@^5.14.11":
-  version "5.14.11"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/utils/-/@mui/utils-5.14.11.tgz"
-  integrity sha512-fmkIiCPKyDssYrJ5qk+dime1nlO3dmWfCtaPY/uVBqCRMBZ11JhddB9m8sjI2mgqQQwRJG5bq3biaosNdU/s4Q== sha1-0ZodhyX/0WxsaBfwC1FykxlY+5o=
+"@mui/utils@^5.16.6":
+  version "5.16.6"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/utils/-/@mui/utils-5.16.6.tgz"
+  integrity sha1-kFh1u8WNPcwkUxwzFKaAeroipxE=
   dependencies:
-    "@babel/runtime" "^7.22.15"
-    "@types/prop-types" "^15.7.5"
+    "@babel/runtime" "^7.23.9"
+    "@mui/types" "^7.2.15"
+    "@types/prop-types" "^15.7.12"
+    clsx "^2.1.1"
     prop-types "^15.8.1"
-    react-is "^18.2.0"
+    react-is "^18.3.1"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -569,7 +531,7 @@
 "@popperjs/core@^2.11.8":
   version "2.11.8"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@popperjs/core/-/@popperjs/core-2.11.8.tgz"
-  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A== sha1-a3kDLnYKCJnNQgRxC+7elyo6GF8=
+  integrity sha1-a3kDLnYKCJnNQgRxC+7elyo6GF8=
 
 "@react-dnd/asap@^5.0.1":
   version "5.0.2"
@@ -629,10 +591,10 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/parse-json/-/@types/parse-json-4.0.0.tgz"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA== sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
 
-"@types/prop-types@*", "@types/prop-types@^15.7.5":
-  version "15.7.7"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/prop-types/-/@types/prop-types-15.7.7.tgz"
-  integrity sha512-FbtmBWCcSa2J4zL781Zf1p5YUBXQomPEcep9QZCfRfQgTxz3pJWiDFLebohZ9fFntX5ibzOkSsrJ0TEew8cAog== sha1-+TYfe4f9XYGIssmY2wofR+n7ORo=
+"@types/prop-types@*", "@types/prop-types@^15.7.12":
+  version "15.7.13"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/prop-types/-/@types/prop-types-15.7.13.tgz"
+  integrity sha1-KvkZGO4S2dMpFP6xP1MmZYRhtFE=
 
 "@types/react-dom@^18.2.7":
   version "18.2.7"
@@ -641,14 +603,14 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-transition-group@^4.4.6":
-  version "4.4.6"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/react-transition-group/-/@types/react-transition-group-4.4.6.tgz"
-  integrity sha512-VnCdSxfcm08KjsJVQcfBmhEQAPnLB8G08hAxn39azX1qYBQ/5RVQuoHuKIcfKOdncuaUvEpFKFzEvbtIMsfVew== sha1-GBh7zaUoH44Q38SPCUPi/fT3Xi4=
+"@types/react-transition-group@^4.4.10":
+  version "4.4.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/react-transition-group/-/@types/react-transition-group-4.4.11.tgz"
+  integrity sha1-2WMlOmEddX3gHrskEUOxAX1dY9U=
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.0 || ^18.0.0", "@types/react@^18.2.15", "@types/react@>= 16":
+"@types/react@*", "@types/react@^17.0.0 || ^18.0.0", "@types/react@^17.0.0 || ^18.0.0 || ^19.0.0", "@types/react@^18.2.15", "@types/react@>= 16":
   version "18.2.23"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/react/-/@types/react-18.2.23.tgz"
   integrity sha512-qHLW6n1q2+7KyBEYnrZpcsAmU/iiCh9WGCKgXvMxx89+TYdJWRjZohVIo9XTcoLhfX3+/hP0Pbulu3bCZQ9PSA== sha1-YK1s9Ilek77YWNsOA7zE/5fQQQ4=
@@ -885,10 +847,10 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-clsx@^2.0.0:
-  version "2.0.0"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/clsx/-/clsx-2.0.0.tgz"
-  integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q== sha1-EmWPP9mPr+YgdVlaXDDkPRjz0As=
+clsx@^2.1.0, clsx@^2.1.1:
+  version "2.1.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/clsx/-/clsx-2.1.1.tgz"
+  integrity sha1-7tOXyf2L2IK/sY3qtxAgSaLzKZk=
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -954,10 +916,10 @@ css-mediaquery@^0.1.2:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/css-mediaquery/-/css-mediaquery-0.1.2.tgz"
   integrity sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q== sha1-aiw3NEkoYYYxxUvTPO3TAdoYvqA=
 
-csstype@^3.0.2, csstype@^3.1.2:
-  version "3.1.2"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/csstype/-/csstype-3.1.2.tgz"
-  integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ== sha1-HUv51XLxHBQDHwQ24cELwfVx9Qs=
+csstype@^3.0.2, csstype@^3.1.3:
+  version "3.1.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/csstype/-/csstype-3.1.3.tgz"
+  integrity sha1-2A/ylNEU+w5qxQD7+FtgE31+/4E=
 
 debug@^4.1.0, debug@^4.1.1, debug@^4.3.2:
   version "4.3.4"
@@ -970,6 +932,11 @@ deep-is@^0.1.3:
   version "0.1.4"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/deep-is/-/deep-is-0.1.4.tgz"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ== sha1-pvLc5hL63S7x9Rm3NVHxfoUZmDE=
+
+deepmerge@^4.0.0:
+  version "4.3.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/deepmerge/-/deepmerge-4.3.1.tgz"
+  integrity sha1-RLXyFHzTsA1LVhN2hZZvJv0l3Uo=
 
 define-data-property@^1.0.1:
   version "1.1.0"
@@ -1856,6 +1823,11 @@ lines-and-columns@^1.1.6:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg== sha1-7KKE910pZQeTCdwK2SVauy68FjI=
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/load-script/-/load-script-1.0.0.tgz"
+  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/locate-path/-/locate-path-6.0.0.tgz"
@@ -1896,6 +1868,11 @@ matchmediaquery@^0.3.0:
   integrity sha512-Hlk20WQHRIm9EE9luN1kjRjYXAQToHOIAHPJn9buxBwuhfTHoKUcX+lXBbxc85DVQfXYbEQ4HcwQdd128E3qHQ== sha1-gkftxH5Jnrt8WPYqn/nM9bgVxtc=
   dependencies:
     css-mediaquery "^0.1.2"
+
+memoize-one@^5.1.1:
+  version "5.2.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/memoize-one/-/memoize-one-5.2.1.tgz"
+  integrity sha1-gzeqPEM1WBg57AHD1ZQJDOvo8A4=
 
 merge2@^1.3.0:
   version "1.4.1"
@@ -2118,7 +2095,7 @@ prettier@3.0.3:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/prettier/-/prettier-3.0.3.tgz"
   integrity sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg== sha1-QypR97pCLRRpCWwP3CjiNduPlkM=
 
-prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg== sha1-Z9h78aaU9IQ1zzMsJK8QIUoxQLU=
@@ -2155,13 +2132,18 @@ react-dnd@^16.0.1:
     fast-deep-equal "^3.1.3"
     hoist-non-react-statics "^3.3.2"
 
-"react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.6.0, react-dom@>=16.8, react-dom@>=16.8.0:
+"react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.6.0, react-dom@>=16.8:
   version "18.2.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g== sha1-IqrzhwjbJnTtmtoiTKSqcI2CHj0=
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-fast-compare@^3.0.1:
+  version "3.2.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-fast-compare/-/react-fast-compare-3.2.2.tgz"
+  integrity sha1-kpqXpTIwTOn+5LyuRCNPHOLCHUk=
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -2173,10 +2155,21 @@ react-is@^16.7.0:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ== sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
 
-react-is@^18.2.0:
-  version "18.2.0"
-  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-is/-/react-is-18.2.0.tgz"
-  integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w== sha1-GZQx7qqi4J+GQn77tPFHPttHYJs=
+react-is@^18.3.1:
+  version "18.3.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-is/-/react-is-18.3.1.tgz"
+  integrity sha1-6DVX3BLq5jqZ4AOkY4ix3LtE234=
+
+react-player@^2.16.0:
+  version "2.16.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-player/-/react-player-2.16.0.tgz"
+  integrity sha1-iQcHALA/Wl3tnwsxZdRxc5B5ZIE=
+  dependencies:
+    deepmerge "^4.0.0"
+    load-script "^1.0.0"
+    memoize-one "^5.1.1"
+    prop-types "^15.7.2"
+    react-fast-compare "^3.0.1"
 
 react-query@^3.39.3:
   version "3.39.3"
@@ -2489,6 +2482,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w== sha1-btpL00SjyUrqN21MwxvHcxEDngk=
+
+swiper@^11.1.15:
+  version "11.1.15"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/swiper/-/swiper-11.1.15.tgz"
+  integrity sha1-4iWMjTgoLi8RXKRj1ujFuEzc8co=
 
 text-table@^0.2.0:
   version "0.2.0"

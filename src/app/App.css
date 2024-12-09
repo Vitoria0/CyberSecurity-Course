@@ -34,3 +34,27 @@
   }
 }
 
+.swiper-button-prev{
+  color: white !important
+}
+
+.swiper-button-next{
+  color: white !important;
+}
+
+.swiper-pagination-bullet{
+  background-color: #14F194 !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #14F194 !important;
+}
+ 
+
+.MuiOutlinedInput-notchedOutline{
+  border-color: #ffffff !important;
+}
+
+.MuiInputLabel-formControl{
+color: #FFF 
+!important;}
