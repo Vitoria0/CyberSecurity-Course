@@ -6,11 +6,11 @@ import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import { Box, Typography } from '@mui/material';
 import { useRef } from 'react';
 import Subtitle from '../Texts/subtitle';
-import slide1 from '../../assets/img/slide1.png';
-import slide2 from '../../assets/img/slide2.png';
-import slide3 from '../../assets/img/slide3.png';
-import slide4 from '../../assets/img/slide4.png';
-import slide5 from '../../assets/img/slide5.png';
+import slide1 from '../../assets/img/Slide1.png';
+import slide2 from '../../assets/img/Slide2.png';
+import slide3 from '../../assets/img/Slide3.png';
+import slide4 from '../../assets/img/Slide4.png';
+import slide5 from '../../assets/img/Slide5.png';
 
 export const Slider = ({ isEnded }) => {
 	const swiperRef = useRef(null);
