@@ -2,27 +2,54 @@ import { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
-import escudo from '../../assets/img/escudo.png';
+import Title from '../../components/Texts/title';
+import { Capa } from '../../assets/svg/Capa';
+import { ImageText } from '../../components/Cards/ImageText';
+import image1 from '../../assets/img/vr.png';
+import image2 from '../../assets/img/www.png';
+import image3 from '../../assets/img/block.png';
 import confidencialidade from '../../assets/img/confidencialidade.png';
 import Disponibilidade from '../../assets/img/disponibilidade.png';
 import Integridade from '../../assets/img/integridade.png';
-import Title from '../../components/Texts/title';
-import Subtitle from '../../components/Texts/subtitle';
+import CardDinamico from '../../components/Cards/CardNeonChip';
+import { InterativeImageText } from '../../components/Cards/InterativeImageText';
 import { CardIcon } from '../../components/Cards/CardIcon';
-import QuizComponent from '../../components/Quiz/quiz';
+import Subtitle from '../../components/Texts/subtitle';
 import IframePlayer from '../../components/Iframe/Iframe';
+import { Slider } from '../../components/Slider/slider';
+import QuizComponent from '../../components/Quiz/quiz';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [blocks, setBlocks] = useState([false, false, false]); 
+	const [block1, setBlock1] = useState(false);
+	const [block2, setBlock2] = useState(false);
+	const [block3, setBlock3] = useState(false);
+	const [block4, setBlock4] = useState(false);
+	const [block5, setBlock5] = useState(false);
+
+	const handleAnswerCallback = () => {
+		setBlock2(true);
+	};
 
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
- const handleUnlockBlock = (index) => {
-    setBlocks((prev) => prev.map((block, i) => (i === index ? true : block)));
-  };
+	const handleUnlockBlock = index => {
+		setBlock1(true);
+	};
+	const handleUnlockBlock1 = index => {
+		setBlock2(true);
+	};
+
+	const handleUnlockBlock2 = index => {
+		setBlock3(true);
+	};
+
+	const handleUnlockBlock3 = index => {
+		setBlock4(true);
+	};
+
 	return (
 		<Box
 			sx={{
@@ -32,11 +59,13 @@ const Modulo01 = () => {
 				background: '#030012',
 				backgroundImage: `url(${backgorund})`,
 				backgroundSize: '100vw',
+				fontFamily: 'Poppins',
 				backgroundRepeat: 'no-repeat',
 				alignItems: 'center',
 				width: '100vw',
 				margin: 0,
 				padding: 0,
+				paddingRight: { xs: 1, md: 0 },
 				color: '#fff',
 				gap: 8,
 			}}
@@ -62,7 +91,7 @@ const Modulo01 = () => {
 					sx={{
 						alignItems: 'center',
 						width: '100%',
-						gap: 3,
+						gap: 2,
 						margin: '0 auto',
 						display: 'flex',
 						justifyContent: 'center',
@@ -70,11 +99,18 @@ const Modulo01 = () => {
 					}}
 				>
 					<Title text='Mundo Digital' />
-					<Typography variant='body1' color='secondary' align='center' maxWidth='50rem'>
+					<Typography
+						variant='body1'
+						color='secondary'
+						align='center'
+						maxWidth='50rem'
+						sx={{ fontFamily: 'Poppins', color: '#fff' }}
+					>
 						Vamos embarcar nessa jornada e entender melhor como funciona tudo isso
 					</Typography>
+					<Capa />
 				</Box>
-				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock(1)} />
+				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
 
 			{block1 && (
@@ -84,88 +120,91 @@ const Modulo01 = () => {
 						justifyContent: 'top',
 						flexDirection: 'column',
 						alignItems: 'center',
-						width: '100%',
-						marginBottom: block2 ? '0' : '5rem',
+						width: { xs: '80%', lg: '60%', xl: '45%' },
+						marginBottom: '5rem',
 						py: 5,
 						padding: 0,
 						color: '#fff',
-						gap: 5,
+						gap: { xs: 5, md: 8, xl: 10 },
 					}}
 				>
-					<Box
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-							flexDirection: { xs: 'column', md: 'row' },
-							gap: 3,
-							width: '100%',
-							margin: '0 auto',
-						}}
-					>
-						<Box
-							sx={{
-								width: { xs: '15rem', md: '20rem' },
-							}}
-						>
-							<img
-								src={escudo}
-								alt='Segurança da Informação'
-								style={{
-									width: '100%',
-								}}
-							/>
-						</Box>
-						<Typography
-							variant='body1'
-							sx={{
-								fontFamily: 'Poppins, sans-serif',
-								color: '#FFF',
-								textAlign: { xs: 'justify', md: 'right' },
-								width: { xs: '20rem', md: '35rem' },
-								borderRight: '4px solid #FFF',
-								fontWeight: '200',
-								paddingRight: '2rem',
-								display: 'flex',
-								justifyContent: 'start',
-								flexDirection: 'column',
-								gap: 1,
-								alignItems: 'end',
-							}}
-						>
-							<Subtitle text='O que é Segurança da Informação?' />
-							Segurança da Informação consiste em proteger os dados contra acessos não
-							autorizados, alterações indevidas ou destruição. Ela é essencial em um mundo
-							onde informações pessoais e corporativas são ativos valiosos.
-						</Typography>
-					</Box>
+					<ImageText
+						image={image1}
+						reverse={true}
+						titulo=' Era Digital e Internet'
+						texto='A Era Digital, também conhecida como Era da Informação, é o período atual da história caracterizado pela rápida transição da indústria tradicional para a economia baseada na informação e tecnologia. o. Suas principais características são o aumento da capacidade de armazenar e compartilhar dados e o impacto da integração global, que conecta pessoas em todo o mundo por meio da internet, promovendo o intercâmbio de informações, culturas e conhecimentos.'
+					/>
 					<Typography
 						variant='body1'
 						sx={{
 							fontFamily: 'Poppins, sans-serif',
-							color: '#FFF',
-							fontWeight: '200',
-							textAlign: { xs: 'justify', md: 'center' },
-							width: { xs: '20rem', md: '50rem' },
+							textAlign: 'center',
+							width: '100%',
+							textAlign: 'center',
+							fontWeight: '300',
 						}}
 					>
-						A segurança da informação se baseia em <strong>três pilares principais:</strong>{' '}
-						confidencialidade, integridade e disponibilidade. Estes sustentam as práticas e
-						políticas de proteção de dados nas empresas, servindo como parâmetros para guiar os
-						processos.
-						<br></br>
-						<br></br>
-						<strong>Clique nos cards para saber mais sobre cada pilar:</strong>
+						Clique noscards para saber quais as <b>principais caracteristicas:</b>
 					</Typography>
 					<Box
 						sx={{
 							display: 'flex',
+							flexDirection: { xs: 'column', md: 'row' },
 							justifyContent: 'center',
 							alignItems: 'center',
-							flexDirection: { xs: 'column', md: 'row' },
-							gap: 5,
+							gap: { xs: 10, md: 5, xl: 9 },
+							marginBottom: 5,
+						}}
+					>
+						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
+						<CardDinamico texto='Conectividade global e comunicação instantânea' />
+						<CardDinamico texto='Automação e digitalização de processos' />
+					</Box>
+
+					<InterativeImageText
+						image={image2}
+						titulo='A Internet'
+						texto='A internet tem suas origens no ARPANET, um projeto financiado pelo Departamento de Defesa dos EUA e criado pela ARPA (atualmente DARPA) para conectar computadores em universidades e institutos de pesquisa. O primeiro nó foi instalado na UCLA em 1969. A internet é formada por milhões de redes interconectadas, e cada dispositivo possui um endereço IP único para comunicação e identificação.'
+					/>
+					<InterativeImageText
+						reverse
+						image={image3}
+						titulo='O Poder dos dados'
+						texto='Na Era Digital, os dados são extremamente críticos e têm um impacto significativo em diversos aspectos do mundo atual. Eles são essenciais para a tomada de decisões informadas, personalização de serviços e inovação tecnológica. A segurança dos dados é fundamental, exigindo proteção contra perda e acesso não autorizado, bem como conformidade com regulamentações como a LGPD - (multas associadas a LGPD podem ser de até 2% do faturamento da empresa, limitado a R$ 50.000.000,00) por infração.'
+					/>
+					<Typography
+						variant='body1'
+						sx={{
+							fontFamily: 'Poppins, sans-serif',
 							width: '100%',
-							margin: '0 auto',
+							textAlign: 'justify',
+							fontWeight: '300',
+						}}
+					>
+						A segurança da informação se baseia em <b>três pilares principais:</b>{' '}
+						confidencialidade, integridade e disponibilidade. Estes sustentam as práticas e
+						políticas de proteção de dados nas empresas, servindo como parâmetros para guiar os
+						processos.
+					</Typography>
+					<Typography
+						variant='body1'
+						sx={{
+							fontFamily: 'Poppins, sans-serif',
+							textAlign: 'center',
+							width: '100%',
+							textAlign: 'center',
+							fontWeight: '600',
+						}}
+					>
+						Clique nos cards para saber mais sobre cada pilar:
+					</Typography>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: { xs: 'column', md: 'row' },
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: { xs: 8, md: 3, xl: 5 },
 						}}
 					>
 						<CardIcon
@@ -190,6 +229,158 @@ const Modulo01 = () => {
 							}
 						/>
 					</Box>
+					<Botao.Primary text='Continuar' onClick={handleUnlockBlock1} />
+				</Box>
+			)}
+			{block2 && (
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'top',
+						flexDirection: 'column',
+						alignItems: 'center',
+						width: { xs: '80%', lg: '60%', xl: '45%' },
+						marginBottom: '5rem',
+						py: 5,
+						padding: 0,
+						color: '#fff',
+						gap: { xs: 5, md: 8, xl: 10 },
+					}}
+				>
+					<Subtitle text={'Por que a Segurança da Informação é Importante?'} />
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: { xs: 'column', md: 'row' },
+							justifyContent: 'center',
+							alignItems: 'start',
+							gap: { xs: 3, md: 3, xl: 5 },
+						}}
+					>
+						<Typography
+							variant='body1'
+							sx={{
+								fontFamily: 'Poppins, sans-serif',
+								width: '100%',
+								textAlign: 'justify',
+								fontWeight: '300',
+							}}
+						>
+							Vivemos na era dos dados. Toda ação digital que realizamos – desde o envio de
+							e-mails até transações bancárias – gera dados valiosos. A proteção desses
+							dados é essencial para evitar consequências como
+						</Typography>
+						<Typography
+							variant='body1'
+							sx={{
+								fontFamily: 'Poppins, sans-serif',
+								width: '100%',
+								textAlign: 'justify',
+								fontWeight: '300',
+							}}
+						>
+							&#x2022; Roubo de identidade.<br></br>
+							&#x2022; Vazamento de informações corporativas.<br></br>
+							&#x2022; Perdas financeiras.<br></br>
+							&#x2022; Comprometimento da privacidade.
+						</Typography>
+					</Box>
+					<Typography
+						variant='body1'
+						sx={{
+							fontFamily: 'Poppins, sans-serif',
+							textAlign: 'center',
+							width: '100%',
+							textAlign: 'center',
+							fontWeight: '600',
+						}}
+					>
+						Assista o video para entender melhor:
+					</Typography>
+					<IframePlayer
+						videoUrl={
+							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
+						} 
+					/>
+					<Botao.Primary text='Continuar' onClick={handleUnlockBlock2} />
+				</Box>
+			)}
+			{block3 && (
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'top',
+						flexDirection: 'column',
+						alignItems: 'center',
+						width: { xs: '80%', lg: '60%', xl: '45%' },
+						marginBottom: '5rem',
+						py: 5,
+						padding: 0,
+						color: '#fff',
+						gap: { xs: 2, md: 3, xl: 5 },
+					}}
+				>
+					{' '}
+					<Subtitle text={'Métodos e estratégias de ameaças virtuais'} />
+					<Typography
+						variant='body1'
+						sx={{
+							fontFamily: 'Poppins, sans-serif',
+							width: '100%',
+							textAlign: 'justify',
+							fontWeight: '300',
+						}}
+					>
+						A engenharia social é um método usado para enganar, manipular ou explorar a
+						confiança das pessoas. É uma forma de ataque sem violência física que busca fazer
+						com que a vítima realize voluntariamente ações prejudiciais a si mesma, como
+						divulgar informações sensíveis ou transferir dinheiro para desconhecidos. Quando
+						alguém convence uma pessoa a divulgar sua senha, está realizando uma ação de
+						engenharia social. Se alguém obriga uma pessoa a dar sua senha sob ameaça de
+						violência, isso não é engenharia social. Esses ataques exploram a confiança, a
+						curiosidade e, muitas vezes, a falta de atenção do alvo. Conheça os 4 pilares da
+						engenharia social navegando pelos slides:
+					</Typography>
+					<Slider />
+					<InterativeImageText
+						reverse
+						image={image3}
+						titulo='Tipos Comuns de Ataques'
+						texto='Ataques cibernéticos, ou ciberataques, são ações maliciosas que se aproveitam da vulnerabilidade de sistemas e redes, assim como de seus usuários, para acessar ou danificar dados confidenciais, sejam eles pessoais ou empresariais. As tentativas de ataques são executadas por indivíduos ou organizações e podem apresentar objetivos criminosos, políticos ou pessoais.'
+					/>
+					<Typography
+						variant='body1'
+						sx={{
+							fontFamily: 'Poppins, sans-serif',
+							width: '100%',
+							textAlign: 'justify',
+							fontWeight: '300',
+						}}
+					>
+						Esses objetivos incluem vazamento de dados, aplicação de golpes, roubo de
+						identidade, extorsão, interrupção de serviços, comprometimento da reputação de
+						empresas e espionagem corporativa.<b> Clique nas setas</b> e navegue pelo slide para
+						ver alguns exemplos de ataques ciberneticos:
+					</Typography>
+					<Slider />
+					<Botao.Primary text='Continuar' onClick={handleUnlockBlock3} />
+				</Box>
+			)}
+			{block3 && (
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'top',
+						flexDirection: 'column',
+						alignItems: 'center',
+						width: { xs: '80%', lg: '60%', xl: '45%' },
+						marginBottom: '5rem',
+						py: 5,
+						padding: 0,
+						color: '#fff',
+						gap: { xs: 2, md: 3, xl: 5 },
+					}}
+				>
 					<Typography
 						variant='body1'
 						sx={{
@@ -206,93 +397,9 @@ const Modulo01 = () => {
 					<QuizComponent
 						question='Qual é o pilar da segurança da informação violado quando um sistema está fora do ar por um ataque de negação de serviço (DDoS)?'
 						options={['Confidencialidade', 'Integridade', 'Disponibilidade']}
-						correctAnswer='Confidencialidade'
-						onAnswer={handleAnswerCallback}
+						correctAnswer='Confidencialidade' 
 					/>
-				</Box>
-			)}
-			{block2 && (
-				<Box
-					sx={{
-						display: 'flex',
-						justifyContent: 'top',
-						flexDirection: 'column',
-						alignItems: 'center',
-						width: '100%',
-						py: 5,
-						marginBottom: '5rem',
-						padding: 0,
-						color: '#fff',
-						gap: 5,
-					}}
-				>
-					<Subtitle text='Por que a Segurança da Informação é Importante?' />
-					<Box
-						sx={{
-							display: 'flex',
-							justifyContent: 'start',
-							alignItems: 'start',
-							flexDirection: { xs: 'column', md: 'row' },
-							gap: 3,
-							width: { xs: '20rem', md: '50rem' },
-							margin: '0 auto',
-						}}
-					>
-						<Typography
-							variant='body1'
-							sx={{
-								fontFamily: 'Poppins, sans-serif',
-								color: '#FFF',
-								textAlign: 'justify',
-								width: '100%',
-								fontWeight: '200',
-							}}
-						>
-							Vivemos na era dos dados. Toda ação digital que realizamos – desde o envio de
-							e-mails até transações bancárias – gera dados valiosos. A proteção desses
-							dados é essencial para evitar consequências como:
-						</Typography>
-						<Typography
-							variant='body1'
-							sx={{
-								fontFamily: 'Poppins, sans-serif',
-								color: '#FFF',
-								textAlign: 'justify',
-								width: '100%',
-								fontWeight: '200',
-							}}
-						>
-							&bull; Roubo de identidade. <br></br> &bull; Vazamento de informações
-							corporativas.<br></br> &bull; Perdas financeiras.<br></br> &bull;
-							Comprometimento da privacidade.
-						</Typography>
-					</Box>
-					<Typography
-						variant='h6'
-						sx={{
-							fontFamily: 'Poppins, sans-serif',
-							color: '#FFF',
-							textAlign: 'center',
-							width: '100%',
-						}}
-					>
-						<strong>Assista o video para entender melhor:</strong>
-					</Typography>
-					<Box sx={{ width: { xs: '20rem', md: '50rem' } }}>
-						<IframePlayer
-							videoUrl='https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
-							onVideoEnd={handleVideoEnded}
-						/>
-					</Box>
-					<Box
-						sx={{
-							cursor: block3 ? 'pointer' : 'default',
-							pointerEvents: block3 ? 'auto' : 'none',
-							opacity: block3 ? 1 : 0.5,
-						}}
-					>
-						<Botao.Navigation page='Modulo02' text='Próxima etapa' />
-					</Box>
+					<Botao.Navigation text='Próximo Modulo' page={'Menu'}/>
 				</Box>
 			)}
 		</Box>

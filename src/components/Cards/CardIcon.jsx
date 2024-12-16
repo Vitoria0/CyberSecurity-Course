@@ -13,8 +13,7 @@ export const CardIcon = ({ img, title, text }) => {
 			onClick={handleCardClick}
 			sx={{
 				width: '15rem',
-				height: '20rem',
-				marginTop: '2rem',
+				height: '20rem', 
 				borderRadius: 3,
 				display: 'flex',
 				flexDirection: 'column',

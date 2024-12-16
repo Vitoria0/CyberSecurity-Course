@@ -20,7 +20,7 @@ const IframePlayer = ({ videoUrl, onVideoEnd }) => {
 			sx={{
 				position: 'relative',
 				width: '100%',
-				height: '500px',
+				aspectRatio: '12/7',
 				backgroundColor: '#1C152E80', // Fundo sólido
 				display: 'flex',
 				justifyContent: 'center',

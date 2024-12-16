@@ -78,22 +78,22 @@ const Menu = () => {
 							isIncomplete={false}
 						/>
 						<ModuloMenu
-							onClick={() => navigateTo('Modulo01')}
+							onClick={() => navigateTo('Modulo02')}
 							image={modulo02}
 							nomeModulo='Como Se Proteger'
 							isIncomplete
 						/>
 						<ModuloMenu
-							onClick={() => navigateTo('Modulo01')}
+							onClick={() => navigateTo('Modulo03')}
 							image={modulo03}
 							nomeModulo='Dispositivos Moveis e Redes sem Fio'
-							isBlocked
 						/>
 						<ModuloMenu
-							onClick={() => navigateTo('Modulo01')}
+							onClick={() => navigateTo('Modulo04')}
 							image={modulo04}
 							nomeModulo='Ambiente Corporativo'
-							isBlocked
+							isIncomplete={false}
+							isBlocked={false}
 						/>
 					</Box>
 				</Box>

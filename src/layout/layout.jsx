@@ -8,8 +8,7 @@ const Layout = ({ children }) => {
 				width: '100vw',
 				height: '100vh',
 			}}
-		>
-			{/* <Menu /> */}
+		> 
 			<Box sx={{ width: '100%', height: '100%' }}>{children}</Box>
 		</Box>
 	);

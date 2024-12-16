@@ -7,7 +7,6 @@ const Subtitle = ({ text }) => {
 			sx={{
 				fontFamily: 'Tektur, sans-serif',
 				color: '#14F194',
-				textAlign: 'center',
 				fontWeight: 'bold',
 			}}
 		>
