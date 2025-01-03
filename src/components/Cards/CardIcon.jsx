@@ -1,10 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import { useState } from 'react';
 
-export const CardIcon = ({ img, title, text }) => {
-	const [isClicked, setIsClicked] = useState(false);
+export const CardIcon = ({ img, title, text, callback, isActive = false }) => {
+	const [isClicked, setIsClicked] = useState(isActive);
 
 	const handleCardClick = () => {
+		callback(title);
 		setIsClicked(prev => !prev);
 	};
 

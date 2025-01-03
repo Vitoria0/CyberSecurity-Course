@@ -1,10 +1,11 @@
 import { Button, Typography } from '@mui/material';
 
-export const Primary = ({ page, text, onClick }) => {
+export const Primary = ({ page, text, onClick, disable }) => {
 	return (
 		<Button
 			variant='outlined'
-			onClick={onClick}
+			onClick={disable ? () => {} : onClick}
+			disabled={disable}
 			sx={{
 				px: 6,
 				py: 1.5,

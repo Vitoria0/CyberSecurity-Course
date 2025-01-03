@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Box, Button, Typography, Radio, RadioGroup, FormControlLabel } from '@mui/material';
 
-const QuizComponent = ({ question, options, correctAnswer, onAnswer }) => {
-	const [selectedOption, setSelectedOption] = useState('');
-	const [isAnswered, setIsAnswered] = useState(false);
-	const [isCorrect, setIsCorrect] = useState(false);
+const QuizComponent = ({ question, options, correctAnswer, onAnswer, callback, currentAnswer = "" }) => {
+	const [selectedOption, setSelectedOption] = useState(currentAnswer);
+	const [isAnswered, setIsAnswered] = useState(currentAnswer != '');
+	const [isCorrect, setIsCorrect] = useState(currentAnswer == correctAnswer);
 
 	const handleOptionChange = event => {
 		setSelectedOption(event.target.value);
@@ -15,6 +15,7 @@ const QuizComponent = ({ question, options, correctAnswer, onAnswer }) => {
 		setIsCorrect(correct);
 		setIsAnswered(true);
 		if (correct) {
+			callback(question)
 			onAnswer(correct);
 		}
 	};

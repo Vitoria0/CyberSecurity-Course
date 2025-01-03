@@ -5,13 +5,13 @@ import Title from '../../components/Texts/title';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 import { useNavigation } from '../../hooks/NavigationContext';
-
+import { loginWithEmailAndPassword, LoggedUser, createUserWithEmailAndPassword } from '../../services/authService';
 const Homepage = () => {
-const { navigateTo } = useNavigation(); 
+	const { navigateTo } = useNavigation();
 	const [isVisible, setIsVisible] = useState(false);
-	const [isLogin, setIsLogin] = useState(true);  
+	const [isLogin, setIsLogin] = useState(true);
 	const [formData, setFormData] = useState({ email: '', password: '', name: '' });
-	const [showPassword, setShowPassword] = useState(false); 
+	const [showPassword, setShowPassword] = useState(false);
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -22,20 +22,30 @@ const { navigateTo } = useNavigation();
 		setFormData(prevData => ({ ...prevData, [name]: value }));
 	};
 
-	const handleSubmit = e => {
-		e.preventDefault();  
-		if (isLogin) { 
-			navigateTo('Menu')
-		} else { 
-			console.log('Cadastro realizado:', formData);
-			setIsLogin(true);  
+	const handleSubmit = async e => {
+		e.preventDefault();
+		if (isLogin) {
+			await loginWithEmailAndPassword(formData.email, formData.password);
+			if (LoggedUser.get()) {
+				3;
+				navigateTo('Menu');
+			} else {
+				alert('Usuário ou senha incorretos');
+			}
+		} else {
+			var user = await createUserWithEmailAndPassword(formData.name, formData.email, formData.password);
+			if (user !== null) {
+				setIsLogin(true);
+			} else {
+				alert('Usuário ou senha incorretos');
+			}
 		}
 	};
 
 	const toggleForm = () => {
 		setIsLogin(!isLogin);
 	};
- 
+
 	const handleClickShowPassword = () => {
 		setShowPassword(!showPassword);
 	};
@@ -80,10 +90,10 @@ const { navigateTo } = useNavigation();
 				</Typography>
 				<Box
 					sx={{
-						width: '100%', 
+						width: '100%',
 						display: 'flex',
 						justifyContent: 'space-between',
-						alignItems: 'start', 
+						alignItems: 'start',
 					}}
 				>
 					<Box
@@ -185,16 +195,22 @@ const { navigateTo } = useNavigation();
 					</Box>
 					<Box
 						sx={{
-							width: '40%', 
-							display: {xs: 'none', lg: 'flex'},
-							justifyContent: 'center', 
+							width: '40%',
+							display: { xs: 'none', lg: 'flex' },
+							justifyContent: 'center',
 							height: '20rem',
 							alignItems: 'center',
-							flexDirection: 'column', 
-
+							flexDirection: 'column',
 						}}
 					>
-						<img src={img} style={{ width: '100%',  objectFit: 'contain', transform: 'translateX(-5rem)' }} />
+						<img
+							src={img}
+							style={{
+								width: '100%',
+								objectFit: 'contain',
+								transform: 'translateX(-5rem)',
+							}}
+						/>
 					</Box>
 				</Box>
 			</Box>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
@@ -18,14 +18,119 @@ import Subtitle from '../../components/Texts/subtitle';
 import IframePlayer from '../../components/Iframe/Iframe';
 import { Slider } from '../../components/Slider/slider';
 import QuizComponent from '../../components/Quiz/quiz';
+import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
+	const [interactics, setInteractics] = useState([]);
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
 	const [block4, setBlock4] = useState(false);
-	const [block5, setBlock5] = useState(false);
+
+	const block1Ref = useRef(null);
+	const block2Ref = useRef(null);
+	const block3Ref = useRef(null);
+	const block4Ref = useRef(null);
+
+	useEffect(() => {
+		const user = LoggedUser.get();
+		if (user && typeof user.progress === 'number') {
+			const progress = user.progress;
+			if (progress >= 5) {
+				setBlock4(true);
+				setBlock3(true);
+				setBlock2(true);
+				setBlock1(true);
+				setInteractics([
+					'CardDinamico-1',
+					'CardDinamico-2',
+					'CardDinamico-3',
+					'InterativeImageText-1',
+					'InterativeImageText-2',
+					'CardIcon-1',
+					'CardIcon-2',
+					'CardIcon-3',
+					'video',
+					'block3',
+					'quiz',
+				]);
+			}
+			if (progress === 4) {
+				setBlock4(true);
+				setBlock3(true);
+				setBlock2(true);
+				setBlock1(true);
+				scrollToBlock(block4Ref);
+				setInteractics([
+					'CardDinamico-1',
+					'CardDinamico-2',
+					'CardDinamico-3',
+					'InterativeImageText-1',
+					'InterativeImageText-2',
+					'CardIcon-1',
+					'CardIcon-2',
+					'CardIcon-3',
+					'video',
+					'block3',
+				]);
+			}
+			if (progress === 3) {
+				setBlock3(true);
+				setBlock2(true);
+				setBlock1(true);
+				scrollToBlock(block3Ref);
+				setInteractics([
+					'CardDinamico-1',
+					'CardDinamico-2',
+					'CardDinamico-3',
+					'InterativeImageText-1',
+					'InterativeImageText-2',
+					'CardIcon-1',
+					'CardIcon-2',
+					'CardIcon-3',
+					'video',
+				]);
+			}
+			if (progress === 2) {
+				setBlock2(true);
+				setBlock1(true);
+				scrollToBlock(block2Ref);
+				setInteractics([
+					'CardDinamico-1',
+					'CardDinamico-2',
+					'CardDinamico-3',
+					'InterativeImageText-1',
+					'InterativeImageText-2',
+					'CardIcon-1',
+					'CardIcon-2',
+					'CardIcon-3',
+				]);
+			}
+			if (progress === 1) {
+				setBlock1(true);
+				scrollToBlock(block1Ref);
+			}
+		}
+	}, []); // Executa apenas uma vez
+
+	const scrollToBlock = blockRef => {
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
+	};
+
+	const addInteractics = item => {
+		if (!interactics.some(i => i === item)) {
+			setInteractics([...interactics, item]); // Adiciona o novo item ao array
+		}
+	};
 
 	const handleAnswerCallback = () => {
 		setBlock2(true);
@@ -36,18 +141,26 @@ const Modulo01 = () => {
 		return () => clearTimeout(timeout);
 	}, []);
 	const handleUnlockBlock = index => {
+		changeProgress(1);
 		setBlock1(true);
+		scrollToBlock(block1Ref);
 	};
 	const handleUnlockBlock1 = index => {
+		changeProgress(2);
 		setBlock2(true);
+		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock2 = index => {
+		changeProgress(3);
 		setBlock3(true);
+		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock3 = index => {
+		changeProgress(4);
 		setBlock4(true);
+		scrollToBlock(block4Ref);
 	};
 
 	return (
@@ -112,7 +225,7 @@ const Modulo01 = () => {
 				</Box>
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
-
+			<Box ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{
@@ -156,21 +269,37 @@ const Modulo01 = () => {
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
-						<CardDinamico texto='Conectividade global e comunicação instantânea' />
-						<CardDinamico texto='Automação e digitalização de processos' />
+						<CardDinamico
+							texto='Uso massivo da internet e dispositivos digitais'
+							callback={e => addInteractics('CardDinamico-1')}
+							isActive={LoggedUser.get().progress >= 2}
+						/>
+						<CardDinamico
+							texto='Conectividade global e comunicação instantânea'
+							callback={e => addInteractics('CardDinamico-2')}
+							isActive={LoggedUser.get().progress >= 2}
+						/>
+						<CardDinamico
+							texto='Automação e digitalização de processos'
+							callback={e => addInteractics('CardDinamico-3')}
+							isActive={LoggedUser.get().progress >= 2}
+						/>
 					</Box>
 
 					<InterativeImageText
 						image={image2}
 						titulo='A Internet'
 						texto='A internet tem suas origens no ARPANET, um projeto financiado pelo Departamento de Defesa dos EUA e criado pela ARPA (atualmente DARPA) para conectar computadores em universidades e institutos de pesquisa. O primeiro nó foi instalado na UCLA em 1969. A internet é formada por milhões de redes interconectadas, e cada dispositivo possui um endereço IP único para comunicação e identificação.'
+						callback={e => addInteractics('InterativeImageText-1')}
+						isActive={LoggedUser.get().progress >= 2}
 					/>
 					<InterativeImageText
 						reverse
 						image={image3}
 						titulo='O Poder dos dados'
 						texto='Na Era Digital, os dados são extremamente críticos e têm um impacto significativo em diversos aspectos do mundo atual. Eles são essenciais para a tomada de decisões informadas, personalização de serviços e inovação tecnológica. A segurança dos dados é fundamental, exigindo proteção contra perda e acesso não autorizado, bem como conformidade com regulamentações como a LGPD - (multas associadas a LGPD podem ser de até 2% do faturamento da empresa, limitado a R$ 50.000.000,00) por infração.'
+						callback={e => addInteractics('InterativeImageText-2')}
+						isActive={LoggedUser.get().progress >= 2}
 					/>
 					<Typography
 						variant='body1'
@@ -213,6 +342,8 @@ const Modulo01 = () => {
 							text={
 								'A confidencialidade está relacionada a privacidade dos dados. Seu objetivo é restringir o acesso às informações, garantindo que ela chegue apenas às pessoas autorizadas.'
 							}
+							callback={e => addInteractics('CardIcon-1')}
+							isActive={LoggedUser.get().progress >= 2}
 						/>
 						<CardIcon
 							img={Integridade}
@@ -220,6 +351,8 @@ const Modulo01 = () => {
 							text={
 								'A integridade está associada a veracidade e confiabilidade da informação, garantindo à preservação dos dados. Ela deve garantir que as informações estejam livres de qualquer alteração sem autorização, se mantendo conforme foram criadas.'
 							}
+							callback={e => addInteractics('CardIcon-2')}
+							isActive={LoggedUser.get().progress >= 2}
 						/>
 						<CardIcon
 							img={Disponibilidade}
@@ -227,11 +360,18 @@ const Modulo01 = () => {
 							text={
 								'A disponibilidade tem o foco de garantir que dados e sistemas ficarão acessíveis sempre que necessário, podendo ser acessados por qualquer pessoa ou processo autorizado quando for preciso.'
 							}
+							callback={e => addInteractics('CardIcon-3')}
+							isActive={LoggedUser.get().progress >= 2}
 						/>
 					</Box>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock1} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={interactics.length >= 8 ? handleUnlockBlock1 : null}
+						disable={interactics.length < 8}
+					/>
 				</Box>
 			)}
+			<Box ref={block2Ref}></Box>
 			{block2 && (
 				<Box
 					sx={{
@@ -300,11 +440,17 @@ const Modulo01 = () => {
 					<IframePlayer
 						videoUrl={
 							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
-						} 
+						}
+						onVideoEnd={() => addInteractics('video')}
 					/>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock2} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={interactics.includes('video') ? handleUnlockBlock2 : null}
+						disable={!interactics.includes('video')}
+					/>
 				</Box>
 			)}
+			<Box ref={block3Ref}></Box>
 			{block3 && (
 				<Box
 					sx={{
@@ -347,6 +493,8 @@ const Modulo01 = () => {
 						image={image3}
 						titulo='Tipos Comuns de Ataques'
 						texto='Ataques cibernéticos, ou ciberataques, são ações maliciosas que se aproveitam da vulnerabilidade de sistemas e redes, assim como de seus usuários, para acessar ou danificar dados confidenciais, sejam eles pessoais ou empresariais. As tentativas de ataques são executadas por indivíduos ou organizações e podem apresentar objetivos criminosos, políticos ou pessoais.'
+						callback={e => addInteractics('block3')}
+						isActive={LoggedUser.get().progress >= 4}
 					/>
 					<Typography
 						variant='body1'
@@ -363,10 +511,15 @@ const Modulo01 = () => {
 						ver alguns exemplos de ataques ciberneticos:
 					</Typography>
 					<Slider />
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock3} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={interactics.includes('block3') ? handleUnlockBlock3 : null}
+						disable={!interactics.includes('block3')}
+					/>
 				</Box>
 			)}
-			{block3 && (
+			<Box ref={block4Ref}></Box>
+			{block4 && (
 				<Box
 					sx={{
 						display: 'flex',
@@ -397,9 +550,16 @@ const Modulo01 = () => {
 					<QuizComponent
 						question='Qual é o pilar da segurança da informação violado quando um sistema está fora do ar por um ataque de negação de serviço (DDoS)?'
 						options={['Confidencialidade', 'Integridade', 'Disponibilidade']}
-						correctAnswer='Confidencialidade' 
+						correctAnswer='Confidencialidade'
+						currentAnswer= {LoggedUser.get().progress >= 5 ? 'Confidencialidade' : ''}
+						callback={e => addInteractics('quiz')}
 					/>
-					<Botao.Navigation text='Próximo Modulo' page={'Menu'}/>
+					<Botao.Navigation
+						text='Próximo Modulo'
+						page={'Menu'}
+						disable={!interactics.includes('quiz')}
+						callback={() => changeProgress(5)}
+					/>
 				</Box>
 			)}
 		</Box>

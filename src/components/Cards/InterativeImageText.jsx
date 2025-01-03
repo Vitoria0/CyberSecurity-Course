@@ -2,10 +2,11 @@ import { Box, Typography } from '@mui/material';
 import Subtitle from '../Texts/subtitle';
 import { useState } from 'react';
 
-export const InterativeImageText = ({ reverse, image, titulo, texto }) => {
-    const [visible, setVisibles] = useState(false); 
+export const InterativeImageText = ({ reverse, image, titulo, texto, callback, isActive = false }) => {
+    const [visible, setVisibles] = useState(isActive); 
 
     const handleClick = () => {
+		callback(titulo);
         setVisibles(!visible);
     }
 

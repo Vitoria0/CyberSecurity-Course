@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import { useEffect } from 'react';
 import background from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
 import modulo01 from '../../assets/img/modulo01.png';
@@ -6,9 +7,23 @@ import modulo02 from '../../assets/img/modulo02.png';
 import modulo03 from '../../assets/img/modulo03.png';
 import modulo04 from '../../assets/img/modulo04.png';
 import { useNavigation } from '../../hooks/NavigationContext';
-
+import { LoggedUser } from '../../services/authService';
 const Menu = () => {
 	const { navigateTo } = useNavigation();
+
+	useEffect(() => {
+		// Atualiza o LoggedUser sempre que o componente é carregado
+		async function fetchUserData() {
+		  try {
+			const user = LoggedUser.get();
+			console.log('Dados do usuário atualizados:', user);
+		  } catch (error) {
+			console.error('Erro ao atualizar dados do usuário:', error);
+		  }
+		}
+	
+		fetchUserData();
+	  }, []);
 
 	return (
 		<Box
@@ -75,25 +90,28 @@ const Menu = () => {
 							onClick={() => navigateTo('Modulo01')}
 							image={modulo01}
 							nomeModulo='Mundo Digital'
-							isIncomplete={false}
+							isIncomplete={LoggedUser.get().progress < 5}
 						/>
 						<ModuloMenu
 							onClick={() => navigateTo('Modulo02')}
 							image={modulo02}
 							nomeModulo='Como Se Proteger'
-							isIncomplete
+							isIncomplete={true}
+							isBlocked={LoggedUser.get().progress < 5}
 						/>
 						<ModuloMenu
 							onClick={() => navigateTo('Modulo03')}
 							image={modulo03}
 							nomeModulo='Dispositivos Moveis e Redes sem Fio'
+							isBlocked={true}
+							isIncomplete={true}
 						/>
 						<ModuloMenu
 							onClick={() => navigateTo('Modulo04')}
 							image={modulo04}
 							nomeModulo='Ambiente Corporativo'
-							isIncomplete={false}
-							isBlocked={false}
+							isBlocked={true}
+							isIncomplete={true}
 						/>
 					</Box>
 				</Box>

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 
-const CardDinamico = ({ titulo, texto }) => {
-	const [showTitle, setShowTitle] = useState(true);
+const CardDinamico = ({ titulo, texto, callback, isActive = false }) => {
+	const [showTitle, setShowTitle] = useState(!isActive);
 
 	const handleCardClick = () => {
+		callback(texto);
 		setShowTitle(!showTitle);
 	};
 
