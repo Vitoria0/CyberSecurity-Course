@@ -21,10 +21,12 @@ import QuizComponent from '../../components/Quiz/quiz';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
 import { HomeRounded } from '@mui/icons-material';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [interactics, setInteractics] = useState([]);
+const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
@@ -185,7 +187,7 @@ const Modulo01 = () => {
 			}}
 		>
 			 <IconButton
-							onClick={() => {}}
+							onClick={() => {navigateTo('Menu');}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',

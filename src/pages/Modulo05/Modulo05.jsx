@@ -6,11 +6,12 @@ import Title from '../../components/Texts/title';
 import { Capa } from '../../assets/svg/Capa';
 import ExamComponent from '../../components/ExamComponent/ExamComponent';
 import { HomeRounded } from '@mui/icons-material';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo05 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);
-
+const { navigateTo } = useNavigation();
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -40,7 +41,7 @@ const Modulo05 = () => {
 		>
 			
 			 <IconButton
-							onClick={() => {}}
+							onClick={() => {navigateTo('Menu');}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',

@@ -13,9 +13,11 @@ import { Slider } from '../../components/Slider/slider';
 import QuizComponent from '../../components/Quiz/quiz';
 import CardFlip from '../../components/Cards/CardFlip';
 import { HomeRounded } from '@mui/icons-material';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo03 = () => {
 	const [isVisible, setIsVisible] = useState(false);
+const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
@@ -67,7 +69,7 @@ const Modulo03 = () => {
 		>
 
 			 <IconButton
-							onClick={() => {}}
+							onClick={() => {navigateTo('Menu');}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',

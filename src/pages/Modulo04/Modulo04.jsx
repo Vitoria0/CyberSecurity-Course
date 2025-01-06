@@ -7,9 +7,11 @@ import { Capa } from '../../assets/svg/Capa';
 import Subtitle from '../../components/Texts/subtitle';
 import { Game } from '../../components/Game/Game';
 import { HomeRounded } from '@mui/icons-material';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo04 = () => {
 	const [isVisible, setIsVisible] = useState(false);
+const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
@@ -61,7 +63,7 @@ const Modulo04 = () => {
 		>
 
 			 <IconButton
-							onClick={() => {}}
+							onClick={() => {navigateTo('Menu');}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',

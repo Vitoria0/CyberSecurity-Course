@@ -19,9 +19,11 @@ import chipCards from '../../assets/img/chipcards.png';
 import CardFlip from '../../components/Cards/CardFlip';
 import QuizComponent from '../../components/Quiz/quiz';
 import { HomeRounded } from '@mui/icons-material';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo02 = () => {
 	const [isVisible, setIsVisible] = useState(false);
+const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
@@ -149,7 +151,7 @@ const Modulo02 = () => {
 		>
 
 			 <IconButton
-							onClick={() => {}}
+							onClick={() => {navigateTo('Menu');}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',
