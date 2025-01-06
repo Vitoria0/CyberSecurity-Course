@@ -22,6 +22,7 @@ import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { Slider1 } from '../../components/Slider1/Slider1';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -508,7 +509,7 @@ const { navigateTo } = useNavigation();
 						alguém convence uma pessoa a divulgar sua senha, está realizando uma ação de
 						engenharia social. Se alguém obriga uma pessoa a dar sua senha sob ameaça de
 						violência, isso não é engenharia social. Esses ataques exploram a confiança, a
-						curiosidade e, muitas vezes, a falta de atenção do alvo. Conheça os 4 pilares da
+						curiosidade e, muitas vezes, a falta de atenção do alvo. Conheça os 5 pilares da
 						engenharia social navegando pelos slides:
 					</Typography>
 					<Slider />
@@ -534,7 +535,7 @@ const { navigateTo } = useNavigation();
 						empresas e espionagem corporativa.<b> Clique nas setas</b> e navegue pelo slide para
 						ver alguns exemplos de ataques ciberneticos:
 					</Typography>
-					<Slider />
+					<Slider1 />
 					<Botao.Primary
 						text='Continuar'
 						onClick={interactics.includes('block3') ? handleUnlockBlock3 : null}
