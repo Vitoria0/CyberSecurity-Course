@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import Title from '../../components/Texts/title';
 import backgorund from '../../assets/img/Finalizacao.png';
@@ -18,6 +18,7 @@ import { PhishingTest } from '../../components/PhishingTest/PhishingTest';
 import chipCards from '../../assets/img/chipcards.png';
 import CardFlip from '../../components/Cards/CardFlip';
 import QuizComponent from '../../components/Quiz/quiz';
+import { HomeRounded } from '@mui/icons-material';
 
 const Modulo02 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -146,6 +147,28 @@ const Modulo02 = () => {
 				gap: 8,
 			}}
 		>
+
+			 <IconButton
+							onClick={() => {}}
+							sx={{
+							borderRadius: '50%',
+							backgroundColor: '#14F194',
+							color: 'white',
+							padding: '10px',
+								position: 'fixed',
+							top: '20px',
+							right: '15px',
+							cursor: 'pointer',
+							zIndex: 9999,
+							transition: 'all 200ms ease-in-out',
+
+							'&:hover': {
+								backgroundColor: '#14F194',
+							},
+							}}
+						>
+							<HomeRounded />
+						</IconButton>
 			<Box
 				sx={{
 					display: 'flex',

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
@@ -20,6 +20,7 @@ import { Slider } from '../../components/Slider/slider';
 import QuizComponent from '../../components/Quiz/quiz';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
+import { HomeRounded } from '@mui/icons-material';
 
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -180,9 +181,30 @@ const Modulo01 = () => {
 				padding: 0,
 				paddingRight: { xs: 1, md: 0 },
 				color: '#fff',
-				gap: 8,
+				// gap: 8,
 			}}
 		>
+			 <IconButton
+							onClick={() => {}}
+							sx={{
+							borderRadius: '50%',
+							backgroundColor: '#14F194',
+							color: 'white',
+							padding: '10px',
+								position: 'fixed',
+							top: '20px',
+							right: '15px',
+							cursor: 'pointer',
+							zIndex: 9999,
+							transition: 'all 200ms ease-in-out',
+
+							'&:hover': {
+								backgroundColor: '#14F194',
+							},
+							}}
+						>
+							<HomeRounded />
+						</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
@@ -225,7 +247,7 @@ const Modulo01 = () => {
 				</Box>
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
-			<Box ref={block1Ref}></Box>
+			<Box sx={{ height: '0' }} ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{

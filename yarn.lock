@@ -376,6 +376,414 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@eslint/js/-/@eslint/js-8.50.0.tgz"
   integrity sha512-NCC3zz2+nvYd+Ckfh87rA47zfu2QsQpvc6k1yzTk+b9KzRj0wkGa8LSoGOXN6Zv4lRf/EIoZ80biDh9HOI+RNQ== sha1-npO4UPDz+jX1+lmt/QOtroSI5IQ=
 
+"@firebase/analytics-compat@0.2.16":
+  version "0.2.16"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/analytics-compat/-/@firebase/analytics-compat-0.2.16.tgz"
+  integrity sha1-qEUTmINYSU72+A72JtQZjaK2I4E=
+  dependencies:
+    "@firebase/analytics" "0.10.10"
+    "@firebase/analytics-types" "0.8.3"
+    "@firebase/component" "0.6.11"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/analytics-types@0.8.3":
+  version "0.8.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/analytics-types/-/@firebase/analytics-types-0.8.3.tgz"
+  integrity sha1-0IzTmmIJaTyiA5unqBVw36bBUY8=
+
+"@firebase/analytics@0.10.10":
+  version "0.10.10"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/analytics/-/@firebase/analytics-0.10.10.tgz"
+  integrity sha1-aEksfsOjQf1srz+Jy9nn5603QUA=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/installations" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/app-check-compat@0.3.17":
+  version "0.3.17"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-check-compat/-/@firebase/app-check-compat-0.3.17.tgz"
+  integrity sha1-7A4LUsTF6ny22Xb50fiS6X0Z/rw=
+  dependencies:
+    "@firebase/app-check" "0.8.10"
+    "@firebase/app-check-types" "0.5.3"
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/app-check-interop-types@0.3.3":
+  version "0.3.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-check-interop-types/-/@firebase/app-check-interop-types-0.3.3.tgz"
+  integrity sha1-7ZxKT0jROV7zePAHR22zlAqlNRo=
+
+"@firebase/app-check-types@0.5.3":
+  version "0.5.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-check-types/-/@firebase/app-check-types-0.5.3.tgz"
+  integrity sha1-OLqVSs9L/+RRWBoy//ogM38R2OU=
+
+"@firebase/app-check@0.8.10":
+  version "0.8.10"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-check/-/@firebase/app-check-0.8.10.tgz"
+  integrity sha1-f6EMkkLswYGg9Fpov8Jo4Scp/wI=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/app-compat@0.2.47", "@firebase/app-compat@0.x":
+  version "0.2.47"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-compat/-/@firebase/app-compat-0.2.47.tgz"
+  integrity sha1-oiPCHsi1o+9Zqr36Xxm683ogeOg=
+  dependencies:
+    "@firebase/app" "0.10.17"
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/app-types@0.9.3", "@firebase/app-types@0.x":
+  version "0.9.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app-types/-/@firebase/app-types-0.9.3.tgz"
+  integrity sha1-hAghnq6bH7dPhsJOcVChSEYEFK0=
+
+"@firebase/app@0.10.17", "@firebase/app@0.x":
+  version "0.10.17"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/app/-/@firebase/app-0.10.17.tgz"
+  integrity sha1-1m31PJA884/ovxXx9SeNCLFWSmI=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    idb "7.1.1"
+    tslib "^2.1.0"
+
+"@firebase/auth-compat@0.5.16":
+  version "0.5.16"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/auth-compat/-/@firebase/auth-compat-0.5.16.tgz"
+  integrity sha1-7zZdJZTAcGaIq++43WHzKmd2JfY=
+  dependencies:
+    "@firebase/auth" "1.8.1"
+    "@firebase/auth-types" "0.12.3"
+    "@firebase/component" "0.6.11"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/auth-interop-types@0.2.4":
+  version "0.2.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/auth-interop-types/-/@firebase/auth-interop-types-0.2.4.tgz"
+  integrity sha1-F2oIaGsGhVlv8D14ebfkEVr1PeA=
+
+"@firebase/auth-types@0.12.3":
+  version "0.12.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/auth-types/-/@firebase/auth-types-0.12.3.tgz"
+  integrity sha1-ZQ5Uo2BgteoBIHXdvTyyZWYzTEE=
+
+"@firebase/auth@^1.8.1", "@firebase/auth@1.8.1":
+  version "1.8.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/auth/-/@firebase/auth-1.8.1.tgz"
+  integrity sha1-i1CDKPYLsGmhHejH4eTjngHVp5Y=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/component@0.6.11":
+  version "0.6.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/component/-/@firebase/component-0.6.11.tgz"
+  integrity sha1-Ioov9aaw5ZcLhNTdKYv27QSDAY4=
+  dependencies:
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/data-connect@0.1.3":
+  version "0.1.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/data-connect/-/@firebase/data-connect-0.1.3.tgz"
+  integrity sha1-qBhKLs6KeLJCQBALkaxHIeYizU4=
+  dependencies:
+    "@firebase/auth-interop-types" "0.2.4"
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/database-compat@2.0.1":
+  version "2.0.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/database-compat/-/@firebase/database-compat-2.0.1.tgz"
+  integrity sha1-BjxL/3R4IzcRcoD79bc7RjqaBjg=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/database" "1.0.10"
+    "@firebase/database-types" "1.0.7"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/database-types@1.0.7":
+  version "1.0.7"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/database-types/-/@firebase/database-types-1.0.7.tgz"
+  integrity sha1-iggZyoxIb8ln06kCGgCMj5aVdr8=
+  dependencies:
+    "@firebase/app-types" "0.9.3"
+    "@firebase/util" "1.10.2"
+
+"@firebase/database@1.0.10":
+  version "1.0.10"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/database/-/@firebase/database-1.0.10.tgz"
+  integrity sha1-4jBE1f0s39B+e+9X/YBkPbB68z0=
+  dependencies:
+    "@firebase/app-check-interop-types" "0.3.3"
+    "@firebase/auth-interop-types" "0.2.4"
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    faye-websocket "0.11.4"
+    tslib "^2.1.0"
+
+"@firebase/firestore-compat@0.3.40":
+  version "0.3.40"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/firestore-compat/-/@firebase/firestore-compat-0.3.40.tgz"
+  integrity sha1-P0z8LSXS8l2ZJc31kDwLSb/a7rw=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/firestore" "4.7.5"
+    "@firebase/firestore-types" "3.0.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/firestore-types@3.0.3":
+  version "3.0.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/firestore-types/-/@firebase/firestore-types-3.0.3.tgz"
+  integrity sha1-fQw92IUMAZPY9e4MyPEZYUB3QsE=
+
+"@firebase/firestore@^4.7.5", "@firebase/firestore@4.7.5":
+  version "4.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/firestore/-/@firebase/firestore-4.7.5.tgz"
+  integrity sha1-o00hWyiyiIhB7V4G+m2yriJGCYo=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    "@firebase/webchannel-wrapper" "1.0.3"
+    "@grpc/grpc-js" "~1.9.0"
+    "@grpc/proto-loader" "^0.7.8"
+    tslib "^2.1.0"
+
+"@firebase/functions-compat@0.3.17":
+  version "0.3.17"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/functions-compat/-/@firebase/functions-compat-0.3.17.tgz"
+  integrity sha1-0ktG7V8czCuKC8utHmtPopwpC+I=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/functions" "0.12.0"
+    "@firebase/functions-types" "0.6.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/functions-types@0.6.3":
+  version "0.6.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/functions-types/-/@firebase/functions-types-0.6.3.tgz"
+  integrity sha1-9fr3cCSLE/RdJW9hQjDaahG/tlQ=
+
+"@firebase/functions@0.12.0":
+  version "0.12.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/functions/-/@firebase/functions-0.12.0.tgz"
+  integrity sha1-DgpP4GaVls/dTkB3WZWsweezaOk=
+  dependencies:
+    "@firebase/app-check-interop-types" "0.3.3"
+    "@firebase/auth-interop-types" "0.2.4"
+    "@firebase/component" "0.6.11"
+    "@firebase/messaging-interop-types" "0.2.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/installations-compat@0.2.11":
+  version "0.2.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/installations-compat/-/@firebase/installations-compat-0.2.11.tgz"
+  integrity sha1-i9nj+8+af6vPojhiZL5qIkVnzbU=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/installations" "0.6.11"
+    "@firebase/installations-types" "0.5.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/installations-types@0.5.3":
+  version "0.5.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/installations-types/-/@firebase/installations-types-0.5.3.tgz"
+  integrity sha1-ysihTdSfCRdNqd+K5FP5s1nD7y8=
+
+"@firebase/installations@0.6.11":
+  version "0.6.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/installations/-/@firebase/installations-0.6.11.tgz"
+  integrity sha1-CsOK+W7HN/RYqpPQfgSZvR3em90=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/util" "1.10.2"
+    idb "7.1.1"
+    tslib "^2.1.0"
+
+"@firebase/logger@0.4.4":
+  version "0.4.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/logger/-/@firebase/logger-0.4.4.tgz"
+  integrity sha1-Keg3nSD9EUk0mhle5t7uRXOob0g=
+  dependencies:
+    tslib "^2.1.0"
+
+"@firebase/messaging-compat@0.2.15":
+  version "0.2.15"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/messaging-compat/-/@firebase/messaging-compat-0.2.15.tgz"
+  integrity sha1-EiRLuW5gB4cJ4Za1M7PnMIn6qsM=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/messaging" "0.12.15"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/messaging-interop-types@0.2.3":
+  version "0.2.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/messaging-interop-types/-/@firebase/messaging-interop-types-0.2.3.tgz"
+  integrity sha1-5kfJzRvuz+am6CAYpu7DdVXk2j4=
+
+"@firebase/messaging@0.12.15":
+  version "0.12.15"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/messaging/-/@firebase/messaging-0.12.15.tgz"
+  integrity sha1-N6/batu9eSeNQwiE8yMxFZm/ZSk=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/installations" "0.6.11"
+    "@firebase/messaging-interop-types" "0.2.3"
+    "@firebase/util" "1.10.2"
+    idb "7.1.1"
+    tslib "^2.1.0"
+
+"@firebase/performance-compat@0.2.11":
+  version "0.2.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/performance-compat/-/@firebase/performance-compat-0.2.11.tgz"
+  integrity sha1-NXmcYtTEd9S4LZgkNZor2IOG2xI=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/performance" "0.6.11"
+    "@firebase/performance-types" "0.2.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/performance-types@0.2.3":
+  version "0.2.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/performance-types/-/@firebase/performance-types-0.2.3.tgz"
+  integrity sha1-XOZOkPogq1Vh+LYqMFAQz5+rhvs=
+
+"@firebase/performance@0.6.11":
+  version "0.6.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/performance/-/@firebase/performance-0.6.11.tgz"
+  integrity sha1-wHwOMBF/myiQ2JlSWeB0JPbZ4mU=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/installations" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/remote-config-compat@0.2.11":
+  version "0.2.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/remote-config-compat/-/@firebase/remote-config-compat-0.2.11.tgz"
+  integrity sha1-XDZgrPZzsXh4N8x+ujoHvJWJifU=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/remote-config" "0.4.11"
+    "@firebase/remote-config-types" "0.3.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/remote-config-types@0.3.3":
+  version "0.3.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/remote-config-types/-/@firebase/remote-config-types-0.3.3.tgz"
+  integrity sha1-gQU4Kqvw7pRgemCBiJrxItMF3Q0=
+
+"@firebase/remote-config@0.4.11":
+  version "0.4.11"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/remote-config/-/@firebase/remote-config-0.4.11.tgz"
+  integrity sha1-fWZOEhSMMTXBd3OQIMdUqkHW5UI=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/installations" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/storage-compat@0.3.14":
+  version "0.3.14"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/storage-compat/-/@firebase/storage-compat-0.3.14.tgz"
+  integrity sha1-F3n0TFF7ttjZMkWsU6m8HssuEiU=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/storage" "0.13.4"
+    "@firebase/storage-types" "0.8.3"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/storage-types@0.8.3":
+  version "0.8.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/storage-types/-/@firebase/storage-types-0.8.3.tgz"
+  integrity sha1-JTHvWTo0UvwSxZEXGV1khcZjLT0=
+
+"@firebase/storage@0.13.4":
+  version "0.13.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/storage/-/@firebase/storage-0.13.4.tgz"
+  integrity sha1-g6O2OP+427jLT1jSXAlh3+vHzZ0=
+  dependencies:
+    "@firebase/component" "0.6.11"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/util@1.10.2", "@firebase/util@1.x":
+  version "1.10.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/util/-/@firebase/util-1.10.2.tgz"
+  integrity sha1-TbtWXPvfUbT7IIHFCT26MDfUmjU=
+  dependencies:
+    tslib "^2.1.0"
+
+"@firebase/vertexai@1.0.2":
+  version "1.0.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/vertexai/-/@firebase/vertexai-1.0.2.tgz"
+  integrity sha1-6RBDYeiFMdn298nyXqZCh/CgYbk=
+  dependencies:
+    "@firebase/app-check-interop-types" "0.3.3"
+    "@firebase/component" "0.6.11"
+    "@firebase/logger" "0.4.4"
+    "@firebase/util" "1.10.2"
+    tslib "^2.1.0"
+
+"@firebase/webchannel-wrapper@1.0.3":
+  version "1.0.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@firebase/webchannel-wrapper/-/@firebase/webchannel-wrapper-1.0.3.tgz"
+  integrity sha1-pzurjrSR17i3vi8ObDEGR4Na/oM=
+
+"@grpc/grpc-js@~1.9.0":
+  version "1.9.15"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@grpc/grpc-js/-/@grpc/grpc-js-1.9.15.tgz"
+  integrity sha1-Qz16wZsXVK9pDqZQq3IZC9cAc5s=
+  dependencies:
+    "@grpc/proto-loader" "^0.7.8"
+    "@types/node" ">=12.12.47"
+
+"@grpc/proto-loader@^0.7.8":
+  version "0.7.13"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@grpc/proto-loader/-/@grpc/proto-loader-0.7.13.tgz"
+  integrity sha1-9qRLK3yfe2CfV0jG6sLUION2cM8=
+  dependencies:
+    lodash.camelcase "^4.3.0"
+    long "^5.0.0"
+    protobufjs "^7.2.5"
+    yargs "^17.7.2"
+
 "@humanwhocodes/config-array@^0.11.11":
   version "0.11.11"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@humanwhocodes/config-array/-/@humanwhocodes/config-array-0.11.11.tgz"
@@ -533,6 +941,59 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@popperjs/core/-/@popperjs/core-2.11.8.tgz"
   integrity sha1-a3kDLnYKCJnNQgRxC+7elyo6GF8=
 
+"@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
+  version "1.1.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/aspromise/-/@protobufjs/aspromise-1.1.2.tgz"
+  integrity sha1-m4sMxmPWaafY9vXQiToU00jzD78=
+
+"@protobufjs/base64@^1.1.2":
+  version "1.1.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/base64/-/@protobufjs/base64-1.1.2.tgz"
+  integrity sha1-TIVzDlm5ofHzSQR9vyQpYDS7JzU=
+
+"@protobufjs/codegen@^2.0.4":
+  version "2.0.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/codegen/-/@protobufjs/codegen-2.0.4.tgz"
+  integrity sha1-fvN/DQEPsCitGtWXIuUG2SYoFcs=
+
+"@protobufjs/eventemitter@^1.1.0":
+  version "1.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/eventemitter/-/@protobufjs/eventemitter-1.1.0.tgz"
+  integrity sha1-NVy8mLr61ZePntCV85diHx0Ga3A=
+
+"@protobufjs/fetch@^1.1.0":
+  version "1.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/fetch/-/@protobufjs/fetch-1.1.0.tgz"
+  integrity sha1-upn7WYYUr2VwDBYZ/wbUVLDYTEU=
+  dependencies:
+    "@protobufjs/aspromise" "^1.1.1"
+    "@protobufjs/inquire" "^1.1.0"
+
+"@protobufjs/float@^1.0.2":
+  version "1.0.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/float/-/@protobufjs/float-1.0.2.tgz"
+  integrity sha1-Xp4avctz/Ap8uLKR33jIy9l7h9E=
+
+"@protobufjs/inquire@^1.1.0":
+  version "1.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/inquire/-/@protobufjs/inquire-1.1.0.tgz"
+  integrity sha1-/yAOPnzyQp4tyvwRQIKOjMY48Ik=
+
+"@protobufjs/path@^1.1.2":
+  version "1.1.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/path/-/@protobufjs/path-1.1.2.tgz"
+  integrity sha1-bMKyDFya1q0NzP0hynZz2Nf79o0=
+
+"@protobufjs/pool@^1.1.0":
+  version "1.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/pool/-/@protobufjs/pool-1.1.0.tgz"
+  integrity sha1-Cf0V8tbTq/qbZbw2ZQbWrXhG/1Q=
+
+"@protobufjs/utf8@^1.1.0":
+  version "1.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@protobufjs/utf8/-/@protobufjs/utf8-1.1.0.tgz"
+  integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
+
 "@react-dnd/asap@^5.0.1":
   version "5.0.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-dnd/asap/-/@react-dnd/asap-5.0.2.tgz"
@@ -585,6 +1046,13 @@
   integrity sha512-ojlGK1Hsfce93J0+kn3H5R73elidKUaZonirN33GSmgTUMpzI/MIFfSpF3haANe3G1bEBS9/9/QEqwTzwqFsKw== sha1-Td+Z2Vz92Ub/NdK2XJeNnJvyZF0=
   dependencies:
     "@babel/types" "^7.20.7"
+
+"@types/node@>= 12", "@types/node@>= 14", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
+  version "22.10.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/node/-/@types/node-22.10.5.tgz"
+  integrity sha1-la+Jo/t0ortB75kn8gbmRyAm5Is=
+  dependencies:
+    undici-types "~6.20.0"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -666,6 +1134,13 @@ ansi-styles@^3.2.1:
   integrity sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA== sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=
   dependencies:
     color-convert "^1.9.0"
+
+ansi-styles@^4.0.0:
+  version "4.3.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/ansi-styles/-/ansi-styles-4.3.0.tgz"
+  integrity sha1-7dgDYornHATIWuegkG7a00tkiTc=
+  dependencies:
+    color-convert "^2.0.1"
 
 ansi-styles@^4.1.0:
   version "4.3.0"
@@ -847,6 +1322,15 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+cliui@^8.0.1:
+  version "8.0.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/cliui/-/cliui-8.0.1.tgz"
+  integrity sha1-DASwddsCy/5g3I5s8vVIaxo2CKo=
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.1"
+    wrap-ansi "^7.0.0"
+
 clsx@^2.1.0, clsx@^2.1.1:
   version "2.1.1"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/clsx/-/clsx-2.1.1.tgz"
@@ -996,6 +1480,11 @@ electron-to-chromium@^1.4.526:
   version "1.4.530"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/electron-to-chromium/-/electron-to-chromium-1.4.530.tgz"
   integrity sha512-rsJ9O8SCI4etS8TBsXuRfHa2eZReJhnGf5MHZd3Vo05PukWHKXhk3VQGbHHnDLa8nZz9woPCpLCMQpLGgkGNRA== sha1-wxpENGc5uzSssaQCagfDue7rMmw=
+
+emoji-regex@^8.0.0:
+  version "8.0.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/emoji-regex/-/emoji-regex-8.0.0.tgz"
+  integrity sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=
 
 error-ex@^1.3.1:
   version "1.3.2"
@@ -1296,6 +1785,13 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+faye-websocket@0.11.4:
+  version "0.11.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/faye-websocket/-/faye-websocket-0.11.4.tgz"
+  integrity sha1-fw2Sdc/dhqHJY9yLZfzEUe3Lsdo=
+  dependencies:
+    websocket-driver ">=0.5.1"
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -1322,6 +1818,40 @@ find-up@^5.0.0:
   dependencies:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
+
+firebase@^11.1.0:
+  version "11.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/firebase/-/firebase-11.1.0.tgz"
+  integrity sha1-f84m6CIPlJC/KjJGm3xQNEYgJMI=
+  dependencies:
+    "@firebase/analytics" "0.10.10"
+    "@firebase/analytics-compat" "0.2.16"
+    "@firebase/app" "0.10.17"
+    "@firebase/app-check" "0.8.10"
+    "@firebase/app-check-compat" "0.3.17"
+    "@firebase/app-compat" "0.2.47"
+    "@firebase/app-types" "0.9.3"
+    "@firebase/auth" "1.8.1"
+    "@firebase/auth-compat" "0.5.16"
+    "@firebase/data-connect" "0.1.3"
+    "@firebase/database" "1.0.10"
+    "@firebase/database-compat" "2.0.1"
+    "@firebase/firestore" "4.7.5"
+    "@firebase/firestore-compat" "0.3.40"
+    "@firebase/functions" "0.12.0"
+    "@firebase/functions-compat" "0.3.17"
+    "@firebase/installations" "0.6.11"
+    "@firebase/installations-compat" "0.2.11"
+    "@firebase/messaging" "0.12.15"
+    "@firebase/messaging-compat" "0.2.15"
+    "@firebase/performance" "0.6.11"
+    "@firebase/performance-compat" "0.2.11"
+    "@firebase/remote-config" "0.4.11"
+    "@firebase/remote-config-compat" "0.2.11"
+    "@firebase/storage" "0.13.4"
+    "@firebase/storage-compat" "0.3.14"
+    "@firebase/util" "1.10.2"
+    "@firebase/vertexai" "1.0.2"
 
 flat-cache@^3.0.4:
   version "3.1.0"
@@ -1382,6 +1912,11 @@ gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/gensync/-/gensync-1.0.0-beta.2.tgz"
   integrity sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg== sha1-MqbudsPX9S1GsrGuXZP+qFgKJeA=
+
+get-caller-file@^2.0.5:
+  version "2.0.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/get-caller-file/-/get-caller-file-2.0.5.tgz"
+  integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
 
 get-intrinsic@^1.0.2, get-intrinsic@^1.1.1, get-intrinsic@^1.1.3, get-intrinsic@^1.2.0, get-intrinsic@^1.2.1:
   version "1.2.1"
@@ -1511,10 +2046,20 @@ hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   dependencies:
     react-is "^16.7.0"
 
+http-parser-js@>=0.5.1:
+  version "0.5.8"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/http-parser-js/-/http-parser-js-0.5.8.tgz"
+  integrity sha1-ryMJDZrE4kVz3m9q7MnYSki/IOM=
+
 hyphenate-style-name@^1.0.0:
   version "1.0.4"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz"
   integrity sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ== sha1-aRh5r44iCupXUOiCfbTvYqVONh0=
+
+idb@7.1.1:
+  version "7.1.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/idb/-/idb-7.1.1.tgz"
+  integrity sha1-2RDe2GbTLHztm+/Fv9829XLO1ys=
 
 ignore@^5.2.0:
   version "5.2.4"
@@ -1622,6 +2167,11 @@ is-finalizationregistry@^1.0.2:
   integrity sha512-0by5vtUJs8iFQb5TYUHHPudOR+qXYIMKtiUzvLIZITZUjknFmziyBJuLhVRc+Ds0dREFlskDNJKYIdIzu/9pfw== sha1-yHSbZfF8EzMT5mGxKJuVrT29YuY=
   dependencies:
     call-bind "^1.0.2"
+
+is-fullwidth-code-point@^3.0.0:
+  version "3.0.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz"
+  integrity sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=
 
 is-generator-function@^1.0.10:
   version "1.0.10"
@@ -1835,10 +2385,20 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz"
+  integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ== sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=
+
+long@^5.0.0:
+  version "5.2.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/long/-/long-5.2.3.tgz"
+  integrity sha1-o7qX84d88dd47MvLBIUl67d0meE=
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -2104,6 +2664,24 @@ prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
+protobufjs@^7.2.5:
+  version "7.4.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/protobufjs/-/protobufjs-7.4.0.tgz"
+  integrity sha1-fv4yTOmzthyCquXegQ0oe8CKJIo=
+  dependencies:
+    "@protobufjs/aspromise" "^1.1.2"
+    "@protobufjs/base64" "^1.1.2"
+    "@protobufjs/codegen" "^2.0.4"
+    "@protobufjs/eventemitter" "^1.1.0"
+    "@protobufjs/fetch" "^1.1.0"
+    "@protobufjs/float" "^1.0.2"
+    "@protobufjs/inquire" "^1.1.0"
+    "@protobufjs/path" "^1.1.2"
+    "@protobufjs/pool" "^1.1.0"
+    "@protobufjs/utf8" "^1.1.0"
+    "@types/node" ">=13.7.0"
+    long "^5.0.0"
+
 punycode@^2.1.0:
   version "2.3.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/punycode/-/punycode-2.3.0.tgz"
@@ -2265,6 +2843,11 @@ remove-accents@0.4.2:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/remove-accents/-/remove-accents-0.4.2.tgz"
   integrity sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA== sha1-CkPTqq4egNuRngeuJUsoXZ4ce7U=
 
+require-directory@^2.1.1:
+  version "2.1.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/require-directory/-/require-directory-2.1.1.tgz"
+  integrity sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
+
 resolve-from@^4.0.0:
   version "4.0.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/resolve-from/-/resolve-from-4.0.0.tgz"
@@ -2339,6 +2922,11 @@ safe-array-concat@^1.0.1:
     has-symbols "^1.0.3"
     isarray "^2.0.5"
 
+safe-buffer@>=5.1.0:
+  version "5.2.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/safe-buffer/-/safe-buffer-5.2.1.tgz"
+  integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
+
 safe-regex-test@^1.0.0:
   version "1.0.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/safe-regex-test/-/safe-regex-test-1.0.0.tgz"
@@ -2405,6 +2993,15 @@ source-map@^0.5.7:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/source-map/-/source-map-0.5.7.tgz"
   integrity sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ== sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
+string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+  version "4.2.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/string-width/-/string-width-4.2.3.tgz"
+  integrity sha1-JpxxF9J7Ba0uU2gwqOyJXvnG0BA=
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
 string.prototype.matchall@^4.0.8:
   version "4.0.10"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/string.prototype.matchall/-/string.prototype.matchall-4.0.10.tgz"
@@ -2447,7 +3044,7 @@ string.prototype.trimstart@^1.0.7:
     define-properties "^1.2.0"
     es-abstract "^1.22.1"
 
-strip-ansi@^6.0.1:
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A== sha1-nibGPTD1NEPpSJSVshBdN7Z6hdk=
@@ -2505,7 +3102,7 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-tslib@^2.4.0:
+tslib@^2.1.0, tslib@^2.4.0:
   version "2.6.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q== sha1-cDrClCXns3zW/UVukkBNRtHz5K4=
@@ -2571,6 +3168,11 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
+undici-types@~6.20.0:
+  version "6.20.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/undici-types/-/undici-types-6.20.0.tgz"
+  integrity sha1-gXG/IsH1iNFVTVW/IEvGJK84hDM=
+
 unload@2.2.0:
   version "2.2.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/unload/-/unload-2.2.0.tgz"
@@ -2604,6 +3206,20 @@ vite@^4.2.0, vite@^4.4.9:
     rollup "^3.27.1"
   optionalDependencies:
     fsevents "~2.3.2"
+
+websocket-driver@>=0.5.1:
+  version "0.7.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/websocket-driver/-/websocket-driver-0.7.4.tgz"
+  integrity sha1-ia1Slbv2S0gKvLox5JU6ynBvV2A=
+  dependencies:
+    http-parser-js ">=0.5.1"
+    safe-buffer ">=5.1.0"
+    websocket-extensions ">=0.1.1"
+
+websocket-extensions@>=0.1.1:
+  version "0.1.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/websocket-extensions/-/websocket-extensions-0.1.4.tgz"
+  integrity sha1-f4RzvIOd/YdgituV1+sHUhFXikI=
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
@@ -2662,10 +3278,24 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
+  integrity sha1-Z+FFz/UQpqaYS98RUpEdadLrnkM=
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
 wrappy@1:
   version "1.0.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/wrappy/-/wrappy-1.0.2.tgz"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ== sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
+
+y18n@^5.0.5:
+  version "5.0.8"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/y18n/-/y18n-5.0.8.tgz"
+  integrity sha1-f0k00PfKjFb5UxSTndzS3ZHOHVU=
 
 yallist@^3.0.2:
   version "3.1.1"
@@ -2676,6 +3306,24 @@ yaml@^1.10.0:
   version "1.10.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/yaml/-/yaml-1.10.2.tgz"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg== sha1-IwHF/78StGfejaIzOkWeKeeSDks=
+
+yargs-parser@^21.1.1:
+  version "21.1.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/yargs-parser/-/yargs-parser-21.1.1.tgz"
+  integrity sha1-kJa87r+ZDSG7MfqVFuDt4pSnfTU=
+
+yargs@^17.7.2:
+  version "17.7.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/yargs/-/yargs-17.7.2.tgz"
+  integrity sha1-mR3zmspnWhkrgW4eA2P5110qomk=
+  dependencies:
+    cliui "^8.0.1"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.3"
+    y18n "^5.0.5"
+    yargs-parser "^21.1.1"
 
 yocto-queue@^0.1.0:
   version "0.1.0"

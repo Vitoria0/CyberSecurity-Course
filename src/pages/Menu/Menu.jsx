@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import background from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
@@ -8,6 +8,7 @@ import modulo03 from '../../assets/img/modulo03.png';
 import modulo04 from '../../assets/img/modulo04.png';
 import { useNavigation } from '../../hooks/NavigationContext';
 import { LoggedUser } from '../../services/authService';
+import { ExitToAppRounded } from '@mui/icons-material';
 const Menu = () => {
 	const { navigateTo } = useNavigation();
 
@@ -63,12 +64,32 @@ const Menu = () => {
 						alignItems: 'center',
 						width: '100%',
 						gap: 2,
-						margin: '0 auto',
+						margin: {xs:'5rem 0' , md:'0 auto'},
 						display: 'flex',
 						justifyContent: 'center',
 						flexDirection: 'column',
 					}}
 				>
+					  <IconButton
+							onClick={() => {}}
+							sx={{
+							borderRadius: '50%',
+							backgroundColor: '#14F194',
+							color: 'white',
+							padding: '10px',
+								position: 'absolute',
+							top: '20px',
+							right: '15px',
+							cursor: 'pointer',
+							transition: 'all 200ms ease-in-out',
+
+							'&:hover': {
+								backgroundColor: '#14F194',
+							},
+							}}
+						>
+							<ExitToAppRounded />
+						</IconButton>
 					<Title text='Segurança da Informação' />
 					<Typography variant='body1' color='white' align='center' maxWidth='50rem'>
 						Conforme você vai avançando no conteudo os modulos serão desbloqueados.<br></br>

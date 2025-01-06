@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
 import { Capa } from '../../assets/svg/Capa';
 import ExamComponent from '../../components/ExamComponent/ExamComponent';
+import { HomeRounded } from '@mui/icons-material';
 
 const Modulo05 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -37,6 +38,28 @@ const Modulo05 = () => {
 				gap: 8,
 			}}
 		>
+			
+			 <IconButton
+							onClick={() => {}}
+							sx={{
+							borderRadius: '50%',
+							backgroundColor: '#14F194',
+							color: 'white',
+							padding: '10px',
+								position: 'fixed',
+							top: '20px',
+							right: '15px',
+							cursor: 'pointer',
+							zIndex: 9999,
+							transition: 'all 200ms ease-in-out',
+
+							'&:hover': {
+								backgroundColor: '#14F194',
+							},
+							}}
+						>
+							<HomeRounded />
+						</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
