@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-function PasswordComponent() {
+function PasswordComponent({callback}) {
   const [password, setPassword] = useState('');
   const [strength, setStrength] = useState(0);
   const [feedback, setFeedback] = useState('');
@@ -50,6 +50,9 @@ function PasswordComponent() {
     }
 
     setStrength(score);
+    if(score === 5){
+      callback();
+    }
     setFeedback(feedbackMessages.join(' '));
   };
 

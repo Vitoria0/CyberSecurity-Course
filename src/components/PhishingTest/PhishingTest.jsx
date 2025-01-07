@@ -11,7 +11,7 @@ const phishingScenarios = [
 	{ id: 3, image: phishing1, isPhishing: true },
 ];
 
-export const PhishingTest = () => {
+export const PhishingTest = (callback) => {
 	const [selectedScenarioIndex, setSelectedScenarioIndex] = useState(0); // Índice do cenário atual
 	const [userFeedback, setUserFeedback] = useState('');
 	const [isFinished, setIsFinished] = useState(false); // Para verificar se terminou
@@ -31,6 +31,7 @@ export const PhishingTest = () => {
 			setSelectedScenarioIndex(selectedScenarioIndex + 1);
 			setUserFeedback(''); // Limpa o feedback para o próximo cenário
 		} else {
+			callback();
 			setIsFinished(true); // Marca como finalizado quando chegar ao último cenário
 		}
 	};

@@ -5,6 +5,7 @@ import Title from '../../components/Texts/title';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { loginWithEmailAndPassword, createUserWithEmailAndPassword, LoggedUser } from '../../services/authService';
 const Homepage = () => {
 	const { navigateTo } = useNavigation();
 	const [isVisible, setIsVisible] = useState(false);
@@ -23,23 +24,22 @@ const Homepage = () => {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-navigateTo('Menu');
-		// if (isLogin) {
-		// 	await loginWithEmailAndPassword(formData.email, formData.password);
-		// 	if (LoggedUser.get()) {
-		// 		3;
-		// 		navigateTo('Menu');
-		// 	} else {
-		// 		alert('Usuário ou senha incorretos');
-		// 	}
-		// } else {
-		// 	var user = await createUserWithEmailAndPassword(formData.name, formData.email, formData.password);
-		// 	if (user !== null) {
-		// 		setIsLogin(true);
-		// 	} else {
-		// 		alert('Usuário ou senha incorretos');
-		// 	}
-		// }
+		if (isLogin) {
+			await loginWithEmailAndPassword(formData.email, formData.password);
+			if (LoggedUser.get()) {
+				3;
+				navigateTo('Menu');
+			} else {
+				alert('Usuário ou senha incorretos');
+			}
+		} else {
+			var user = await createUserWithEmailAndPassword(formData.name, formData.email, formData.password);
+			if (user !== null) {
+				setIsLogin(true);
+			} else {
+				alert('Usuário ou senha incorretos');
+			}
+		}
 	};
 
 	const toggleForm = () => {

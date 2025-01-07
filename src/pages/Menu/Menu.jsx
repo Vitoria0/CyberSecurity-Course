@@ -7,7 +7,7 @@ import modulo02 from '../../assets/img/modulo02.png';
 import modulo03 from '../../assets/img/modulo03.png';
 import modulo04 from '../../assets/img/modulo04.png';
 import { useNavigation } from '../../hooks/NavigationContext';
-import { LoggedUser } from '../../services/authService';
+import { LoggedUser, logout } from '../../services/authService';
 import { ExitToAppRounded } from '@mui/icons-material';
 const Menu = () => {
 	const { navigateTo } = useNavigation();
@@ -71,7 +71,10 @@ const Menu = () => {
 					}}
 				>
 					  <IconButton
-							onClick={() => {}}
+							onClick={() => {
+								logout();
+								navigateTo('Homepage');
+							}}
 							sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',
@@ -117,14 +120,14 @@ const Menu = () => {
 							onClick={() => navigateTo('Modulo02')}
 							image={modulo02}
 							nomeModulo='Como Se Proteger'
-							isIncomplete={true}
+							isIncomplete={LoggedUser.get().progress < 15}
 							isBlocked={LoggedUser.get().progress < 5}
 						/>
 						<ModuloMenu
 							onClick={() => navigateTo('Modulo03')}
 							image={modulo03}
 							nomeModulo='Dispositivos Moveis e Redes sem Fio'
-							isBlocked={true}
+							isBlocked={LoggedUser.get().progress < 15}
 							isIncomplete={true}
 						/>
 						<ModuloMenu

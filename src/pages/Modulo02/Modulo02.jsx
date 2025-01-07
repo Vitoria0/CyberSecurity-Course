@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import Title from '../../components/Texts/title';
@@ -20,10 +20,11 @@ import CardFlip from '../../components/Cards/CardFlip';
 import QuizComponent from '../../components/Quiz/quiz';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
 
 const Modulo02 = () => {
 	const [isVisible, setIsVisible] = useState(false);
-const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
@@ -33,45 +34,197 @@ const { navigateTo } = useNavigation();
 	const [block7, setBlock7] = useState(false);
 	const [block8, setBlock8] = useState(false);
 	const [block9, setBlock9] = useState(false);
+	const [interactics, setInteractics] = useState([]);
+
+	const block1Ref = useRef(null);
+	const block2Ref = useRef(null);
+	const block3Ref = useRef(null);
+	const block4Ref = useRef(null);
+	const block5Ref = useRef(null);
+	const block6Ref = useRef(null);
+	const block7Ref = useRef(null);
+	const block8Ref = useRef(null);
+	const block9Ref = useRef(null);
 
 	useEffect(() => {
+		const user = LoggedUser.get();
+
+		if (user && typeof user.progress === 'number') {
+			var goRef = null;
+			const progress = user.progress;
+			if (progress >= 6) {
+				setBlock1(true);
+				goRef = block1Ref;
+				setInteractics([...interactics, 'video-1']);
+			}
+			if (progress >= 7) {
+				setBlock2(true);
+				goRef = block2Ref;
+				setInteractics([
+					...interactics,
+					'CardDinamico-1',
+					'CardDinamico-2',
+					'CardDinamico-3',
+					'CardDinamico-4',
+					'CardDinamico-5',
+					'CardDinamico-6',
+				]);
+			}
+			if (progress >= 8) {
+				setBlock3(true);
+				goRef = block3Ref;
+				setInteractics([
+					...interactics,
+					'CardDinamico-7',
+					'CardDinamico-8',
+					'CardDinamico-9',
+					'CardDinamico-10',
+					'CardDinamico-11',
+				]);
+			}
+			if (progress >= 9) {
+				setBlock4(true);
+				goRef = block4Ref;
+				setInteractics([...interactics, 'PasswordComponent-1']);
+			}
+			if (progress >= 10) {
+				setBlock5(true);
+				goRef = block5Ref;
+				setInteractics([
+					...interactics,
+					'CardDinamico-12',
+					'CardDinamico-13',
+					'CardDinamico-14',
+					'CardDinamico-15',
+					'CardDinamico-16',
+					'video-2',
+				]);
+			}
+			if (progress >= 11) {
+				setBlock6(true);
+				goRef = block6Ref;
+				setInteractics([...interactics, 'phishing-test']);
+			}
+			if (progress >= 12) {
+				setBlock7(true);
+				goRef = block7Ref;
+			}
+			if (progress >= 13) {
+				setBlock8(true);
+				goRef = block8Ref;
+				setInteractics([
+					...interactics,
+					'CardFlip-1',
+					'CardFlip-2',
+					'CardFlip-3',
+					'CardFlip-4',
+					'CardFlip-5',
+					'CardFlip-6',
+					'CardFlip-7',
+					'CardDinamico-17',
+					'CardDinamico-18',
+					'CardDinamico-19',
+					'CardDinamico-20',
+					'CardDinamico-21',
+					'CardDinamico-22',
+				]);
+			}
+			if (progress >= 14) {
+				setBlock9(true);
+				goRef = block9Ref;
+				setInteractics([...interactics, 'quiz']);
+			}
+
+			if (goRef != null) {
+				scrollToBlock(goRef);
+			}
+		}
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
 
 	const handleUnlockBlock = () => {
+		changeProgress(6);
 		setBlock1(true);
+		scrollToBlock(block1Ref);
 	};
 	const handleUnlockBlock2 = () => {
+		changeProgress(7);
 		setBlock2(true);
+		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock3 = () => {
+		changeProgress(8);
 		setBlock3(true);
+		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock4 = () => {
+		changeProgress(9);
 		setBlock4(true);
+		scrollToBlock(block4Ref);
 	};
 
 	const handleUnlockBlock5 = () => {
+		changeProgress(10);
 		setBlock5(true);
+		scrollToBlock(block5Ref);
 	};
 
 	const handleUnlockBlock6 = () => {
+		changeProgress(11);
 		setBlock6(true);
+		scrollToBlock(block6Ref);
 	};
 
 	const handleUnlockBlock7 = () => {
+		changeProgress(12);
 		setBlock7(true);
+		scrollToBlock(block7Ref);
 	};
 
 	const handleUnlockBlock8 = () => {
+		changeProgress(13);
 		setBlock8(true);
+		scrollToBlock(block8Ref);
 	};
 
 	const handleUnlockBlock9 = () => {
+		changeProgress(14);
 		setBlock9(true);
+		scrollToBlock(block9Ref);
+	};
+
+	const hasAllProgress = interactions => {
+		var response = true;
+		console.log(interactions);
+		console.log(interactics);
+		for (let i = 0; i < interactions.length; i++) {
+			const e = interactions[i];
+			if (!interactics.includes(e)) {
+				response = false;
+			}
+		}
+		console.log(response);
+		return !response;
+	};
+
+	const scrollToBlock = blockRef => {
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
+	};
+
+	const addInteractics = item => {
+		if (!interactics.some(i => i === item)) {
+			setInteractics([...interactics, item]); // Adiciona o novo item ao array
+		}
 	};
 
 	const array = [
@@ -149,28 +302,29 @@ const { navigateTo } = useNavigation();
 				gap: 8,
 			}}
 		>
+			<IconButton
+				onClick={() => {
+					navigateTo('Menu');
+				}}
+				sx={{
+					borderRadius: '50%',
+					backgroundColor: '#14F194',
+					color: 'white',
+					padding: '10px',
+					position: 'fixed',
+					top: '20px',
+					right: '15px',
+					cursor: 'pointer',
+					zIndex: 9999,
+					transition: 'all 200ms ease-in-out',
 
-			 <IconButton
-							onClick={() => {navigateTo('Menu');}}
-							sx={{
-							borderRadius: '50%',
-							backgroundColor: '#14F194',
-							color: 'white',
-							padding: '10px',
-								position: 'fixed',
-							top: '20px',
-							right: '15px',
-							cursor: 'pointer',
-							zIndex: 9999,
-							transition: 'all 200ms ease-in-out',
-
-							'&:hover': {
-								backgroundColor: '#14F194',
-							},
-							}}
-						>
-							<HomeRounded />
-						</IconButton>
+					'&:hover': {
+						backgroundColor: '#14F194',
+					},
+				}}
+			>
+				<HomeRounded />
+			</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
@@ -213,7 +367,7 @@ const { navigateTo } = useNavigation();
 				</Box>
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
-
+			<Box ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{
@@ -288,10 +442,17 @@ const { navigateTo } = useNavigation();
 						videoUrl={
 							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
 						}
+						onVideoEnd={() => addInteractics('video-1')}
 					/>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock2} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock2}
+						disable={hasAllProgress(['video-1'])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block2Ref}></Box>
 			{block2 && (
 				<Box
 					sx={{
@@ -318,9 +479,21 @@ const { navigateTo } = useNavigation();
 							marginY: 5,
 						}}
 					>
-						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
-						<CardDinamico texto='Conectividade global e comunicação instantânea' />
-						<CardDinamico texto='Automação e digitalização de processos' />
+						<CardDinamico
+							texto='Uso massivo da internet e dispositivos digitais'
+							callback={e => addInteractics('CardDinamico-1')}
+							isActive={LoggedUser.get().progress > 7}
+						/>
+						<CardDinamico
+							texto='Conectividade global e comunicação instantânea'
+							callback={e => addInteractics('CardDinamico-2')}
+							isActive={LoggedUser.get().progress >= 7}
+						/>
+						<CardDinamico
+							texto='Automação e digitalização de processos'
+							callback={e => addInteractics('CardDinamico-3')}
+							isActive={LoggedUser.get().progress >= 7}
+						/>
 					</Box>
 					<Box
 						sx={{
@@ -332,13 +505,38 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
-						<CardDinamico texto='Conectividade global e comunicação instantânea' />
-						<CardDinamico texto='Automação e digitalização de processos' />
+						<CardDinamico
+							texto='Uso massivo da internet e dispositivos digitais'
+							callback={e => addInteractics('CardDinamico-4')}
+							isActive={LoggedUser.get().progress >= 7}
+						/>
+						<CardDinamico
+							texto='Conectividade global e comunicação instantânea'
+							callback={e => addInteractics('CardDinamico-5')}
+							isActive={LoggedUser.get().progress >= 7}
+						/>
+						<CardDinamico
+							texto='Automação e digitalização de processos'
+							callback={e => addInteractics('CardDinamico-6')}
+							isActive={LoggedUser.get().progress >= 7}
+						/>
 					</Box>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock3} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock3}
+						disable={hasAllProgress([
+							'CardDinamico-1',
+							'CardDinamico-2',
+							'CardDinamico-3',
+							'CardDinamico-4',
+							'CardDinamico-5',
+							'CardDinamico-6',
+						])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block3Ref}></Box>
 			{block3 && (
 				<Box
 					sx={{
@@ -412,9 +610,21 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
-						<CardDinamico texto='Conectividade global e comunicação instantânea' />
-						<CardDinamico texto='Automação e digitalização de processos' />
+						<CardDinamico
+							texto='Uso massivo da internet e dispositivos digitais'
+							callback={e => addInteractics('CardDinamico-7')}
+							isActive={LoggedUser.get().progress > 8}
+						/>
+						<CardDinamico
+							texto='Conectividade global e comunicação instantânea'
+							callback={e => addInteractics('CardDinamico-8')}
+							isActive={LoggedUser.get().progress > 8}
+						/>
+						<CardDinamico
+							texto='Automação e digitalização de processos'
+							callback={e => addInteractics('CardDinamico-9')}
+							isActive={LoggedUser.get().progress > 8}
+						/>
 					</Box>
 					<Box
 						sx={{
@@ -426,13 +636,33 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Uso massivo da internet e dispositivos digitais' />
-						<CardDinamico texto='Conectividade global e comunicação instantânea' />
+						<CardDinamico
+							texto='Uso massivo da internet e dispositivos digitais'
+							callback={e => addInteractics('CardDinamico-10')}
+							isActive={LoggedUser.get().progress > 8}
+						/>
+						<CardDinamico
+							texto='Conectividade global e comunicação instantânea'
+							callback={e => addInteractics('CardDinamico-11')}
+							isActive={LoggedUser.get().progress > 8}
+						/>
 					</Box>
 
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock4} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock4}
+						disable={hasAllProgress([
+							'CardDinamico-7',
+							'CardDinamico-8',
+							'CardDinamico-9',
+							'CardDinamico-10',
+							'CardDinamico-11',
+						])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block4Ref}></Box>
 			{block4 && (
 				<Box
 					sx={{
@@ -499,11 +729,17 @@ const { navigateTo } = useNavigation();
 							em verificar para receber um feedback:
 						</Typography>
 
-						<PasswordComponent />
+						<PasswordComponent callback={() => addInteractics('PasswordComponent-1')} />
 					</Box>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock5} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock5}
+						disable={hasAllProgress(['PasswordComponent-1'])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block5Ref}></Box>
 			{block5 && (
 				<Box
 					sx={{
@@ -535,9 +771,21 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Roubo de identidade: criminosos podem coletar informações pessoais para se passar por você e realizar fraudes' />
-						<CardDinamico texto='Exposição de informações pessoais: compartilhar dados sensiveis publicamente pode levar ao uso indevido dessas informaçções por terceiros mal intencionados' />
-						<CardDinamico texto='Privacidade comprometida: configurações de privacidade inadequadas podem permitir que desconhecidos acessem suas postagens e informações pessoais' />
+						<CardDinamico
+							texto='Roubo de identidade: criminosos podem coletar informações pessoais para se passar por você e realizar fraudes'
+							callback={e => addInteractics('CardDinamico-12')}
+							isActive={LoggedUser.get().progress > 10}
+						/>
+						<CardDinamico
+							texto='Exposição de informações pessoais: compartilhar dados sensiveis publicamente pode levar ao uso indevido dessas informaçções por terceiros mal intencionados'
+							callback={e => addInteractics('CardDinamico-13')}
+							isActive={LoggedUser.get().progress > 10}
+						/>
+						<CardDinamico
+							texto='Privacidade comprometida: configurações de privacidade inadequadas podem permitir que desconhecidos acessem suas postagens e informações pessoais'
+							callback={e => addInteractics('CardDinamico-14')}
+							isActive={LoggedUser.get().progress > 10}
+						/>
 					</Box>
 					<Box
 						sx={{
@@ -549,8 +797,16 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Perfis falsos: criminosos podem criar perfis falsos para enganar e obter dados pessoais ou financeiros' />
-						<CardDinamico texto='Geolocalização: publicações com localização em tempo real podem expor sua localização para pessoas não confiáveis.' />
+						<CardDinamico
+							texto='Perfis falsos: criminosos podem criar perfis falsos para enganar e obter dados pessoais ou financeiros'
+							callback={e => addInteractics('CardDinamico-15')}
+							isActive={LoggedUser.get().progress > 10}
+						/>
+						<CardDinamico
+							texto='Geolocalização: publicações com localização em tempo real podem expor sua localização para pessoas não confiáveis.'
+							callback={e => addInteractics('CardDinamico-16')}
+							isActive={LoggedUser.get().progress > 10}
+						/>
 					</Box>
 					<Subtitle text='Phishing' />
 					<Typography
@@ -578,10 +834,24 @@ const { navigateTo } = useNavigation();
 						videoUrl={
 							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
 						}
+						onVideoEnd={e => addInteractics('video-2')}
 					/>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock6} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock6}
+						disable={hasAllProgress([
+							'CardDinamico-12',
+							'CardDinamico-13',
+							'CardDinamico-14',
+							'CardDinamico-15',
+							'CardDinamico-16',
+							'video-2',
+						])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block6Ref}></Box>
 			{block6 && (
 				<Box
 					sx={{
@@ -634,10 +904,16 @@ const { navigateTo } = useNavigation();
 						saber se é ou não um phishing, baseado em tudo que você aprendeu até agora. Clique
 						em nos botões para dizer se é ou não phishing.
 					</Typography>
-					<PhishingTest />
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock7} />
+					<PhishingTest callback={addInteractics('phishing-test')} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock7}
+						disable={hasAllProgress(['phishing-test'])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block7Ref}></Box>
 			{block7 && (
 				<Box
 					sx={{
@@ -705,9 +981,15 @@ const { navigateTo } = useNavigation();
 					</Box>{' '}
 					<Subtitle text='Como Evitar os Riscos?' />
 					<AccordionComponent arrayAccordionItems={array2} />
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock8} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock8}
+						disable={hasAllProgress([])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block8Ref}></Box>
 			{block8 && (
 				<Box
 					sx={{
@@ -759,9 +1041,21 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Usar Perfis de Usuário Separados: Crie contas distintas para cada usuário com permissões limitadas. Isso ajuda a evitar acessos indevidos a informações privadas.' />
-						<CardDinamico texto='Habilitar a Navegação Privada: Oriente os usuários a usar o modo de navegação anônima para evitar que histórico e credenciais sejam salvos.' />
-						<CardDinamico texto='Evitar Salvar Senhas: Nunca permita que navegadores ou aplicativos salvem senhas em dispositivos compartilhados.' />
+						<CardDinamico
+							texto='Usar Perfis de Usuário Separados: Crie contas distintas para cada usuário com permissões limitadas. Isso ajuda a evitar acessos indevidos a informações privadas.'
+							callback={e => addInteractics('CardDinamico-17')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
+						<CardDinamico
+							texto='Habilitar a Navegação Privada: Oriente os usuários a usar o modo de navegação anônima para evitar que histórico e credenciais sejam salvos.'
+							callback={e => addInteractics('CardDinamico-18')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
+						<CardDinamico
+							texto='Evitar Salvar Senhas: Nunca permita que navegadores ou aplicativos salvem senhas em dispositivos compartilhados.'
+							callback={e => addInteractics('CardDinamico-19')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
 					</Box>
 					<Box
 						sx={{
@@ -773,9 +1067,21 @@ const { navigateTo } = useNavigation();
 							marginBottom: 5,
 						}}
 					>
-						<CardDinamico texto='Desativar Downloads Não Autorizados: Restrinja a instalação de aplicativos ou downloads de fontes desconhecidas.' />
-						<CardDinamico texto='Manter o Software Atualizado: Atualize regularmente o sistema operacional, navegadores e antivírus para corrigir vulnerabilidades.' />
-						<CardDinamico texto='Utilizar Softwares de Monitoramento: Em ambientes corporativos, implemente ferramentas que monitorem e limitem atividades no dispositivo.' />
+						<CardDinamico
+							texto='Desativar Downloads Não Autorizados: Restrinja a instalação de aplicativos ou downloads de fontes desconhecidas.'
+							callback={e => addInteractics('CardDinamico-20')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
+						<CardDinamico
+							texto='Manter o Software Atualizado: Atualize regularmente o sistema operacional, navegadores e antivírus para corrigir vulnerabilidades.'
+							callback={e => addInteractics('CardDinamico-21')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
+						<CardDinamico
+							texto='Utilizar Softwares de Monitoramento: Em ambientes corporativos, implemente ferramentas que monitorem e limitem atividades no dispositivo.'
+							callback={e => addInteractics('CardDinamico-22')}
+							isActive={LoggedUser.get().progress > 13}
+						/>
 					</Box>
 					<ImageText
 						reverse
@@ -806,18 +1112,22 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Perda ou Roubo de Dispositivos'
 								backText='Proteja dispositivos removíveis com criptografia e senhas fortes para evitar acesso não autorizado em caso de perda ou roubo.'
+								callback={e => addInteractics('CardFlip-1')}
 							/>
 							<CardFlip
 								frontText='Aplicativos Maliciosos'
 								backText='Evite executar arquivos ou programas desconhecidos em mídias removíveis e mantenha um antivírus atualizado no sistema.'
+								callback={e => addInteractics('CardFlip-2')}
 							/>
 							<CardFlip
 								frontText='Conexões Wi-Fi Públicas'
 								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
+								callback={e => addInteractics('CardFlip-3')}
 							/>
 							<CardFlip
 								frontText='Configurações Inseguras de Redes Wi-Fi'
 								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
+								callback={e => addInteractics('CardFlip-4')}
 							/>
 						</Box>
 						<Box
@@ -833,14 +1143,17 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Dispositivos IoT Vulneráveis'
 								backText='Não conecte mídias removíveis a dispositivos IoT sem verificar se estão atualizados e protegidos contra ameaças conhecidas.'
+								callback={e => addInteractics('CardFlip-5')}
 							/>
 							<CardFlip
 								frontText='Falta de Atualizações'
 								backText='Certifique-se de que os sistemas e dispositivos que utilizam mídias removíveis estejam sempre atualizados para corrigir vulnerabilidades.'
+								callback={e => addInteractics('CardFlip-6')}
 							/>
 							<CardFlip
 								frontText='.Ataques de Spoofing em Redes Públicas'
 								backText='Evite conectar mídias removíveis em dispositivos desconhecidos, pois ataques de spoofing podem comprometer dados transferidos.'
+								callback={e => addInteractics('CardFlip-7')}
 							/>
 						</Box>{' '}
 					</Box>{' '}
@@ -865,10 +1178,31 @@ const { navigateTo } = useNavigation();
 						videoUrl={
 							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
 						}
+						onVideoEnd={e => addInteractics('video-3')}
 					/>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock9} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock9}
+						disable={hasAllProgress([
+							'CardFlip-1',
+							'CardFlip-2',
+							'CardFlip-3',
+							'CardFlip-4',
+							'CardFlip-5',
+							'CardFlip-6',
+							'CardFlip-7',
+							'CardDinamico-17',
+							'CardDinamico-18',
+							'CardDinamico-19',
+							'CardDinamico-20',
+							'CardDinamico-21',
+							'CardDinamico-22',
+						])}
+					/>
 				</Box>
 			)}
+
+			<Box ref={block9Ref}></Box>
 			{block9 && (
 				<Box
 					sx={{
@@ -901,10 +1235,15 @@ const { navigateTo } = useNavigation();
 					<QuizComponent
 						question='Qual é o pilar da segurança da informação violado quando um sistema está fora do ar por um ataque de negação de serviço (DDoS)?'
 						options={['Confidencialidade', 'Integridade', 'Disponibilidade']}
-						correctAnswer='Confidencialidade' 
+						correctAnswer='Confidencialidade'
+						callback={e => addInteractics('quiz')}
 					/>
-					<Botao.Navigation text='Próximo Modulo' page={'Menu'}/>
-			
+					<Botao.Navigation
+						text='Próximo Modulo'
+						page={'Menu'}
+						callback={() => changeProgress(15)}
+						disable={hasAllProgress(['quiz'])}
+					/>
 				</Box>
 			)}
 		</Box>

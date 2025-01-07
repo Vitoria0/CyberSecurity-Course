@@ -12,6 +12,7 @@ export class LoggedUser {
 	}
 
 	static get() {
+		console.log(this.data);
 		return this.data;
 	}
 

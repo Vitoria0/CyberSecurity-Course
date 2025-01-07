@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import { Box, Typography, Card, CardContent } from '@mui/material';
 
-const CardFlip = ({ frontText, backText }) => {
+const CardFlip = ({ frontText, backText, callback }) => {
 	const [flipped, setFlipped] = useState(false);
 
 	const handleFlip = () => {
 		setFlipped(prev => !prev);
+		callback();
 	};
 
 	return (

@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 
 const { v4: uuidv4 } = require('uuid');
 
-var serviceAccount = require('./cybersecuritycourse-eaf81-firebase-adminsdk-ou1ty-f935038a57.json');
+var serviceAccount = require('./cybersecuritycourse-eaf81-firebase-adminsdk-ou1ty-826f07ee06.json');
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
