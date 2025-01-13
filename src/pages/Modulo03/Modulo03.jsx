@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
@@ -14,39 +14,108 @@ import QuizComponent from '../../components/Quiz/quiz';
 import CardFlip from '../../components/Cards/CardFlip';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
 
 const Modulo03 = () => {
 	const [isVisible, setIsVisible] = useState(false);
-const { navigateTo } = useNavigation();
+	const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
-	const [block3, setBlock3] = useState(false);
-	const [block4, setBlock4] = useState(false);
-	const [block5, setBlock5] = useState(false);
 
+	const block1Ref = useRef(null);
+	const block2Ref = useRef(null);
+
+	const [interactics, setInteractics] = useState([]);
 	const handleAnswerCallback = () => {
 		setBlock2(true);
 	};
 
 	useEffect(() => {
+		const user = LoggedUser.get();
+
+		if (user && typeof user.progress === 'number') {
+			var goRef = null;
+			const progress = user.progress;
+			if (progress >= 17) {
+				setBlock1(true);
+				goRef = block1Ref;
+				setInteractics([
+					...interactics,
+					'video-1',
+					'CardFlip-1',
+					'CardFlip-2',
+					'CardFlip-3',
+					'CardFlip-4',
+					'CardFlip-5',
+					'CardFlip-6',
+					'CardFlip-7',
+				]);
+			}
+			if (progress >= 18) {
+				setBlock2(true);
+				goRef = block2Ref;
+				setInteractics([
+					...interactics,
+					'CardFlip-8',
+					'CardFlip-9',
+					'CardFlip-10',
+					'CardFlip-11',
+					'CardFlip-12',
+					'CardFlip-13',
+					'CardFlip-14',
+					'quiz',
+				]);
+			}
+
+			if (goRef != null) {
+				scrollToBlock(goRef);
+			}
+		}
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
+
 	const handleUnlockBlock = index => {
+		changeProgress(16);
 		setBlock1(true);
 	};
+
 	const handleUnlockBlock1 = index => {
+		changeProgress(17);
 		setBlock2(true);
 	};
 
-	const handleUnlockBlock2 = index => {
-		setBlock3(true);
+	const hasAllProgress = interactions => {
+		var response = true;
+		console.log(interactions);
+		console.log(interactics);
+		for (let i = 0; i < interactions.length; i++) {
+			const e = interactions[i];
+			if (!interactics.includes(e)) {
+				response = false;
+			}
+		}
+		console.log(response);
+		return !response;
 	};
 
-	const handleUnlockBlock3 = index => {
-		setBlock4(true);
+	const scrollToBlock = blockRef => {
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
+	const addInteractics = item => {
+		if (!interactics.some(i => i === item)) {
+			setInteractics([...interactics, item]); // Adiciona o novo item ao array
+		}
+	};
 	return (
 		<Box
 			sx={{
@@ -67,28 +136,29 @@ const { navigateTo } = useNavigation();
 				gap: 8,
 			}}
 		>
+			<IconButton
+				onClick={() => {
+					navigateTo('Menu');
+				}}
+				sx={{
+					borderRadius: '50%',
+					backgroundColor: '#14F194',
+					color: 'white',
+					padding: '10px',
+					position: 'fixed',
+					top: '20px',
+					right: '15px',
+					cursor: 'pointer',
+					zIndex: 9999,
+					transition: 'all 200ms ease-in-out',
 
-			 <IconButton
-							onClick={() => {navigateTo('Menu');}}
-							sx={{
-							borderRadius: '50%',
-							backgroundColor: '#14F194',
-							color: 'white',
-							padding: '10px',
-								position: 'fixed',
-							top: '20px',
-							right: '15px',
-							cursor: 'pointer',
-							zIndex: 9999,
-							transition: 'all 200ms ease-in-out',
-
-							'&:hover': {
-								backgroundColor: '#14F194',
-							},
-							}}
-						>
-							<HomeRounded />
-						</IconButton>
+					'&:hover': {
+						backgroundColor: '#14F194',
+					},
+				}}
+			>
+				<HomeRounded />
+			</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
@@ -131,7 +201,7 @@ const { navigateTo } = useNavigation();
 				</Box>
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
-
+			<Box ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{
@@ -196,18 +266,22 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Perda ou Roubo de Dispositivos'
 								backText='Proteja dispositivos removíveis com criptografia e senhas fortes para evitar acesso não autorizado em caso de perda ou roubo.'
+								callback={e => addInteractics('CardFlip-1')}
 							/>
 							<CardFlip
 								frontText='Aplicativos Maliciosos'
 								backText='Evite executar arquivos ou programas desconhecidos em mídias removíveis e mantenha um antivírus atualizado no sistema.'
+								callback={e => addInteractics('CardFlip-2')}
 							/>
 							<CardFlip
 								frontText='Conexões Wi-Fi Públicas'
 								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
+								callback={e => addInteractics('CardFlip-3')}
 							/>
 							<CardFlip
 								frontText='Configurações Inseguras de Redes Wi-Fi'
 								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
+								callback={e => addInteractics('CardFlip-4')}
 							/>
 						</Box>
 						<Box
@@ -223,14 +297,17 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Dispositivos IoT Vulneráveis'
 								backText='Não conecte mídias removíveis a dispositivos IoT sem verificar se estão atualizados e protegidos contra ameaças conhecidas.'
+								callback={e => addInteractics('CardFlip-5')}
 							/>
 							<CardFlip
 								frontText='Falta de Atualizações'
 								backText='Certifique-se de que os sistemas e dispositivos que utilizam mídias removíveis estejam sempre atualizados para corrigir vulnerabilidades.'
+								callback={e => addInteractics('CardFlip-6')}
 							/>
 							<CardFlip
 								frontText='.Ataques de Spoofing em Redes Públicas'
 								backText='Evite conectar mídias removíveis em dispositivos desconhecidos, pois ataques de spoofing podem comprometer dados transferidos.'
+								callback={e => addInteractics('CardFlip-7')}
 							/>
 						</Box>
 					</Box>
@@ -289,10 +366,25 @@ const { navigateTo } = useNavigation();
 						videoUrl={
 							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
 						}
+						onVideoEnd={e => addInteractics('video-1')}
 					/>
-					<Botao.Primary text='Continuar' onClick={handleUnlockBlock1} />
+					<Botao.Primary
+						text='Continuar'
+						onClick={handleUnlockBlock1}
+						disable={hasAllProgress([
+							'video-1',
+							'CardFlip-1',
+							'CardFlip-2',
+							'CardFlip-3',
+							'CardFlip-4',
+							'CardFlip-5',
+							'CardFlip-6',
+							'CardFlip-7',
+						])}
+					/>
 				</Box>
 			)}
+			<Box ref={block2Ref}></Box>
 			{block2 && (
 				<Box
 					sx={{
@@ -345,18 +437,22 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Perda ou Roubo de Dispositivos'
 								backText='Proteja dispositivos removíveis com criptografia e senhas fortes para evitar acesso não autorizado em caso de perda ou roubo.'
+								callback={e => addInteractics('CardFlip-8')}
 							/>
 							<CardFlip
 								frontText='Aplicativos Maliciosos'
 								backText='Evite executar arquivos ou programas desconhecidos em mídias removíveis e mantenha um antivírus atualizado no sistema.'
+								callback={e => addInteractics('CardFlip-9')}
 							/>
 							<CardFlip
 								frontText='Conexões Wi-Fi Públicas'
 								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
+								callback={e => addInteractics('CardFlip-10')}
 							/>
 							<CardFlip
 								frontText='Configurações Inseguras de Redes Wi-Fi'
 								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
+								callback={e => addInteractics('CardFlip-11')}
 							/>
 						</Box>
 						<Box
@@ -372,14 +468,17 @@ const { navigateTo } = useNavigation();
 							<CardFlip
 								frontText='Dispositivos IoT Vulneráveis'
 								backText='Não conecte mídias removíveis a dispositivos IoT sem verificar se estão atualizados e protegidos contra ameaças conhecidas.'
+								callback={e => addInteractics('CardFlip-12')}
 							/>
 							<CardFlip
 								frontText='Falta de Atualizações'
 								backText='Certifique-se de que os sistemas e dispositivos que utilizam mídias removíveis estejam sempre atualizados para corrigir vulnerabilidades.'
+								callback={e => addInteractics('CardFlip-13')}
 							/>
 							<CardFlip
 								frontText='.Ataques de Spoofing em Redes Públicas'
 								backText='Evite conectar mídias removíveis em dispositivos desconhecidos, pois ataques de spoofing podem comprometer dados transferidos.'
+								callback={e => addInteractics('CardFlip-14')}
 							/>
 						</Box>
 					</Box>
@@ -409,8 +508,23 @@ const { navigateTo } = useNavigation();
 							'Acessar depois em uma rede segura',
 						]}
 						correctAnswer='Usar Wi-Fi público'
+						callback={e => addInteractics('quiz')}
 					/>
-					<Botao.Navigation text='Próximo Modulo' page={'Menu'} />
+					<Botao.Navigation
+						text='Próximo Modulo'
+						page={'Menu'}
+						disable={hasAllProgress([
+							'CardFlip-8',
+							'CardFlip-9',
+							'CardFlip-10',
+							'CardFlip-11',
+							'CardFlip-12',
+							'CardFlip-13',
+							'CardFlip-14',
+							'quiz',
+						])}
+						callback={() => changeProgress(18)}
+					/>
 				</Box>
 			)}
 		</Box>

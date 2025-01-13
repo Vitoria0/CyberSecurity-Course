@@ -128,13 +128,13 @@ const Menu = () => {
 							image={modulo03}
 							nomeModulo='Dispositivos Moveis e Redes sem Fio'
 							isBlocked={LoggedUser.get().progress < 15}
-							isIncomplete={true}
+							isIncomplete={LoggedUser.get().progress < 18}
 						/>
 						<ModuloMenu
 							onClick={() => navigateTo('Modulo04')}
 							image={modulo04}
 							nomeModulo='Ambiente Corporativo'
-							isBlocked={true}
+							isBlocked={LoggedUser.get().progress < 18}
 							isIncomplete={true}
 						/>
 					</Box>
