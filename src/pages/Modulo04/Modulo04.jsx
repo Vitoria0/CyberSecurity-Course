@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
@@ -8,19 +8,17 @@ import Subtitle from '../../components/Texts/subtitle';
 import { Game } from '../../components/Game/Game';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
 
 const Modulo04 = () => {
 	const [isVisible, setIsVisible] = useState(false);
-const { navigateTo } = useNavigation();
+	const { navigateTo } = useNavigation();
 	const [block1, setBlock1] = useState(false);
-	const [block2, setBlock2] = useState(false);
-	const [block3, setBlock3] = useState(false);
-	const [block4, setBlock4] = useState(false);
-	const [block5, setBlock5] = useState(false);
 
-	const handleAnswerCallback = () => {
-		setBlock2(true);
-	};
+	const block1Ref = useRef(null);
+
+	const [interactics, setInteractics] = useState([]);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
@@ -28,19 +26,43 @@ const { navigateTo } = useNavigation();
 	}, []);
 	const handleUnlockBlock = index => {
 		setBlock1(true);
+		changeProgress(19);
 	};
-	const handleUnlockBlock1 = index => {
-		setBlock2(true);
+	const handleUnlockBlockGame = index => {
+		addInteractics('game');
+		changeProgress(20);
+	};
+	const hasAllProgress = interactions => {
+		var response = true;
+		console.log(interactions);
+		console.log(interactics);
+		for (let i = 0; i < interactions.length; i++) {
+			const e = interactions[i];
+			if (!interactics.includes(e)) {
+				response = false;
+			}
+		}
+		console.log(response);
+
+		return !response;
 	};
 
-	const handleUnlockBlock2 = index => {
-		setBlock3(true);
+	const scrollToBlock = blockRef => {
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
-	const handleUnlockBlock3 = index => {
-		setBlock4(true);
+	const addInteractics = item => {
+		if (!interactics.some(i => i === item)) {
+			setInteractics([...interactics, item]); // Adiciona o novo item ao array
+		}
 	};
-
 	return (
 		<Box
 			sx={{
@@ -61,28 +83,29 @@ const { navigateTo } = useNavigation();
 				gap: 8,
 			}}
 		>
+			<IconButton
+				onClick={() => {
+					navigateTo('Menu');
+				}}
+				sx={{
+					borderRadius: '50%',
+					backgroundColor: '#14F194',
+					color: 'white',
+					padding: '10px',
+					position: 'fixed',
+					top: '20px',
+					right: '15px',
+					cursor: 'pointer',
+					zIndex: 9999,
+					transition: 'all 200ms ease-in-out',
 
-			 <IconButton
-							onClick={() => {navigateTo('Menu');}}
-							sx={{
-							borderRadius: '50%',
-							backgroundColor: '#14F194',
-							color: 'white',
-							padding: '10px',
-								position: 'fixed',
-							top: '20px',
-							right: '15px',
-							cursor: 'pointer',
-							zIndex: 9999,
-							transition: 'all 200ms ease-in-out',
-
-							'&:hover': {
-								backgroundColor: '#14F194',
-							},
-							}}
-						>
-							<HomeRounded />
-						</IconButton>
+					'&:hover': {
+						backgroundColor: '#14F194',
+					},
+				}}
+			>
+				<HomeRounded />
+			</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
@@ -140,7 +163,7 @@ const { navigateTo } = useNavigation();
 						color: '#fff',
 						gap: { xs: 5, md: 8, xl: 10 },
 					}}
-				> 
+				>
 					<Subtitle text='GAME' />
 					<Typography
 						variant='body1'
@@ -154,10 +177,20 @@ const { navigateTo } = useNavigation();
 							fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
 						}}
 					>
-						Bem-vindo ao jogo de Segurança da Informação no Ambiente Corporativo! Você enfrentará situações reais do dia a dia, tomando decisões importantes para proteger os dados da empresa. Explore o cenário, interaja com objetos e personagens, e faça escolhas inteligentes para avançar no jogo. Caso erre, receberá um feedback que ajudará a corrigir seu caminho. O objetivo é aprender na prática como aplicar boas práticas de segurança e se tornar um aliado na proteção da informação corporativa! Clique em iniciar para começar o jogo:
+						Bem-vindo ao jogo de Segurança da Informação no Ambiente Corporativo! Você
+						enfrentará situações reais do dia a dia, tomando decisões importantes para proteger
+						os dados da empresa. Explore o cenário, interaja com objetos e personagens, e faça
+						escolhas inteligentes para avançar no jogo. Caso erre, receberá um feedback que
+						ajudará a corrigir seu caminho. O objetivo é aprender na prática como aplicar boas
+						práticas de segurança e se tornar um aliado na proteção da informação corporativa!
+						Clique em iniciar para começar o jogo:
 					</Typography>
-					<Game/>
-					<Botao.Navigation text='Avaliação Final' page={'Modulo05'} />
+					<Game Completed={e => handleUnlockBlockGame()} />
+					<Botao.Navigation
+						text='Avaliação Final'
+						page={'Modulo05'}
+						disable={hasAllProgress(['game']) && LoggedUser.get().progress < 20}
+					/>
 				</Box>
 			)}
 		</Box>

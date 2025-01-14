@@ -64,6 +64,7 @@ export const Game = ({ Completed }) => {
 		setIsAnswered(false);
 		('');
 		setSelectedAnswer(null);
+		callback()
 	};
 	const handleRestart = () => {
 		setIndex(0); // Próxima etapa do jogo

@@ -15,16 +15,16 @@ const Menu = () => {
 	useEffect(() => {
 		// Atualiza o LoggedUser sempre que o componente é carregado
 		async function fetchUserData() {
-		  try {
-			const user = LoggedUser.get();
-			console.log('Dados do usuário atualizados:', user);
-		  } catch (error) {
-			console.error('Erro ao atualizar dados do usuário:', error);
-		  }
+			try {
+				const user = LoggedUser.get();
+				console.log('Dados do usuário atualizados:', user);
+			} catch (error) {
+				console.error('Erro ao atualizar dados do usuário:', error);
+			}
 		}
-	
+
 		fetchUserData();
-	  }, []);
+	}, []);
 
 	return (
 		<Box
@@ -64,23 +64,23 @@ const Menu = () => {
 						alignItems: 'center',
 						width: '100%',
 						gap: 2,
-						margin: {xs:'5rem 0' , md:'0 auto'},
+						margin: { xs: '5rem 0', md: '0 auto' },
 						display: 'flex',
 						justifyContent: 'center',
 						flexDirection: 'column',
 					}}
 				>
-					  <IconButton
-							onClick={() => {
-								logout();
-								navigateTo('Homepage');
-							}}
-							sx={{
+					<IconButton
+						onClick={() => {
+							logout();
+							navigateTo('Homepage');
+						}}
+						sx={{
 							borderRadius: '50%',
 							backgroundColor: '#14F194',
 							color: 'white',
 							padding: '10px',
-								position: 'absolute',
+							position: 'absolute',
 							top: '20px',
 							right: '15px',
 							cursor: 'pointer',
@@ -89,10 +89,10 @@ const Menu = () => {
 							'&:hover': {
 								backgroundColor: '#14F194',
 							},
-							}}
-						>
-							<ExitToAppRounded />
-						</IconButton>
+						}}
+					>
+						<ExitToAppRounded />
+					</IconButton>
 					<Title text='Segurança da Informação' />
 					<Typography variant='body1' color='white' align='center' maxWidth='50rem'>
 						Conforme você vai avançando no conteudo os modulos serão desbloqueados.<br></br>
@@ -135,7 +135,7 @@ const Menu = () => {
 							image={modulo04}
 							nomeModulo='Ambiente Corporativo'
 							isBlocked={LoggedUser.get().progress < 18}
-							isIncomplete={true}
+							isIncomplete={LoggedUser.get().progress < 21}
 						/>
 					</Box>
 				</Box>

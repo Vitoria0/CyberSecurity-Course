@@ -7,17 +7,22 @@ import { Capa } from '../../assets/svg/Capa';
 import ExamComponent from '../../components/ExamComponent/ExamComponent';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { changeProgress } from '../../services/userService';
 
 const Modulo05 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);
-const { navigateTo } = useNavigation();
+	const [blockFinal, setBlockFinal] = useState(false);
+	const { navigateTo } = useNavigation();
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
 	const handleUnlockBlock = index => {
 		setBlock1(true);
+	};
+	const handleUnlockBlockFinal = index => {
+		setBlockFinal(true);
 	};
 	return (
 		<Box
@@ -39,28 +44,29 @@ const { navigateTo } = useNavigation();
 				gap: 8,
 			}}
 		>
-			
-			 <IconButton
-							onClick={() => {navigateTo('Menu');}}
-							sx={{
-							borderRadius: '50%',
-							backgroundColor: '#14F194',
-							color: 'white',
-							padding: '10px',
-								position: 'fixed',
-							top: '20px',
-							right: '15px',
-							cursor: 'pointer',
-							zIndex: 9999,
-							transition: 'all 200ms ease-in-out',
+			<IconButton
+				onClick={() => {
+					navigateTo('Menu');
+				}}
+				sx={{
+					borderRadius: '50%',
+					backgroundColor: '#14F194',
+					color: 'white',
+					padding: '10px',
+					position: 'fixed',
+					top: '20px',
+					right: '15px',
+					cursor: 'pointer',
+					zIndex: 9999,
+					transition: 'all 200ms ease-in-out',
 
-							'&:hover': {
-								backgroundColor: '#14F194',
-							},
-							}}
-						>
-							<HomeRounded />
-						</IconButton>
+					'&:hover': {
+						backgroundColor: '#14F194',
+					},
+				}}
+			>
+				<HomeRounded />
+			</IconButton>
 			<Box
 				sx={{
 					display: 'flex',
@@ -126,17 +132,23 @@ const { navigateTo } = useNavigation();
 						maxWidth='50rem'
 						sx={{
 							fontFamily: 'Poppins',
-							color: '#fff', 
+							color: '#fff',
 							fontWeight: '300',
 							fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
 						}}
 					>
-						<b>Responda as perguntas da avaliação final</b> para desbloquear o certificado do curso!
-						Lembre-se de que é necessário alcançar uma nota mínima de 7 para obter o
+						<b>Responda as perguntas da avaliação final</b> para desbloquear o certificado do
+						curso! Lembre-se de que é necessário alcançar uma nota mínima de 7 para obter o
 						certificado. Caso não alcance a nota mínima, você poderá refazer a prova. Boa sorte!
 					</Typography>
-					<ExamComponent/>
-					<Botao.Navigation text='Baixar Certificado' page={'Modulo05'} />
+					<ExamComponent onComplete={handleUnlockBlockFinal} />
+					{blockFinal && (
+						<Botao.Navigation
+							text='Baixar Certificado'
+							page={'Modulo05'}
+							callback={changeProgress(21)}
+						/>
+					)}
 				</Box>
 			)}
 		</Box>
