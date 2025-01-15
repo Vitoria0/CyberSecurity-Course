@@ -84,12 +84,12 @@ function PasswordComponent({callback}) {
     <Box sx={{ maxWidth: 800, width: '100%', margin: 'auto', textAlign: 'center', padding: 2 }}>
       <TextField
         label="Crie uma senha"
-        type="password"
+        type="text"
         variant="outlined"
         fullWidth
         value={password}
         onChange={handleChange}
-        sx={{ marginBottom: 2 }}
+        sx={{ marginBottom: 2, borderRadius: 10  }}
       />
       <LinearProgress
         variant="determinate"

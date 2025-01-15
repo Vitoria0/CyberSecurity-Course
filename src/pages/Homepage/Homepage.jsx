@@ -49,7 +49,8 @@ const Homepage = () => {
 						// Se ele pagou
 						navigateTo('Menu');
 					} else {
-						setIsPaying(true);
+						// setIsPaying(true);
+navigateTo('Menu');
 					}
 				} else {
 					setError('Usuário ou senha incorretos');

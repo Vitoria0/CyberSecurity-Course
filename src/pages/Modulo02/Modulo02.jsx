@@ -8,20 +8,23 @@ import chip from '../../assets/img/chip.png';
 import navegacao from '../../assets/img/navegacao.png';
 import { Capa } from '../../assets/svg/Capa';
 import image1 from '../../assets/img/image1.png';
+import people from '../../assets/img/people.png';
+import cell from '../../assets/img/cell.png';
+import lixeira from '../../assets/img/lixeira.png';
+import redes from '../../assets/img/redes.png';
 import IframePlayer from '../../components/Iframe/Iframe';
 import CardDinamico from '../../components/Cards/CardNeonChip';
 import { ImageText } from '../../components/Cards/ImageText';
 import AccordionComponent from '../../components/Accordion/Accordion';
 import PasswordComponent from '../../components/PasswordComponent/PasswordComponent';
-import { Slider } from '../../components/Slider/slider';
 import { PhishingTest } from '../../components/PhishingTest/PhishingTest';
 import chipCards from '../../assets/img/chipcards.png';
 import CardFlip from '../../components/Cards/CardFlip';
 import QuizComponent from '../../components/Quiz/quiz';
 import { HomeRounded } from '@mui/icons-material';
-import { useNavigation } from '../../hooks/NavigationContext';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
+import { Slider2 } from '../../components/Slider2/Slider2';
 
 const Modulo02 = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -299,7 +302,6 @@ const Modulo02 = () => {
 				margin: 0,
 				padding: 0,
 				color: '#fff',
-				gap: 8,
 			}}
 		>
 			<IconButton
@@ -340,6 +342,7 @@ const Modulo02 = () => {
 					transform: isVisible ? 'scale(1)' : 'scale(0.5)',
 					opacity: isVisible ? 1 : 0,
 					transition: 'all 700ms ease-in-out',
+					mt: 8,
 				}}
 			>
 				<Box
@@ -371,6 +374,7 @@ const Modulo02 = () => {
 			{block1 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -456,6 +460,7 @@ const Modulo02 = () => {
 			{block2 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -468,7 +473,25 @@ const Modulo02 = () => {
 						gap: { xs: 5, md: 8, xl: 10 },
 					}}
 				>
+<Box sx={{
+display: 'flex',
+justifyContent: 'center',
+alignItems: 'center',
+width: '100%',
+flexDirection: 'column',}}>
 					<Subtitle text='Como poderia ter sido evitado?' />
+<Typography
+							variant='body1'
+							color='secondary'
+							align='justify'
+							maxWidth='50rem'
+							sx={{
+								fontFamily: 'Poppins',
+								color: '#fff',
+								fontWeight: '300',
+								fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
+							}}
+						>Clique nos cads para saber:</Typography></Box>
 					<Box
 						sx={{
 							display: 'flex',
@@ -480,17 +503,17 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='Uso massivo da internet e dispositivos digitais'
+							texto='Alterar senhas padrão: Sempre defina senhas fortes e únicas para cada dispositivo.'
 							callback={e => addInteractics('CardDinamico-1')}
 							isActive={LoggedUser.get().progress > 7}
 						/>
 						<CardDinamico
-							texto='Conectividade global e comunicação instantânea'
+							texto='Atualizar firmware: Certifique-se de que o dispositivo esteja rodando a versão mais recente do firmware, com correções de segurança aplicadas.'
 							callback={e => addInteractics('CardDinamico-2')}
 							isActive={LoggedUser.get().progress >= 7}
 						/>
 						<CardDinamico
-							texto='Automação e digitalização de processos'
+							texto='Usar redes Wi-Fi seguras: Configure o Wi-Fi com criptografia forte (WPA3, se disponível) e altere a senha periodicamente.'
 							callback={e => addInteractics('CardDinamico-3')}
 							isActive={LoggedUser.get().progress >= 7}
 						/>
@@ -506,17 +529,17 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='Uso massivo da internet e dispositivos digitais'
+							texto='Desativar acesso remoto não necessário: Se você não precisa acessar o dispositivo remotamente, desative essa função.'
 							callback={e => addInteractics('CardDinamico-4')}
 							isActive={LoggedUser.get().progress >= 7}
 						/>
 						<CardDinamico
-							texto='Conectividade global e comunicação instantânea'
+							texto='Configurar autenticação de dois fatores (2FA): Caso disponível, ative 2FA para maior segurança no login.'
 							callback={e => addInteractics('CardDinamico-5')}
 							isActive={LoggedUser.get().progress >= 7}
 						/>
 						<CardDinamico
-							texto='Automação e digitalização de processos'
+							texto='Monitorar atividades suspeitas: Fique atento a comportamentos estranhos, como movimentos inesperados da câmera.'
 							callback={e => addInteractics('CardDinamico-6')}
 							isActive={LoggedUser.get().progress >= 7}
 						/>
@@ -540,6 +563,7 @@ const Modulo02 = () => {
 			{block3 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -611,17 +635,17 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='Uso massivo da internet e dispositivos digitais'
+							texto='NO momento de proporcionar informação sigilosa (senhas, dados bancários...)em algum site, reveja a barra de navegação e confira se tem o prefixo HTTPS.'
 							callback={e => addInteractics('CardDinamico-7')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
 						<CardDinamico
-							texto='Conectividade global e comunicação instantânea'
+							texto='Desabilite a opção de “lembrar senha” no seu navegador e feche as suas sessões ao sair de algum site'
 							callback={e => addInteractics('CardDinamico-8')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
 						<CardDinamico
-							texto='Automação e digitalização de processos'
+							texto='Preste atenção nos anexos e links dispolibilizados antes de acessa-los.'
 							callback={e => addInteractics('CardDinamico-9')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
@@ -637,12 +661,12 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='Uso massivo da internet e dispositivos digitais'
+							texto='Mantenha sempre os seus equipamentos atualizados (sistemas operacionais, navegadores e aplicativos) e instale, sempre que possivel,, um antivirus.'
 							callback={e => addInteractics('CardDinamico-10')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
 						<CardDinamico
-							texto='Conectividade global e comunicação instantânea'
+							texto='Ocasionalmente elimite o histórico de navegação, os cookies e os ficheiros temporários do seu navegador'
 							callback={e => addInteractics('CardDinamico-11')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
@@ -666,6 +690,7 @@ const Modulo02 = () => {
 			{block4 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -705,6 +730,7 @@ const Modulo02 = () => {
 					<Box
 						sx={{
 							display: 'flex',
+							width: {xs:'100%', md:'50%'},
 							justifyContent: 'top',
 							flexDirection: 'column',
 							alignItems: 'center',
@@ -716,11 +742,11 @@ const Modulo02 = () => {
 						<Typography
 							variant='body1'
 							color='secondary'
-							align='justify'
+							align='center'
 							maxWidth='50rem'
 							sx={{
 								fontFamily: 'Poppins',
-								color: '#fff',
+								color: '#fff', 
 								fontWeight: '300',
 								fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
 							}}
@@ -729,7 +755,7 @@ const Modulo02 = () => {
 							em verificar para receber um feedback:
 						</Typography>
 
-						<PasswordComponent callback={() => addInteractics('PasswordComponent-1')} />
+						<PasswordComponent  callback={() => addInteractics('PasswordComponent-1')} />
 					</Box>
 					<Botao.Primary
 						text='Continuar'
@@ -743,6 +769,7 @@ const Modulo02 = () => {
 			{block5 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -757,7 +784,7 @@ const Modulo02 = () => {
 				>
 					<ImageText
 						reverse
-						image={image1}
+						image={redes}
 						titulo='Redes Sociais'
 						texto='As redes sociais possuem uma relevância muito alta bos dias atuais, permitindo-nos contectar ocm amigos, famili e colegas de trabalho. No entanto, é crucial utiliza-lás de forma segura para proteger nossas informações pessoais e evitar riscos online. Veremos algumas dicas simples e práticas para garantir que você possa desfrutar das redes sociais de maneira segura e conciente, clique nos cards para ver:'
 					/>
@@ -855,6 +882,7 @@ const Modulo02 = () => {
 			{block6 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -886,7 +914,7 @@ const Modulo02 = () => {
 						formulários ou sites falsificados.
 						<b> Veja abaixo navegando pelo slide os tipos mais comuns de phishing:</b>
 					</Typography>
-					<Slider />
+					<Slider2 />
 					<Subtitle text='Vamos Praticar!' />
 					<Typography
 						variant='body1'
@@ -917,6 +945,7 @@ const Modulo02 = () => {
 			{block7 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -931,7 +960,7 @@ const Modulo02 = () => {
 				>
 					<ImageText
 						reverse
-						image={image1}
+						image={cell}
 						titulo='Softwares Não Legítimos'
 						texto='Softwares não legítimos, também conhecidos como softwares piratas, falsificados ou não autorizados, representam um risco significativo para a cibersegurança de indivíduos e organizações. Usá-los pode expor sistemas a vulnerabilidades, ataques cibernéticos e perda de dados. São programas obtidos sem autorização legal, seja por meio de pirataria, cracks, versões falsificadas ou distribuídos por fontes não confiáveis. Saiba alguns exemplos:'
 					/>
@@ -993,6 +1022,7 @@ const Modulo02 = () => {
 			{block8 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -1006,7 +1036,7 @@ const Modulo02 = () => {
 					}}
 				>
 					<ImageText
-						image={image1}
+						image={people}
 						titulo='Dispositivos Compartilhados'
 						texto='Dispositivos compartilhados são aqueles utilizados por várias pessoas, como computadores públicos, tablets em empresas, dispositivos de coworking ou até mesmo aparelhos domésticos usados por membros da família. Embora convenientes, eles apresentam desafios de cibersegurança que exigem atenção especial para evitar vulnerabilidades.'
 					/>
@@ -1085,7 +1115,7 @@ const Modulo02 = () => {
 					</Box>
 					<ImageText
 						reverse
-						image={image1}
+						image={lixeira}
 						titulo='Mídias Removíveis'
 						texto='Mídias removíveis, como pen drives, HDs externos, cartões de memória, CDs/DVDs e outros dispositivos portáteis de armazenamento, oferecem conveniência para transferir e armazenar dados. No entanto, seu uso pode representar sérios riscos de cibersegurança, especialmente em ambientes corporativos e redes públicas. Alguns exemplos de midias removiveis são: Pen Drive, Hds Externos, CDs, DVDs, MP3, SDs. E assim como as demais tecnologias as Midias removiveis também contém seus riscos de segurança associados, clique nos cards para saber como se precaver de cada situação:'
 					/>{' '}
@@ -1206,6 +1236,7 @@ const Modulo02 = () => {
 			{block9 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -1233,9 +1264,9 @@ const Modulo02 = () => {
 						Responda o quiz abaixo para seguir com o conteúdo:
 					</Typography>
 					<QuizComponent
-						question='Qual é o pilar da segurança da informação violado quando um sistema está fora do ar por um ataque de negação de serviço (DDoS)?'
-						options={['Confidencialidade', 'Integridade', 'Disponibilidade']}
-						correctAnswer='Confidencialidade'
+						question='Qual das seguintes práticas ajuda a prevenir ataques de phishing?'
+						options={['Clicar em links de fontes desconhecidas', 'Verificar a autenticidade do remetente antes de clicar em links ou abrir anexos', 'Ignorar atualizações de segurança']}
+						correctAnswer='Verificar a autenticidade do remetente antes de clicar em links ou abrir anexos'
 						callback={e => addInteractics('quiz')}
 					/>
 					<Botao.Navigation

@@ -575,8 +575,8 @@ const Modulo01 = () => {
 					<QuizComponent
 						question='Qual é o pilar da segurança da informação violado quando um sistema está fora do ar por um ataque de negação de serviço (DDoS)?'
 						options={['Confidencialidade', 'Integridade', 'Disponibilidade']}
-						correctAnswer='Confidencialidade'
-						currentAnswer= {LoggedUser.get().progress >= 5 ? 'Confidencialidade' : ''}
+						correctAnswer='Disponibilidade'
+						currentAnswer= {LoggedUser.get().progress >= 5 ? 'Disponibilidade' : ''}
 						callback={e => addInteractics('quiz')}
 					/>
 					<Botao.Navigation
