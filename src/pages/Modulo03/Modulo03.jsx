@@ -5,11 +5,11 @@ import backgorund from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
 import { Capa } from '../../assets/svg/Capa';
 import { ImageText } from '../../components/Cards/ImageText';
-import image1 from '../../assets/img/vr.png';
-import image3 from '../../assets/img/block.png';
+import image1 from '../../assets/img/computador.png';
+import image3 from '../../assets/img/redesfio.png';
+import image2 from '../../assets/img/vpn.png';
 import Subtitle from '../../components/Texts/subtitle';
 import IframePlayer from '../../components/Iframe/Iframe';
-import { Slider } from '../../components/Slider/slider';
 import QuizComponent from '../../components/Quiz/quiz';
 import CardFlip from '../../components/Cards/CardFlip';
 import { HomeRounded } from '@mui/icons-material';
@@ -222,8 +222,7 @@ const Modulo03 = () => {
 						reverse={true}
 						titulo='Dispositivos Móveis'
 						texto='Os dispositivos móveis são ferramentas indispensáveis no cotidiano moderno, permitindo acesso à internet, comunicações e trabalho remoto de qualquer lugar. No entanto, essa conveniência também traz desafios significativos de segurança. A mobilidade aumenta o risco de perda de dispositivos, roubo de dados e exposição a ataques maliciosos. Navegue pelo slide abaixo para saber mais sobre Riscos Associados a Dispositivos Móveis:'
-					/>
-					<Slider />
+					/> 
 					<Subtitle text='Ameaças e Como se Proteger' />
 					<Typography
 						variant='body1'
@@ -334,7 +333,7 @@ const Modulo03 = () => {
 					</Typography>
 					<ImageText
 						reverse
-						image={image3}
+						image={image2}
 						titulo='Redes Públicas e VPN'
 						texto='Ao usar redes públicas, como as de cafés ou aeroportos, é importante tomar precauções para proteger seus dados. Redes públicas podem ser vulneráveis à interceptação de informações, como senhas e dados bancários, e ataques de spoofing, onde redes falsas são criadas para roubar dados. Para se proteger, é recomendado usar uma VPN, evitar acessar informações sensíveis, desativar a conexão automática a redes públicas e sempre verificar se os sites acessados são seguros, utilizando HTTPS.'
 					/>

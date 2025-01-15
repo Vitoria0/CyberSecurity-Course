@@ -1,22 +1,30 @@
-import { Button, Typography } from '@mui/material'; 
+import { Button, Typography } from '@mui/material';
 import { useNavigation } from '../../hooks/NavigationContext';
 
 export const Navigation = ({ page, text, disable, callback }) => {
-	const { navigateTo } = useNavigation(); 
+	const { navigateTo } = useNavigation();
 	return (
 		<Button
 			variant='oulined'
-			onClick={disable ? () => {console.log('disabled')} : async () => {
-				if(callback !== undefined) {
-					await callback()
-				}
-				navigateTo(page)}}
+			onClick={
+				disable
+					? () => {
+							console.log('disabled');
+					  }
+					: async () => {
+							if (callback !== undefined) {
+								await callback();
+							}
+							navigateTo(page);
+					  }
+			}
 			disabled={disable}
 			sx={{
 				px: 6,
 				py: 1.5,
 				border: '2px solid #AD61FF',
 				background: '#030012',
+				opacity: disable ? 0.3 : 1,
 				borderRadius: '99px',
 				transition: 'all 200ms ease-in-out',
 				'&:hover': {

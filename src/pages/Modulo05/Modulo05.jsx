@@ -8,10 +8,14 @@ import ExamComponent from '../../components/ExamComponent/ExamComponent';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
 import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
+import { jsPDF } from 'jspdf';
+import certificado from '../../assets/img/certificado.png';
 
 const Modulo05 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);
+	const [dowload, setDowload] = useState(false);
 	const [blockFinal, setBlockFinal] = useState(false);
 	const { navigateTo } = useNavigation();
 	useEffect(() => {
@@ -24,6 +28,58 @@ const Modulo05 = () => {
 	const handleUnlockBlockFinal = index => {
 		setBlockFinal(true);
 	};
+
+	const finalize = async name => {
+		setDowload(true);
+		await generatePDF(name);
+		await changeProgress(21);
+	};
+
+	const generatePDF = async studentName => {
+		try {
+			const widthMm = 1804 / 3.78;
+			const heightMm = 1005 / 3.78;
+
+			const doc = new jsPDF({
+				orientation: 'l',
+				unit: 'mm',
+				format: [widthMm, heightMm],
+			});
+
+			const response = await fetch(certificado);
+			if (!response.ok) throw new Error('Erro ao carregar a imagem.');
+
+			const blob = await response.blob();
+
+			const backgroundImage = await new Promise((resolve, reject) => {
+				const reader = new FileReader();
+				reader.onloadend = () => resolve(reader.result);
+				reader.onerror = () => reject(new Error('Erro ao ler a imagem.'));
+				reader.readAsDataURL(blob);
+			});
+
+			doc.addImage(backgroundImage, 'PNG', 0, 0, widthMm, heightMm);
+
+			doc.setTextColor('#00CDBB');
+			doc.setFontSize(60);
+
+			// Calculando nova posição
+			const originalX = 114 / 3.78;
+			const originalY = 525 / 3.78;
+
+			const adjustedX = originalX + widthMm * 0.04; 
+			const adjustedY = originalY + heightMm * 0.06; 
+
+			// Inserindo o nome do aluno
+			doc.text(studentName, adjustedX, adjustedY);
+
+			doc.save('certificado.pdf');
+			setDowload(false);
+		} catch (error) {
+			console.error('Erro ao gerar o PDF:', error.message);
+		}
+	};
+
 	return (
 		<Box
 			sx={{
@@ -142,13 +198,14 @@ const Modulo05 = () => {
 						certificado. Caso não alcance a nota mínima, você poderá refazer a prova. Boa sorte!
 					</Typography>
 					<ExamComponent onComplete={handleUnlockBlockFinal} />
-					{blockFinal && (
-						<Botao.Navigation
-							text='Baixar Certificado'
-							page={'Modulo05'}
-							callback={changeProgress(21)}
-						/>
-					)}
+					{blockFinal ||
+						(LoggedUser.get().progress == 21 && (
+							<Botao.Navigation
+								text={dowload ? 'Baixando...' : 'Baixar Certificado'}
+								page={'Modulo05'}
+								callback={() => finalize('Mavi')}
+							/>
+						))}
 				</Box>
 			)}
 		</Box>

@@ -25,8 +25,10 @@ import { HomeRounded } from '@mui/icons-material';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
 import { Slider2 } from '../../components/Slider2/Slider2';
+import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo02 = () => {
+const { navigateTo } = useNavigation();
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);

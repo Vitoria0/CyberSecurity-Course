@@ -4,57 +4,113 @@ import { Box, Button, Typography, Radio, RadioGroup, FormControlLabel } from '@m
 const ExamComponent = ({ onComplete }) => {
 	const questions = [
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'Qual é a principal preocupação relacionada à segurança dos dispositivos IoT?',
+			options: [
+				'Dispositivos IoT consomem muita energia e afetam o desempenho da rede.',
+				'Dispositivos IoT podem ser vulneráveis a ataques se não forem configurados adequadamente.',
+				'Dispositivos IoT são facilmente acessíveis por meio de cabos de rede.',
+				'Dispositivos IoT têm padrões de segurança que são mais fortes que os de outros dispositivos.',
+			],
+			correctAnswer:
+				'Dispositivos IoT podem ser vulneráveis a ataques se não forem configurados adequadamente.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'Quais práticas são recomendadas para garantir a segurança e privacidade de informações em dispositivos usados por várias pessoas?',
+			options: [
+				'Usar perfis de usuário separados e manter o software desatualizado.',
+				'Habilitar a navegação privada e salvar senhas para facilitar o acesso.',
+				'Usar perfis de usuário separados, habilitar a navegação privada e manter o software atualizado.',
+				'Compartilhar senhas para facilitar o acesso ao dispositivo.',
+			],
+			correctAnswer:
+				'Usar perfis de usuário separados, habilitar a navegação privada e manter o software atualizado.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'Quais são os principais desafios de segurança relacionados ao uso de dispositivos móveis?',
+			options: [
+				'Aumento do risco de perda de dispositivos, roubo de dados e exposição a ataques maliciosos.',
+				'Menor custo de manutenção e maior facilidade de uso.',
+				'Dificuldade em acessar a internet e limitações na comunicação.',
+				'Aumento da vida útil dos dispositivos e maior resistência a falhas.',
+			],
+			correctAnswer:
+				'Aumento do risco de perda de dispositivos, roubo de dados e exposição a ataques maliciosos.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que é um vírus de computador?',
+			options: [
+				'Um tipo de software que ajuda a melhorar o desempenho do sistema.',
+				'Um programa malicioso que se replica e pode danificar dados ou sistemas.',
+				'Um arquivo inofensivo que ajuda na navegação na internet.',
+				'Um dispositivo físico que protege o computador contra ameaças.',
+			],
+			correctAnswer: 'Um programa malicioso que se replica e pode danificar dados ou sistemas.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que é a Engenharia Social?',
+			options: [
+				'Um tipo de vírus de computador.',
+				'Técnicas utilizadas para manipular ou enganar pessoas a fim de obter informações confidenciais.',
+				'Um método de criptografia de dados.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer:
+				'Técnicas utilizadas para manipular ou enganar pessoas a fim de obter informações confidenciais.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que caracteriza o ataque de phishing?',
+			options: [
+				'O uso de software malicioso para roubar dados.',
+				'A criação de um site falso para coletar informações pessoais de forma fraudulenta.',
+				'A tentativa de enganar alguém usando uma falsa identidade ou cenário.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer: 'A criação de um site falso para coletar informações pessoais de forma fraudulenta.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'Qual é o principal objetivo da LGPD (Lei Geral de Proteção de Dados)?',
+			options: [
+				'Garantir a privacidade dos dados pessoais e proteger os indivíduos contra o uso indevido.',
+				'Fornecer regras sobre como tratar dados financeiros em empresas.',
+				'Regular o uso de cookies em sites.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer:
+				'Garantir a privacidade dos dados pessoais e proteger os indivíduos contra o uso indevido.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que é o pretexting em engenharia social?',
+			options: [
+				'Utilização de iscas para atrair vítimas, como promoções falsas.',
+				'A criação de um cenário falso para obter informações pessoais.',
+				'Roubo físico de dispositivos de armazenamento de dados.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer: 'A criação de um cenário falso para obter informações pessoais.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que é baiting em termos de ataques de engenharia social?',
+			options: [
+				'A utilização de software malicioso para roubar informações bancárias.',
+				'A tentativa de enganar a vítima através de iscas, como downloads ou ofertas falsas.',
+				'O envio de e-mails falsos com links para sites seguros.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer: 'A tentativa de enganar a vítima através de iscas, como downloads ou ofertas falsas.',
 		},
 		{
-			question: 'Quanto é 2 + 2?',
-			options: ['3', '4', '5', '6'],
-			correctAnswer: '4',
+			question: 'O que significa o termo tailgating no contexto de segurança da informação?',
+			options: [
+				'O ato de um atacante seguir outra pessoa para obter acesso físico a áreas restritas.',
+				'O ato de se passar por outra pessoa para acessar um sistema protegido.',
+				'O uso de senhas fracas para acessar sistemas.',
+				'Nenhuma das alternativas anteriores.',
+			],
+			correctAnswer: 'O ato de um atacante seguir outra pessoa para obter acesso físico a áreas restritas.',
 		},
-		// Adicione mais perguntas...
 	];
+	// 2,3,1,2,2,2,1,2,2,1
+
 
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedOption, setSelectedOption] = useState('');
@@ -62,7 +118,7 @@ const ExamComponent = ({ onComplete }) => {
 	const [isFinished, setIsFinished] = useState(false);
 
 	const getPercentage = () => {
-    console.log((score / questions.length) * 100)
+		console.log((score / questions.length) * 100);
 		return (score / questions.length) * 100;
 	};
 
@@ -136,15 +192,16 @@ const ExamComponent = ({ onComplete }) => {
 						onClick={handleSubmitAnswer}
 						disabled={!selectedOption}
 						sx={{
+							
 							marginTop: 3,
 							px: 6,
 							py: 1.5,
-							borderRadius: '15px',
-							background: selectedOption ? '#8BFF61' : '#D9D9D910',
-							'&:hover': { background: selectedOption ? '#6DBE49' : '#D9D9D910' },
+							color: '#FFF',
+							borderRadius: '15px', 
+							'&:hover': { color: '#FFF' },
 						}}
 					>
-						Responder
+						Responder aaaaa
 					</Button>
 				</Box>
 			) : (
