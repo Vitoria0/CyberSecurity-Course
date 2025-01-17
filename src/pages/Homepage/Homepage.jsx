@@ -45,12 +45,10 @@ const Homepage = () => {
 			if (isLogin) {
 				await loginWithEmailAndPassword(formData.email, formData.password);
 				if (LoggedUser.get()) {
-					if (isPaying) {
-						// Se ele pagou
+					if (LoggedUser.get().isPaying == true) {
 						navigateTo('Menu');
 					} else {
-						// setIsPaying(true);
-navigateTo('Menu');
+						setIsPaying(true);
 					}
 				} else {
 					setError('Usuário ou senha incorretos');

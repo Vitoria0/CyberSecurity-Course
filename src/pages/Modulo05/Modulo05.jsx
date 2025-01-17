@@ -203,7 +203,7 @@ const Modulo05 = () => {
 							<Botao.Navigation
 								text={dowload ? 'Baixando...' : 'Baixar Certificado'}
 								page={'Modulo05'}
-								callback={() => finalize('Mavi')}
+								callback={() => finalize(LoggedUser.get().name)}
 							/>
 						))}
 				</Box>
