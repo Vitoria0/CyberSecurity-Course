@@ -241,8 +241,8 @@ const finalize = async name => {
 					{(LoggedUser.get().progress == 21 ? (
 							<Botao.Navigation
 								text={dowload ? 'Baixando...' : 'Baixar Certificado'}
-								page={'Modulo05'}
-								callback={() => finalize('Mavi')}
+								page={'Menu'}
+								callback={() => finalize(LoggedUser.get().name)}
 							/>
 						) : (
 							<Botao.Navigation

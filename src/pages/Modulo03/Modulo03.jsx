@@ -37,35 +37,41 @@ const Modulo03 = () => {
 		if (user && typeof user.progress === 'number') {
 			var goRef = null;
 			const progress = user.progress;
-			if (progress >= 17) {
+			if (progress >= 16) {
 				setBlock1(true);
 				goRef = block1Ref;
-				setInteractics([
-					...interactics,
-					'video-1',
-					'CardFlip-1',
-					'CardFlip-2',
-					'CardFlip-3',
-					'CardFlip-4',
-					'CardFlip-5',
-					'CardFlip-6',
-					'CardFlip-7',
-				]);
+				if(progress > 16){
+					setInteractics([
+						...interactics,
+						'video-1',
+						'CardFlip-1',
+						'CardFlip-2',
+						'CardFlip-3',
+						'CardFlip-4',
+						'CardFlip-5',
+						'CardFlip-6',
+						'CardFlip-7',
+					]);
+				}
+				
 			}
-			if (progress >= 18) {
+			if (progress >= 17) {
 				setBlock2(true);
 				goRef = block2Ref;
-				setInteractics([
-					...interactics,
-					'CardFlip-8',
-					'CardFlip-9',
-					'CardFlip-10',
-					'CardFlip-11',
-					'CardFlip-12',
-					'CardFlip-13',
-					'CardFlip-14',
-					'quiz',
-				]);
+				if(progress > 17){
+					setInteractics([
+						...interactics,
+						'CardFlip-8',
+						'CardFlip-9',
+						'CardFlip-10',
+						'CardFlip-11',
+						'CardFlip-12',
+						'CardFlip-13',
+						'CardFlip-14',
+						'quiz',
+					]);
+				}
+				
 			}
 
 			if (goRef != null) {

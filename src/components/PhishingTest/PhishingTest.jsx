@@ -11,7 +11,7 @@ const phishingScenarios = [
 	{ id: 3, image: phishing1, isPhishing: true },
 ];
 
-export const PhishingTest = (callback) => {
+export const PhishingTest = ({callback}) => {
 	const [selectedScenarioIndex, setSelectedScenarioIndex] = useState(0); // Índice do cenário atual
 	const [userFeedback, setUserFeedback] = useState('');
 	const [isFinished, setIsFinished] = useState(false); // Para verificar se terminou
@@ -27,11 +27,13 @@ export const PhishingTest = (callback) => {
 	};
 
 	const handleNext = () => {
+		if (selectedScenarioIndex + 1 == phishingScenarios.length - 1) {
+			callback();
+		}
 		if (selectedScenarioIndex < phishingScenarios.length - 1) {
 			setSelectedScenarioIndex(selectedScenarioIndex + 1);
 			setUserFeedback(''); // Limpa o feedback para o próximo cenário
 		} else {
-			callback();
 			setIsFinished(true); // Marca como finalizado quando chegar ao último cenário
 		}
 	};
@@ -150,39 +152,41 @@ export const PhishingTest = (callback) => {
 										? 400
 										: 80,
 							}}
-						/>{' '}{!isFinished && userFeedback && (
-						<Box
-							sx={{
-								width: '100%',
-								height: '100%',
-								backgroundColor: 'rgba(0, 0, 0, 0.8)',
-								display: 'flex',
-								flexDirection: 'column',
-								alignItems: 'center',
-								justifyContent: 'center',
-								gap: 2,
-								position: 'absolute', 
-								top: 0,    
-                                left: 0,    
-                                bottom: 0,    
-                                right: 0,   
-								zIndex: 2,
-							}}
-						>
-							
+						/>{' '}
+						{!isFinished && userFeedback && (
+							<Box
+								sx={{
+									width: '100%',
+									height: '100%',
+									backgroundColor: 'rgba(0, 0, 0, 0.8)',
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: 2,
+									position: 'absolute',
+									top: 0,
+									left: 0,
+									bottom: 0,
+									right: 0,
+									zIndex: 2,
+								}}
+							>
 								<Typography variant='h6' sx={{ marginTop: 2 }}>
 									{userFeedback && <span>{userFeedback}</span>}
 								</Typography>
-						
 
-							 
-								<Button variant='contained' onClick={handleNext} sx={{ marginTop: 2, backgroundColor: 'gray' }}>
+								<Button
+									variant='contained'
+									onClick={handleNext}
+									sx={{ marginTop: 2, backgroundColor: 'gray' }}
+								>
 									{selectedScenarioIndex < phishingScenarios.length - 1
 										? 'Próximo'
 										: 'Finalizar'}
 								</Button>
-							 
-						</Box>	)}
+							</Box>
+						)}
 					</Box>
 				)}
 			</Box>

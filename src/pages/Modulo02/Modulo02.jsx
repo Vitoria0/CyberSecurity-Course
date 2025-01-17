@@ -28,7 +28,7 @@ import { Slider2 } from '../../components/Slider2/Slider2';
 import { useNavigation } from '../../hooks/NavigationContext';
 
 const Modulo02 = () => {
-const { navigateTo } = useNavigation();
+	const { navigateTo } = useNavigation();
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);
 	const [block2, setBlock2] = useState(false);
@@ -60,55 +60,67 @@ const { navigateTo } = useNavigation();
 			if (progress >= 6) {
 				setBlock1(true);
 				goRef = block1Ref;
-				setInteractics([...interactics, 'video-1']);
+				if (progress > 6) {
+					setInteractics([...interactics, 'video-1']);
+				}
 			}
 			if (progress >= 7) {
 				setBlock2(true);
 				goRef = block2Ref;
-				setInteractics([
-					...interactics,
-					'CardDinamico-1',
-					'CardDinamico-2',
-					'CardDinamico-3',
-					'CardDinamico-4',
-					'CardDinamico-5',
-					'CardDinamico-6',
-				]);
+				if (progress > 7) {
+					setInteractics([
+						...interactics,
+						'CardDinamico-1',
+						'CardDinamico-2',
+						'CardDinamico-3',
+						'CardDinamico-4',
+						'CardDinamico-5',
+						'CardDinamico-6',
+					]);
+				}
 			}
 			if (progress >= 8) {
 				setBlock3(true);
 				goRef = block3Ref;
-				setInteractics([
-					...interactics,
-					'CardDinamico-7',
-					'CardDinamico-8',
-					'CardDinamico-9',
-					'CardDinamico-10',
-					'CardDinamico-11',
-				]);
+				if (progress > 8) {
+					setInteractics([
+						...interactics,
+						'CardDinamico-7',
+						'CardDinamico-8',
+						'CardDinamico-9',
+						'CardDinamico-10',
+						'CardDinamico-11',
+					]);
+				}
 			}
 			if (progress >= 9) {
 				setBlock4(true);
 				goRef = block4Ref;
-				setInteractics([...interactics, 'PasswordComponent-1']);
+				if (progress > 9) {
+					setInteractics([...interactics, 'PasswordComponent-1']);
+				}
 			}
 			if (progress >= 10) {
 				setBlock5(true);
 				goRef = block5Ref;
-				setInteractics([
-					...interactics,
-					'CardDinamico-12',
-					'CardDinamico-13',
-					'CardDinamico-14',
-					'CardDinamico-15',
-					'CardDinamico-16',
-					'video-2',
-				]);
+				if (progress > 10) {
+					setInteractics([
+						...interactics,
+						'CardDinamico-12',
+						'CardDinamico-13',
+						'CardDinamico-14',
+						'CardDinamico-15',
+						'CardDinamico-16',
+						'video-2',
+					]);
+				}
 			}
 			if (progress >= 11) {
 				setBlock6(true);
 				goRef = block6Ref;
-				setInteractics([...interactics, 'phishing-test']);
+				if (progress > 11) {
+					setInteractics([...interactics, 'phishing-test']);
+				}
 			}
 			if (progress >= 12) {
 				setBlock7(true);
@@ -117,27 +129,31 @@ const { navigateTo } = useNavigation();
 			if (progress >= 13) {
 				setBlock8(true);
 				goRef = block8Ref;
-				setInteractics([
-					...interactics,
-					'CardFlip-1',
-					'CardFlip-2',
-					'CardFlip-3',
-					'CardFlip-4',
-					'CardFlip-5',
-					'CardFlip-6',
-					'CardFlip-7',
-					'CardDinamico-17',
-					'CardDinamico-18',
-					'CardDinamico-19',
-					'CardDinamico-20',
-					'CardDinamico-21',
-					'CardDinamico-22',
-				]);
+				if (progress > 13) {
+					setInteractics([
+						...interactics,
+						'CardFlip-1',
+						'CardFlip-2',
+						'CardFlip-3',
+						'CardFlip-4',
+						'CardFlip-5',
+						'CardFlip-6',
+						'CardFlip-7',
+						'CardDinamico-17',
+						'CardDinamico-18',
+						'CardDinamico-19',
+						'CardDinamico-20',
+						'CardDinamico-21',
+						'CardDinamico-22',
+					]);
+				}
 			}
 			if (progress >= 14) {
 				setBlock9(true);
 				goRef = block9Ref;
-				setInteractics([...interactics, 'quiz']);
+				if (progress > 14) {
+					setInteractics([...interactics, 'quiz']);
+				}
 			}
 
 			if (goRef != null) {
@@ -475,14 +491,17 @@ const { navigateTo } = useNavigation();
 						gap: { xs: 5, md: 8, xl: 10 },
 					}}
 				>
-<Box sx={{
-display: 'flex',
-justifyContent: 'center',
-alignItems: 'center',
-width: '100%',
-flexDirection: 'column',}}>
-					<Subtitle text='Como poderia ter sido evitado?' />
-<Typography
+					<Box
+						sx={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+							flexDirection: 'column',
+						}}
+					>
+						<Subtitle text='Como poderia ter sido evitado?' />
+						<Typography
 							variant='body1'
 							color='secondary'
 							align='justify'
@@ -493,7 +512,10 @@ flexDirection: 'column',}}>
 								fontWeight: '300',
 								fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
 							}}
-						>Clique nos cads para saber:</Typography></Box>
+						>
+							Clique nos cads para saber:
+						</Typography>
+					</Box>
 					<Box
 						sx={{
 							display: 'flex',
@@ -512,12 +534,12 @@ flexDirection: 'column',}}>
 						<CardDinamico
 							texto='Atualizar firmware: Certifique-se de que o dispositivo esteja rodando a versão mais recente do firmware, com correções de segurança aplicadas.'
 							callback={e => addInteractics('CardDinamico-2')}
-							isActive={LoggedUser.get().progress >= 7}
+							isActive={LoggedUser.get().progress > 7}
 						/>
 						<CardDinamico
 							texto='Usar redes Wi-Fi seguras: Configure o Wi-Fi com criptografia forte (WPA3, se disponível) e altere a senha periodicamente.'
 							callback={e => addInteractics('CardDinamico-3')}
-							isActive={LoggedUser.get().progress >= 7}
+							isActive={LoggedUser.get().progress > 7}
 						/>
 					</Box>
 					<Box
@@ -533,17 +555,17 @@ flexDirection: 'column',}}>
 						<CardDinamico
 							texto='Desativar acesso remoto não necessário: Se você não precisa acessar o dispositivo remotamente, desative essa função.'
 							callback={e => addInteractics('CardDinamico-4')}
-							isActive={LoggedUser.get().progress >= 7}
+							isActive={LoggedUser.get().progress > 7}
 						/>
 						<CardDinamico
 							texto='Configurar autenticação de dois fatores (2FA): Caso disponível, ative 2FA para maior segurança no login.'
 							callback={e => addInteractics('CardDinamico-5')}
-							isActive={LoggedUser.get().progress >= 7}
+							isActive={LoggedUser.get().progress > 7}
 						/>
 						<CardDinamico
 							texto='Monitorar atividades suspeitas: Fique atento a comportamentos estranhos, como movimentos inesperados da câmera.'
 							callback={e => addInteractics('CardDinamico-6')}
-							isActive={LoggedUser.get().progress >= 7}
+							isActive={LoggedUser.get().progress > 7}
 						/>
 					</Box>
 					<Botao.Primary
@@ -732,7 +754,7 @@ flexDirection: 'column',}}>
 					<Box
 						sx={{
 							display: 'flex',
-							width: {xs:'100%', md:'50%'},
+							width: { xs: '100%', md: '50%' },
 							justifyContent: 'top',
 							flexDirection: 'column',
 							alignItems: 'center',
@@ -748,7 +770,7 @@ flexDirection: 'column',}}>
 							maxWidth='50rem'
 							sx={{
 								fontFamily: 'Poppins',
-								color: '#fff', 
+								color: '#fff',
 								fontWeight: '300',
 								fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
 							}}
@@ -757,7 +779,7 @@ flexDirection: 'column',}}>
 							em verificar para receber um feedback:
 						</Typography>
 
-						<PasswordComponent  callback={() => addInteractics('PasswordComponent-1')} />
+						<PasswordComponent callback={() => addInteractics('PasswordComponent-1')} />
 					</Box>
 					<Botao.Primary
 						text='Continuar'
@@ -934,7 +956,7 @@ flexDirection: 'column',}}>
 						saber se é ou não um phishing, baseado em tudo que você aprendeu até agora. Clique
 						em nos botões para dizer se é ou não phishing.
 					</Typography>
-					<PhishingTest callback={addInteractics('phishing-test')} />
+					<PhishingTest callback={e => addInteractics('phishing-test')} />
 					<Botao.Primary
 						text='Continuar'
 						onClick={handleUnlockBlock7}
@@ -1145,21 +1167,25 @@ flexDirection: 'column',}}>
 								frontText='Perda ou Roubo de Dispositivos'
 								backText='Proteja dispositivos removíveis com criptografia e senhas fortes para evitar acesso não autorizado em caso de perda ou roubo.'
 								callback={e => addInteractics('CardFlip-1')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 							<CardFlip
 								frontText='Aplicativos Maliciosos'
 								backText='Evite executar arquivos ou programas desconhecidos em mídias removíveis e mantenha um antivírus atualizado no sistema.'
 								callback={e => addInteractics('CardFlip-2')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 							<CardFlip
 								frontText='Conexões Wi-Fi Públicas'
 								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
 								callback={e => addInteractics('CardFlip-3')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 							<CardFlip
 								frontText='Configurações Inseguras de Redes Wi-Fi'
 								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
 								callback={e => addInteractics('CardFlip-4')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 						</Box>
 						<Box
@@ -1176,16 +1202,19 @@ flexDirection: 'column',}}>
 								frontText='Dispositivos IoT Vulneráveis'
 								backText='Não conecte mídias removíveis a dispositivos IoT sem verificar se estão atualizados e protegidos contra ameaças conhecidas.'
 								callback={e => addInteractics('CardFlip-5')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 							<CardFlip
 								frontText='Falta de Atualizações'
 								backText='Certifique-se de que os sistemas e dispositivos que utilizam mídias removíveis estejam sempre atualizados para corrigir vulnerabilidades.'
 								callback={e => addInteractics('CardFlip-6')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 							<CardFlip
 								frontText='.Ataques de Spoofing em Redes Públicas'
 								backText='Evite conectar mídias removíveis em dispositivos desconhecidos, pois ataques de spoofing podem comprometer dados transferidos.'
 								callback={e => addInteractics('CardFlip-7')}
+								isActive={LoggedUser.get().progress > 13}
 							/>
 						</Box>{' '}
 					</Box>{' '}
@@ -1267,7 +1296,11 @@ flexDirection: 'column',}}>
 					</Typography>
 					<QuizComponent
 						question='Qual das seguintes práticas ajuda a prevenir ataques de phishing?'
-						options={['Clicar em links de fontes desconhecidas', 'Verificar a autenticidade do remetente antes de clicar em links ou abrir anexos', 'Ignorar atualizações de segurança']}
+						options={[
+							'Clicar em links de fontes desconhecidas',
+							'Verificar a autenticidade do remetente antes de clicar em links ou abrir anexos',
+							'Ignorar atualizações de segurança',
+						]}
 						correctAnswer='Verificar a autenticidade do remetente antes de clicar em links ou abrir anexos'
 						callback={e => addInteractics('quiz')}
 					/>

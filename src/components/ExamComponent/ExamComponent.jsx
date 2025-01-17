@@ -201,7 +201,7 @@ const ExamComponent = ({ onComplete }) => {
 							'&:hover': { color: '#FFF' },
 						}}
 					>
-						Responder aaaaa
+						Responder
 					</Button>
 				</Box>
 			) : (
