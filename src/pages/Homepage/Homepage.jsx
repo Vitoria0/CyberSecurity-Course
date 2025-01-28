@@ -1,21 +1,12 @@
 import { useState, useEffect } from 'react';
-import {
-	Box,
-	Typography,
-	TextField,
-	Button,
-	InputAdornment,
-	IconButton,
-	CircularProgress,
-	Alert
-} from '@mui/material';
+import { Box, Typography, TextField, Button, InputAdornment, IconButton, CircularProgress, Alert } from '@mui/material';
 import background from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 
 const Homepage = () => {
-	const [formData, setFormData] = useState({password: '', confirmPassword: '' });
+	const [formData, setFormData] = useState({ password: '', confirmPassword: '' });
 	const [showPassword, setShowPassword] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -27,12 +18,12 @@ const Homepage = () => {
 		return () => clearTimeout(timeout);
 	}, []);
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		const { name, value } = e.target;
-		setFormData((prevData) => ({ ...prevData, [name]: value }));
+		setFormData(prevData => ({ ...prevData, [name]: value }));
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async e => {
 		e.preventDefault();
 		setIsLoading(true);
 		setError('');
@@ -47,9 +38,9 @@ const Homepage = () => {
 		try {
 			// Aqui você pode adicionar a lógica para redefinir a senha.
 			// Por exemplo, chamar um serviço de API.
-			await new Promise((resolve) => setTimeout(resolve, 2000)); // Simula uma chamada de API.
+			await new Promise(resolve => setTimeout(resolve, 2000)); // Simula uma chamada de API.
 			setSuccess(true);
-			setFormData({password: '', confirmPassword: '' });
+			setFormData({ password: '', confirmPassword: '' });
 		} catch (err) {
 			setError('Ocorreu um erro ao redefinir a senha. Tente novamente mais tarde.');
 		} finally {
@@ -85,8 +76,8 @@ const Homepage = () => {
 					gap: 2,
 					margin: '0 auto',
 					display: 'flex',
-					flexDirection: 'column', 
-alignItems: 'start',
+					flexDirection: 'column',
+					alignItems: 'start',
 					transition: 'all 700ms ease-in-out',
 					transform: isVisible ? 'scale(1)' : 'scale(0.5)',
 					opacity: isVisible ? 1 : 0,
@@ -133,7 +124,11 @@ alignItems: 'start',
 												edge='end'
 												sx={{ '&:focus': { border: 'none' } }}
 											>
-												{showPassword ? <VisibilityOff /> : <Visibility />}
+												{showPassword ? (
+													<VisibilityOff />
+												) : (
+													<Visibility />
+												)}
 											</IconButton>
 										</InputAdornment>
 									),
@@ -160,7 +155,11 @@ alignItems: 'start',
 								sx={{ marginTop: 2 }}
 								disabled={isLoading}
 							>
-								{isLoading ? <CircularProgress size={24} sx={{ color: '#fff' }} /> : 'Redefinir Senha'}
+								{isLoading ? (
+									<CircularProgress size={24} sx={{ color: '#fff' }} />
+								) : (
+									'Redefinir Senha'
+								)}
 							</Button>
 						</form>
 					</Box>
@@ -176,7 +175,11 @@ alignItems: 'start',
 					>
 						<img
 							src={img}
-							style={{ width: '100%', objectFit: 'contain', transform: 'translateX(-5rem)' }}
+							style={{
+								width: '100%',
+								objectFit: 'contain',
+								transform: 'translateX(-5rem)',
+							}}
 						/>
 					</Box>
 				</Box>
