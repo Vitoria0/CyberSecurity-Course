@@ -1,21 +1,10 @@
 import { useState, useEffect } from 'react';
-import {
-	Box,
-	Typography,
-	TextField,
-	Link,
-	Button,
-	InputAdornment,
-	IconButton,
-	CircularProgress,
-	Alert,
-} from '@mui/material';
-import background from '../../assets/img/Finalizacao.png';
-import Title from '../../components/Texts/title';
+import { Box, TextField, Button, InputAdornment, IconButton, CircularProgress, Alert } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 import { useNavigation } from '../../hooks/NavigationContext';
-import { loginWithEmailAndPassword, createUserWithEmailAndPassword, LoggedUser } from '../../services/authService';
+import { loginWithEmailAndPassword, LoggedUser } from '../../services/authService';
+import Subtitle from '../../components/Texts/subtitle';
 
 const Homepage = () => {
 	const { navigateTo } = useNavigation();
@@ -45,24 +34,9 @@ const Homepage = () => {
 			if (isLogin) {
 				await loginWithEmailAndPassword(formData.email, formData.password);
 				if (LoggedUser.get()) {
-					if (LoggedUser.get().isPaying == true) {
-						navigateTo('Menu');
-					} else {
-						setIsPaying(true);
-					}
+					navigateTo('Menu');
 				} else {
 					setError('Usuário ou senha incorretos');
-				}
-			} else {
-				const user = await createUserWithEmailAndPassword(
-					formData.name,
-					formData.email,
-					formData.password,
-				);
-				if (user !== null) {
-					setIsLogin(true);
-				} else {
-					setError('Erro ao criar conta. Tente novamente.');
 				}
 			}
 		} catch (error) {
@@ -76,10 +50,6 @@ const Homepage = () => {
 		}
 	};
 
-	const toggleForm = () => {
-		setIsLogin(!isLogin);
-	};
-
 	const handleClickShowPassword = () => {
 		setShowPassword(!showPassword);
 	};
@@ -90,8 +60,8 @@ const Homepage = () => {
 				display: 'flex',
 				justifyContent: 'center',
 				flexDirection: 'column',
-				backgroundImage: `url(${background})`,
-				backgroundSize: { xs: 'cover', md: '100vw' },
+				background: '#04000F',
+
 				backgroundRepeat: 'no-repeat',
 				alignItems: 'center',
 				width: '100%',
@@ -104,88 +74,32 @@ const Homepage = () => {
 		>
 			<Box
 				sx={{
-					alignItems: isPaying ? 'center' : 'start',
-					width: '80%',
+					alignItems: 'center',
+					width: '100%',
+					height: '100%',
 					gap: 2,
-					margin: '0 auto',
 					display: 'flex',
 					justifyContent: 'start',
-					flexDirection: 'column',
-					transition: 'all 700ms ease-in-out',
-					transform: isVisible ? 'scale(1)' : 'scale(0.5)',
-					opacity: isVisible ? 1 : 0,
+					flexDirection: 'row-reverse',
 				}}
 			>
-				<Title text='Segurança da Informação' />
-
-				{isPaying ? (
+				<Box
+					sx={{
+						width: { xs: '100%', md: '40%' },
+						px: 4,
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'start',
+						flexDirection: 'row',
+					}}
+				>
 					<Box
 						sx={{
 							display: 'flex',
 							flexDirection: 'column',
-							alignItems: 'center',
-							gap: 2,
-							padding: 2,
-							background: '#FFF',
-							borderRadius: 2,
-							maxWidth: '400px',
-						}}
-					>
-						<Typography variant='body1' color='#000' align='left' gutterBottom>
-							Estamos muito felizes em tê-lo(a) conosco! Para aproveitar todo o conteúdo do
-							curso, é necessário realizar o pagamento. Caso ainda não tenha feito, clique
-							no botão abaixo para concluir essa etapa.
-						</Typography>
-						<Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, width: '100%' }}>
-							<Button
-								variant='outlined'
-								onClick={() => {
-									setIsPaying(false);
-								}}
-								color='primary'
-								sx={{
-									px: { xs: 1, sm: 1.5, md: 2, xl: 3 },
-									py: { xs: 1, sm: 1, md: 1.5 },
-									borderRadius: '10px'
-								}}
-							>
-								Voltar
-							</Button>
-							<Button
-								variant='contained'
-								color='primary'
-								href='https://w.app/OVacNf'
-								target='_blank'
-								rel='noopener noreferrer'
-								sx={{
-									color: '#FFF',
-									px: { xs: 1, sm: 1.5, md: 2, xl: 3 },
-									py: { xs: 1, sm: 1, md: 1.5 },
-									borderRadius: '10px',
-									boxShadow: '0px 10px 10px #FE706270',
-									transition: 'all 200ms ease-in-out',
-									'&:hover': {
-										border: 0,
-										transform: 'scale(1.03)',
-										color: '#FFF',
-									},
-									'&:focus': {
-										outline: 'none',
-										color: '#FFF',
-									},
-								}}
-							>
-								Realizar Pagamento
-							</Button>
-						</Box>
-					</Box>
-				) : (
-					<Box
-						sx={{
+							gap: 3,
 							width: '100%',
-							display: 'flex',
-							justifyContent: 'space-between',
-							alignItems: 'start',
+							maxWidth: '450px',
 						}}
 					>
 						<Box
@@ -194,22 +108,13 @@ const Homepage = () => {
 								flexDirection: 'column',
 								gap: 3,
 								width: '100%',
-								maxWidth: '450px',
+								background: '#181324',
+								borderRadius: '10px',
+								padding: '20px',
 							}}
 						>
+							<Subtitle text={'Segurança da Informação Admin'} />
 							<form onSubmit={handleSubmit}>
-								{!isLogin && (
-									<TextField
-										label='Nome'
-										variant='outlined'
-										color='primary'
-										fullWidth
-										margin='normal'
-										name='name'
-										value={formData.name}
-										onChange={handleChange}
-									/>
-								)}
 								<TextField
 									label='Email'
 									variant='outlined'
@@ -279,53 +184,31 @@ const Homepage = () => {
 								>
 									{isLoading ? (
 										<CircularProgress size={24} sx={{ color: '#fff' }} />
-									) : isLogin ? (
-										'Entrar'
 									) : (
-										'Cadastrar'
+										'Entrar'
 									)}
 								</Button>
 							</form>
-							<Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 2 }}>
-								<Link
-									component='button'
-									variant='body2'
-									color='primary'
-									onClick={toggleForm}
-								>
-									{isLogin ? 'Cadastrar-se' : 'Já tenho uma conta'}
-								</Link>
-								<Link
-									component='button'
-									variant='body2'
-									color='primary'
-									onClick={() => alert('Redirecionar para o "Esqueci a senha"')}
-								>
-									Esqueci a senha
-								</Link>
-							</Box>
-						</Box>
-						<Box
-							sx={{
-								width: '40%',
-								display: { xs: 'none', lg: 'flex' },
-								justifyContent: 'center',
-								height: '20rem',
-								alignItems: 'center',
-								flexDirection: 'column',
-							}}
-						>
-							<img
-								src={img}
-								style={{
-									width: '100%',
-									objectFit: 'contain',
-									transform: 'translateX(-5rem)',
-								}}
-							/>
+							<Box
+								sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 2 }}
+							></Box>
 						</Box>
 					</Box>
-				)}
+				</Box>
+
+				<Box
+					sx={{
+						width: { xs: '0', md: '100%' },
+						height: '100%',
+						backgroundImage: `url(${img})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						display: { xs: 'none', lg: 'flex' },
+						justifyContent: 'center',
+						alignItems: 'center',
+						flexDirection: 'column',
+					}}
+				></Box>
 			</Box>
 		</Box>
 	);

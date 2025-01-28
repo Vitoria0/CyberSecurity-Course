@@ -179,7 +179,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.23.2", "@babel/runtime@^7.23.9", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.23.2", "@babel/runtime@^7.23.9", "@babel/runtime@^7.25.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.26.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@babel/runtime/-/@babel/runtime-7.26.0.tgz"
   integrity sha1-hgDC9ZXyd8YIFSVkGLhTVqZRc8E=
@@ -277,7 +277,7 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@emotion/memoize/-/@emotion/memoize-0.7.4.tgz"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw== sha1-Gb8PWvGRSREcQNmLsM+CEZ9dnus=
 
-"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.11.1", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0":
+"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.11.1", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0", "@emotion/react@^11.9.0":
   version "11.11.1"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@emotion/react/-/@emotion/react-11.11.1.tgz"
   integrity sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA== sha1-ssNq+slbGE9zsI2owhT9+GH6QVc=
@@ -307,7 +307,7 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@emotion/sheet/-/@emotion/sheet-1.2.2.tgz"
   integrity sha512-0QBtGvaqtWi+nx6doRwDdBIzhNdZrXUppvTM4dtZZWEGTXL/XE/yJxLMGlDT1Gt+UHH5IX1n+jkXyytE/av7OA== sha1-1Y54juJyZ6FDQjA+Grs9UIttD+w=
 
-"@emotion/styled@^11.11.0", "@emotion/styled@^11.3.0":
+"@emotion/styled@^11.11.0", "@emotion/styled@^11.3.0", "@emotion/styled@^11.8.1":
   version "11.11.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@emotion/styled/-/@emotion/styled-11.11.0.tgz"
   integrity sha512-hM5Nnvu9P3midq5aaXj4I+lnSfNi7Pmd4EWk1fOZ3pxookaQTNew6bp4JaCBYM4HVFZF9g7UjJmsUmC2JlxOng== sha1-JrdeG1obemKdfAqLcI+/Wpzc40Y=
@@ -847,7 +847,7 @@
   dependencies:
     "@babel/runtime" "^7.22.15"
 
-"@mui/material@^5.0.0", "@mui/material@^5.14.11":
+"@mui/material@^5.0.0", "@mui/material@^5.14.11", "@mui/material@^5.15.14 || ^6.0.0":
   version "5.16.7"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/material/-/@mui/material-5.16.7.tgz"
   integrity sha1-boFOLu/a8GWnac7PVJw1aeEHpQs=
@@ -884,7 +884,7 @@
     csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/system@^5.16.7":
+"@mui/system@^5.15.14 || ^6.0.0", "@mui/system@^5.16.7":
   version "5.16.7"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/system/-/@mui/system-5.16.7.tgz"
   integrity sha1-RYPKW/OziULgLBWh5iK6hprFE5M=
@@ -903,7 +903,7 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/types/-/@mui/types-7.2.19.tgz"
   integrity sha1-yUGVTdJDk/3OXweDDUREDPSrbIA=
 
-"@mui/utils@^5.16.6":
+"@mui/utils@^5.16.6", "@mui/utils@^5.16.6 || ^6.0.0":
   version "5.16.6"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/utils/-/@mui/utils-5.16.6.tgz"
   integrity sha1-kFh1u8WNPcwkUxwzFKaAeroipxE=
@@ -914,6 +914,49 @@
     clsx "^2.1.1"
     prop-types "^15.8.1"
     react-is "^18.3.1"
+
+"@mui/x-charts-vendor@7.20.0":
+  version "7.20.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/x-charts-vendor/-/@mui/x-charts-vendor-7.20.0.tgz"
+  integrity sha1-tYWLkdoL3k+cMfU2DQWt4LbrXjE=
+  dependencies:
+    "@babel/runtime" "^7.25.7"
+    "@types/d3-color" "^3.1.3"
+    "@types/d3-delaunay" "^6.0.4"
+    "@types/d3-interpolate" "^3.0.4"
+    "@types/d3-scale" "^4.0.8"
+    "@types/d3-shape" "^3.1.6"
+    "@types/d3-time" "^3.0.3"
+    d3-color "^3.1.0"
+    d3-delaunay "^6.0.4"
+    d3-interpolate "^3.0.1"
+    d3-scale "^4.0.2"
+    d3-shape "^3.2.0"
+    d3-time "^3.1.0"
+    delaunator "^5.0.1"
+    robust-predicates "^3.0.2"
+
+"@mui/x-charts@^7.24.1":
+  version "7.24.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/x-charts/-/@mui/x-charts-7.24.1.tgz"
+  integrity sha1-jdDkqR6eM9FFk7dw2Mh9bAeUHos=
+  dependencies:
+    "@babel/runtime" "^7.25.7"
+    "@mui/utils" "^5.16.6 || ^6.0.0"
+    "@mui/x-charts-vendor" "7.20.0"
+    "@mui/x-internals" "7.24.1"
+    "@react-spring/rafz" "^9.7.5"
+    "@react-spring/web" "^9.7.5"
+    clsx "^2.1.1"
+    prop-types "^15.8.1"
+
+"@mui/x-internals@7.24.1":
+  version "7.24.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@mui/x-internals/-/@mui/x-internals-7.24.1.tgz"
+  integrity sha1-NNY/E9sKxMJAM3NaEe+r4Lnw+3M=
+  dependencies:
+    "@babel/runtime" "^7.25.7"
+    "@mui/utils" "^5.16.6 || ^6.0.0"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1009,6 +1052,51 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-dnd/shallowequal/-/@react-dnd/shallowequal-4.0.2.tgz"
   integrity sha512-/RVXdLvJxLg4QKvMoM5WlwNR9ViO9z8B/qPcc+C0Sa/teJY7QG7kJ441DwzOjMYEY7GmU4dj5EcGHIkKZiQZCA== sha1-0bS++kI/aS+kq/HHkglwLn2K5LQ=
 
+"@react-spring/animated@~9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/animated/-/@react-spring/animated-9.7.5.tgz"
+  integrity sha1-6wNzqvmbh5c2s4DCgpMS2uOwXyg=
+  dependencies:
+    "@react-spring/shared" "~9.7.5"
+    "@react-spring/types" "~9.7.5"
+
+"@react-spring/core@~9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/core/-/@react-spring/core-9.7.5.tgz"
+  integrity sha1-chWQefUsHBKBPXi1LU8XwL9kEfc=
+  dependencies:
+    "@react-spring/animated" "~9.7.5"
+    "@react-spring/shared" "~9.7.5"
+    "@react-spring/types" "~9.7.5"
+
+"@react-spring/rafz@^9.7.5", "@react-spring/rafz@~9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/rafz/-/@react-spring/rafz-9.7.5.tgz"
+  integrity sha1-7nlZZ257XWo4E+jBfV5Q35i5Xfk=
+
+"@react-spring/shared@~9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/shared/-/@react-spring/shared-9.7.5.tgz"
+  integrity sha1-bVE2It9q11C7vU3ttMoKZT7JIHM=
+  dependencies:
+    "@react-spring/rafz" "~9.7.5"
+    "@react-spring/types" "~9.7.5"
+
+"@react-spring/types@~9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/types/-/@react-spring/types-9.7.5.tgz"
+  integrity sha1-5d0YDz7ZhbRP0s0vMqqSA3Uu8+g=
+
+"@react-spring/web@^9.7.5":
+  version "9.7.5"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@react-spring/web/-/@react-spring/web-9.7.5.tgz"
+  integrity sha1-fXeCVgs6b7kGa1KCRpDac4YF3oA=
+  dependencies:
+    "@react-spring/animated" "~9.7.5"
+    "@react-spring/core" "~9.7.5"
+    "@react-spring/shared" "~9.7.5"
+    "@react-spring/types" "~9.7.5"
+
 "@remix-run/router@1.9.0":
   version "1.9.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@remix-run/router/-/@remix-run/router-1.9.0.tgz"
@@ -1046,6 +1134,47 @@
   integrity sha512-ojlGK1Hsfce93J0+kn3H5R73elidKUaZonirN33GSmgTUMpzI/MIFfSpF3haANe3G1bEBS9/9/QEqwTzwqFsKw== sha1-Td+Z2Vz92Ub/NdK2XJeNnJvyZF0=
   dependencies:
     "@babel/types" "^7.20.7"
+
+"@types/d3-color@*", "@types/d3-color@^3.1.3":
+  version "3.1.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-color/-/@types/d3-color-3.1.3.tgz"
+  integrity sha1-NoyWGhjech2oIA6AvzlD+1MTavI=
+
+"@types/d3-delaunay@^6.0.4":
+  version "6.0.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-delaunay/-/@types/d3-delaunay-6.0.4.tgz"
+  integrity sha1-GFwagMyAf92io/6WD3wRxKJ5UuE=
+
+"@types/d3-interpolate@^3.0.4":
+  version "3.0.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-interpolate/-/@types/d3-interpolate-3.0.4.tgz"
+  integrity sha1-QSuQ6EhwKF8v+KhGxutgNE8SpBw=
+  dependencies:
+    "@types/d3-color" "*"
+
+"@types/d3-path@*":
+  version "3.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-path/-/@types/d3-path-3.1.0.tgz"
+  integrity sha1-K5B63Odip46Ygo8LQ46sozmuQQo=
+
+"@types/d3-scale@^4.0.8":
+  version "4.0.8"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-scale/-/@types/d3-scale-4.0.8.tgz"
+  integrity sha1-1Am1+dz2MHRGS/jd+47loflZRbs=
+  dependencies:
+    "@types/d3-time" "*"
+
+"@types/d3-shape@^3.1.6":
+  version "3.1.7"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-shape/-/@types/d3-shape-3.1.7.tgz"
+  integrity sha1-K3tCPcLf5pyMk1luZz43RDNIxVU=
+  dependencies:
+    "@types/d3-path" "*"
+
+"@types/d3-time@*", "@types/d3-time@^3.0.3":
+  version "3.0.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/d3-time/-/@types/d3-time-3.0.4.tgz"
+  integrity sha1-hHL+7NY5aRRQ3YAA6zPt1EThMj8=
 
 "@types/node@>= 12", "@types/node@>= 14", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
   version "22.10.5"
@@ -1451,6 +1580,74 @@ csstype@^3.0.2, csstype@^3.1.3:
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/csstype/-/csstype-3.1.3.tgz"
   integrity sha1-2A/ylNEU+w5qxQD7+FtgE31+/4E=
 
+"d3-array@2 - 3", "d3-array@2.10.0 - 3":
+  version "3.2.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-array/-/d3-array-3.2.4.tgz"
+  integrity sha1-Ff7DOyN/l6xdfJhtx32ic6jtC7U=
+  dependencies:
+    internmap "1 - 2"
+
+d3-color@^3.1.0, "d3-color@1 - 3":
+  version "3.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-color/-/d3-color-3.1.0.tgz"
+  integrity sha1-OVsoM9+scVB/EqwvevI7+BneJOI=
+
+d3-delaunay@^6.0.4:
+  version "6.0.4"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-delaunay/-/d3-delaunay-6.0.4.tgz"
+  integrity sha1-mBaQOHM6ClurvtpVBU95W7nkpYs=
+  dependencies:
+    delaunator "5"
+
+"d3-format@1 - 3":
+  version "3.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-format/-/d3-format-3.1.0.tgz"
+  integrity sha1-kmDiOijqXLEJ6TshoG4k4uvVVkE=
+
+d3-interpolate@^3.0.1, "d3-interpolate@1.2.0 - 3":
+  version "3.0.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-interpolate/-/d3-interpolate-3.0.1.tgz"
+  integrity sha1-PEeqWzLFs9+1bvP9Q0IHimMrQA0=
+  dependencies:
+    d3-color "1 - 3"
+
+d3-path@^3.1.0:
+  version "3.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-path/-/d3-path-3.1.0.tgz"
+  integrity sha1-It+TkDL7WnGuixgA1h3beFHEJSY=
+
+d3-scale@^4.0.2:
+  version "4.0.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-scale/-/d3-scale-4.0.2.tgz"
+  integrity sha1-grOOjo/3CAdk+Nzsd71L45Nok5Y=
+  dependencies:
+    d3-array "2.10.0 - 3"
+    d3-format "1 - 3"
+    d3-interpolate "1.2.0 - 3"
+    d3-time "2.1.1 - 3"
+    d3-time-format "2 - 4"
+
+d3-shape@^3.2.0:
+  version "3.2.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-shape/-/d3-shape-3.2.0.tgz"
+  integrity sha1-oag5y9m6RfKGdMadf4Vbz5HfxqU=
+  dependencies:
+    d3-path "^3.1.0"
+
+"d3-time-format@2 - 4":
+  version "4.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-time-format/-/d3-time-format-4.1.0.tgz"
+  integrity sha1-erUlelBB0R7LT+cKXH0WoZW7QIo=
+  dependencies:
+    d3-time "1 - 3"
+
+d3-time@^3.1.0, "d3-time@1 - 3", "d3-time@2.1.1 - 3":
+  version "3.1.0"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/d3-time/-/d3-time-3.1.0.tgz"
+  integrity sha1-kxDbVumS48AXXh7zheVF5Iqbtcc=
+  dependencies:
+    d3-array "2 - 3"
+
 debug@^4.1.0, debug@^4.1.1, debug@^4.3.2:
   version "4.3.4"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/debug/-/debug-4.3.4.tgz"
@@ -1485,6 +1682,13 @@ define-properties@^1.1.3, define-properties@^1.1.4, define-properties@^1.2.0, de
     define-data-property "^1.0.1"
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
+
+delaunator@^5.0.1, delaunator@5:
+  version "5.0.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/delaunator/-/delaunator-5.0.1.tgz"
+  integrity sha1-OQMrCAU5I+kk1glP4s3hqZzFEng=
+  dependencies:
+    robust-predicates "^3.0.2"
 
 detect-node@^2.0.4, detect-node@^2.1.0:
   version "2.1.0"
@@ -2165,6 +2369,11 @@ internal-slot@^1.0.5:
     has "^1.0.3"
     side-channel "^1.0.4"
 
+"internmap@1 - 2":
+  version "2.0.3"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/internmap/-/internmap-2.0.3.tgz"
+  integrity sha1-ZoXyN1XkPFJOJR0py8lySOMGEAk=
+
 is-array-buffer@^3.0.1, is-array-buffer@^3.0.2:
   version "3.0.2"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/is-array-buffer/-/is-array-buffer-3.0.2.tgz"
@@ -2801,7 +3010,7 @@ react-dnd@^16.0.1:
     fast-deep-equal "^3.1.3"
     hoist-non-react-statics "^3.3.2"
 
-"react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.6.0, react-dom@>=16.8:
+"react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0 || ^19.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.6.0, react-dom@>=16.8:
   version "18.2.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g== sha1-IqrzhwjbJnTtmtoiTKSqcI2CHj0=
@@ -2889,7 +3098,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16.14", react@>=16.6.0, react@>=16.8, react@>=16.8.0:
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0 || ^19.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16.14", react@>=16.6.0, react@>=16.8, react@>=16.8.0:
   version "18.2.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ== sha1-VVvZhZKIMlX6AN4U8RUakXtdd9U=
@@ -2983,6 +3192,11 @@ rimraf@^3.0.2, rimraf@3.0.2:
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA== sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
   dependencies:
     glob "^7.1.3"
+
+robust-predicates@^3.0.2:
+  version "3.0.2"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/robust-predicates/-/robust-predicates-3.0.2.tgz"
+  integrity sha1-1bKFKMSCTSD8SN8ZKNQdnvoa13E=
 
 rollup-plugin-glob-import@^0.5.0:
   version "0.5.0"

@@ -16,6 +16,7 @@
     "@firebase/firestore": "^4.7.5",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
+    "@mui/x-charts": "^7.24.1",
     "firebase": "^11.1.0",
     "framer-motion": "^10.16.4",
     "jspdf": "^2.5.2",
