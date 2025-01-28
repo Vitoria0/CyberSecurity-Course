@@ -54,6 +54,7 @@ const Homepage = () => {
 					setError('Usuário ou senha incorretos');
 				}
 			} else {
+debugger
 				const user = await createUserWithEmailAndPassword(
 					formData.name,
 					formData.email,
@@ -61,6 +62,7 @@ const Homepage = () => {
 				);
 				if (user !== null) {
 					setIsLogin(true);
+					setIsPaying(true);
 				} else {
 					setError('Erro ao criar conta. Tente novamente.');
 				}
