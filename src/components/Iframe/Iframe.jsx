@@ -61,7 +61,7 @@ const IframePlayer = ({ videoUrl, onVideoEnd }) => {
 					<ReactPlayer
 						url={videoUrl}
 						playing={isPlaying}
-						controls={false}
+						controls={true}
 						width='100%'
 						height='100%'
 						onEnded={() => {

@@ -462,7 +462,7 @@ const Modulo02 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
+							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V2-Hacker-invade-baba-eletronica.mp4'
 						}
 						onVideoEnd={() => addInteractics('video-1')}
 					/>
@@ -883,7 +883,7 @@ const Modulo02 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
+							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V3-Phishing.mp4'
 						}
 						onVideoEnd={e => addInteractics('video-2')}
 					/>
@@ -1237,7 +1237,7 @@ const Modulo02 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
+							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V4-Antiviruz.mp4'
 						}
 						onVideoEnd={e => addInteractics('video-3')}
 					/>

@@ -464,7 +464,7 @@ const Modulo01 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/SEGURAN%C3%87A%20DA%20INFORMA%C3%87%C3%83O%20(online-video-cutter.com).mp4'
+							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V1-Seguranca-da-Informacao.mp4'
 						}
 						onVideoEnd={() => addInteractics('video')}
 					/>
