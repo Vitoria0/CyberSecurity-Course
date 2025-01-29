@@ -2,7 +2,6 @@ import { auth, db } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
-import axios from 'axios';
 
 // Classe estática para representar o usuário logado
 export class LoggedUser {
@@ -59,13 +58,9 @@ export async function logout() {
 // Função para criar um novo usuário
 export async function createUserWithEmailAndPassword(name, email, password) {
 	try {
-		const response = await axios.post('https://us-central1-cybersecuritycourse-eaf81.cloudfunctions.net/createUser3', {
-			email: email,
-			password: password,
-			name: name,
-		  });
-	  
-		  console.log('Resposta:', response.data);
+		const functions = getFunctions();
+		const callableReturnMessage = httpsCallable(functions, 'createUser');
+		const userCredential = await callableReturnMessage({ name, email, password });
 		return userCredential.user;
 	} catch (error) {
 		console.error('Erro ao criar usuário:', error);

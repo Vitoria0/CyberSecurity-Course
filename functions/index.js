@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const { v4: uuidv4 } = require('uuid');
 
-var serviceAccount = require('./cybersecuritycourse-eaf81-047ef8463fa1.json');
+var serviceAccount = require('./cybersecuritycourse-eaf81-b4defc3c9988.json');
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
@@ -20,48 +20,42 @@ const functions = require('firebase-functions');
 
 const corsHandler = cors({ origin: true });
 
-exports.createUser3 = functions.https.onRequest((req, res) => {
-    corsHandler(req, res, async () => {
-        try {
-            if (req.method !== 'POST') {
-                return res.status(405).send({ error: 'Method not allowed' });
-            }
+exports.createUser = functions.https.onCall(async (data, context) => {
+	try {
+		if (data.accepted == true) {
+			throw new functions.https.HttpsError('permission-denied', 'permission-denied!');
+		}
+		const batch = db.batch();
 
-            const { accepted, email, password, name } = req.body;
+		// Criar o usuário no Firebase Authentication
+		const userRecord = await admin.auth().createUser({
+			email: data.email,
+			password: data.password,
+		});
 
-            if (accepted === true) {
-                return res.status(403).send({ error: 'permission-denied', message: 'Permission denied!' });
-            }
+		// Construir os dados do usuário
+		const timestamp = Number(moment().format('YYYYMMDDHHmmssSSS'));
+		const user = {
+			id: userRecord.uid,
+			name: data.name,
+			email: data.email,
+			accepted: false,
+			createdAt: timestamp,
+			updatedAt: timestamp,
+			profile: 1,
+		};
 
-            const batch = db.batch();
+		// Adicionar o usuário ao Firestore
+		const userRef = db.collection('users').doc(user.id);
+		batch.set(userRef, user);
 
-            // Criar o usuário no Firebase Authentication
-            const userRecord = await admin.auth().createUser({
-                email: email,
-                password: password,
-            });
+		// Commit das operações do Firestore
+		await batch.commit();
 
-            // Criar o objeto do usuário
-            const timestamp = Date.now();
-            const user = {
-                id: userRecord.uid,
-                name: name,
-                email: email,
-                accepted: false,
-                createdAt: timestamp,
-                updatedAt: timestamp,
-                profile: 1,
-            };
-
-            // Adicionar ao Firestore
-            const userRef = db.collection("users").doc(user.id);
-            batch.set(userRef, user);
-            await batch.commit();
-
-            return res.status(200).send({ status: 200, body: user });
-        } catch (error) {
-            console.error(error);
-            return res.status(500).send({ status: 500, body: { error: error.message } });
-        }
-    });
+		// Retornar o usuário criado
+		return { status: 200, body: user };
+	} catch (error) {
+		logger.error(error);
+		return { status: 500, body: { error: error, message: error.message } };
+	}
 });
