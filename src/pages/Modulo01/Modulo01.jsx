@@ -282,7 +282,7 @@ const Modulo01 = () => {
 							fontWeight: '300',
 						}}
 					>
-						Clique noscards para saber quais as <b>principais caracteristicas:</b>
+						Clique nos cards para saber quais as <b>principais caracteristicas:</b>
 					</Typography>
 					<Box
 						sx={{
@@ -433,7 +433,7 @@ const Modulo01 = () => {
 						>
 							Vivemos na era dos dados. Toda ação digital que realizamos – desde o envio de
 							e-mails até transações bancárias – gera dados valiosos. A proteção desses
-							dados é essencial para evitar consequências como
+							dados é essencial para evitar consequências como:
 						</Typography>
 						<Typography
 							variant='body1'
