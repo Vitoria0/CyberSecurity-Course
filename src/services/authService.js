@@ -1,5 +1,5 @@
 import { auth, db } from '../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 
@@ -44,6 +44,15 @@ export async function loginWithEmailAndPassword(email, password) {
 		}
 	} catch (error) {
 		console.error('Erro ao logar ou buscar dados:', error);
+		throw error;
+	}
+}
+
+export async function sendResetPasswordEmail(email) {
+	try {
+		const resp = sendPasswordResetEmail(auth, email)
+	} catch (error) {
+		console.error('Erro ao enviar e-mail de redefinição de senha:', error);
 		throw error;
 	}
 }

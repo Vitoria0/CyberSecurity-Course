@@ -15,12 +15,13 @@ import Title from '../../components/Texts/title';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 import { useNavigation } from '../../hooks/NavigationContext';
-import { loginWithEmailAndPassword, createUserWithEmailAndPassword, LoggedUser } from '../../services/authService';
+import { loginWithEmailAndPassword, createUserWithEmailAndPassword, LoggedUser , sendResetPasswordEmail} from '../../services/authService';
 
 const Homepage = () => {
 	const { navigateTo } = useNavigation();
 	const [isVisible, setIsVisible] = useState(false);
 	const [isLogin, setIsLogin] = useState(true);
+	const [isResetPassword, setIsResetPassword] = useState(false);
 	const [formData, setFormData] = useState({ email: '', password: '', name: '' });
 	const [showPassword, setShowPassword] = useState(false);
 	const [isPaying, setIsPaying] = useState(false);
@@ -42,7 +43,13 @@ const Homepage = () => {
 		setIsLoading(true);
 		setError('');
 		try {
-			if (isLogin) {
+			if(isResetPassword){
+				await sendResetPasswordEmail(formData.email, formData.password);
+				alert("Email enviado com sucesso!");
+				setIsResetPassword(false);
+				setIsLogin(true);
+			}
+			else if (isLogin) {
 				await loginWithEmailAndPassword(formData.email, formData.password);
 				if (LoggedUser.get()) {
 					if (LoggedUser.get().isPaying == true) {
@@ -79,6 +86,7 @@ const Homepage = () => {
 
 	const toggleForm = () => {
 		setIsLogin(!isLogin);
+		setIsResetPassword(false);
 	};
 
 	const handleClickShowPassword = () => {
@@ -199,7 +207,7 @@ const Homepage = () => {
 							}}
 						>
 							<form onSubmit={handleSubmit}>
-								{!isLogin && (
+								{!isLogin && !isResetPassword && (
 									<TextField
 										label='Nome'
 										variant='outlined'
@@ -221,51 +229,54 @@ const Homepage = () => {
 									value={formData.email}
 									onChange={handleChange}
 								/>
-								<TextField
-									label='Senha'
-									type={showPassword ? 'text' : 'password'}
-									variant='outlined'
-									color='secondary'
-									fullWidth
-									margin='normal'
-									name='password'
-									value={formData.password}
-									onChange={handleChange}
-									InputProps={{
-										endAdornment: (
-											<InputAdornment position='end'>
-												<IconButton
-													aria-label='toggle password visibility'
-													onClick={handleClickShowPassword}
-													edge='end'
-													sx={{
-														'&:focus': { border: 'none' },
-													}}
-												>
-													{showPassword ? (
-														<VisibilityOff
-															sx={{
-																color: '#fff',
-																'&:focus': {
-																	border: 'none',
-																},
-															}}
-														/>
-													) : (
-														<Visibility
-															sx={{
-																color: '#fff',
-																'&:focus': {
-																	border: 'none',
-																},
-															}}
-														/>
-													)}
-												</IconButton>
-											</InputAdornment>
-										),
-									}}
-								/>
+								{!isResetPassword && (
+									<TextField
+										label='Senha'
+										type={showPassword ? 'text' : 'password'}
+										variant='outlined'
+										color='secondary'
+										fullWidth
+										margin='normal'
+										name='password'
+										value={formData.password}
+										onChange={handleChange}
+										InputProps={{
+											endAdornment: (
+												<InputAdornment position='end'>
+													<IconButton
+														aria-label='toggle password visibility'
+														onClick={handleClickShowPassword}
+														edge='end'
+														sx={{
+															'&:focus': { border: 'none' },
+														}}
+													>
+														{showPassword ? (
+															<VisibilityOff
+																sx={{
+																	color: '#fff',
+																	'&:focus': {
+																		border: 'none',
+																	},
+																}}
+															/>
+														) : (
+															<Visibility
+																sx={{
+																	color: '#fff',
+																	'&:focus': {
+																		border: 'none',
+																	},
+																}}
+															/>
+														)}
+													</IconButton>
+												</InputAdornment>
+											),
+										}}
+									/>
+								)}
+
 								{error && (
 									<Alert severity='error' sx={{ marginTop: 2 }}>
 										{error}
@@ -282,6 +293,8 @@ const Homepage = () => {
 										<CircularProgress size={24} sx={{ color: '#fff' }} />
 									) : isLogin ? (
 										'Entrar'
+									) : isResetPassword ? (
+										'Enviar'
 									) : (
 										'Cadastrar'
 									)}
@@ -294,16 +307,16 @@ const Homepage = () => {
 									color='primary'
 									onClick={toggleForm}
 								>
-									{isLogin ? 'Cadastrar-se' : 'Já tenho uma conta'}
+									{(isLogin && !isResetPassword) ? 'Cadastrar-se' : 'Já tenho uma conta'}
 								</Link>
-								<Link
+								{!isResetPassword && <Link
 									component='button'
 									variant='body2'
 									color='primary'
-									onClick={() => alert('Redirecionar para o "Esqueci a senha"')}
+									onClick={() =>{ setIsResetPassword(true); setIsLogin(false); }}
 								>
 									Esqueci a senha
-								</Link>
+								</Link>}
 							</Box>
 						</Box>
 						<Box
