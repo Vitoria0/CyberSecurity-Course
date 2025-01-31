@@ -40,7 +40,7 @@ const Modulo03 = () => {
 			if (progress >= 16) {
 				setBlock1(true);
 				goRef = block1Ref;
-				if(progress > 16){
+				if (progress > 16) {
 					setInteractics([
 						...interactics,
 						'video-1',
@@ -53,12 +53,11 @@ const Modulo03 = () => {
 						'CardFlip-7',
 					]);
 				}
-				
 			}
 			if (progress >= 17) {
 				setBlock2(true);
 				goRef = block2Ref;
-				if(progress > 17){
+				if (progress > 17) {
 					setInteractics([
 						...interactics,
 						'CardFlip-8',
@@ -71,7 +70,6 @@ const Modulo03 = () => {
 						'quiz',
 					]);
 				}
-				
 			}
 
 			if (goRef != null) {
@@ -139,7 +137,6 @@ const Modulo03 = () => {
 				padding: 0,
 				paddingRight: { xs: 1, md: 0 },
 				color: '#fff',
-				gap: 8,
 			}}
 		>
 			<IconButton
@@ -211,6 +208,7 @@ const Modulo03 = () => {
 			{block1 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
@@ -228,7 +226,7 @@ const Modulo03 = () => {
 						reverse={true}
 						titulo='Dispositivos Móveis'
 						texto='Os dispositivos móveis são ferramentas indispensáveis no cotidiano moderno, permitindo acesso à internet, comunicações e trabalho remoto de qualquer lugar. No entanto, essa conveniência também traz desafios significativos de segurança. A mobilidade aumenta o risco de perda de dispositivos, roubo de dados e exposição a ataques maliciosos. Navegue pelo slide abaixo para saber mais sobre Riscos Associados a Dispositivos Móveis:'
-					/> 
+					/>
 					<Subtitle text='Ameaças e Como se Proteger' />
 					<Typography
 						variant='body1'
@@ -282,11 +280,6 @@ const Modulo03 = () => {
 								frontText='Conexões Wi-Fi Públicas'
 								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
 								callback={e => addInteractics('CardFlip-3')}
-							/>
-							<CardFlip
-								frontText='Configurações Inseguras de Redes Wi-Fi'
-								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
-								callback={e => addInteractics('CardFlip-4')}
 							/>
 						</Box>
 						<Box
@@ -393,100 +386,19 @@ const Modulo03 = () => {
 			{block2 && (
 				<Box
 					sx={{
+						mt: 8,
 						display: 'flex',
 						justifyContent: 'top',
 						flexDirection: 'column',
 						alignItems: 'center',
 						width: { xs: '80%', lg: '60%', xl: '45%' },
 						marginBottom: '5rem',
-						py: 5,
+						pb: 5,
 						padding: 0,
 						color: '#fff',
 						gap: { xs: 5, md: 8, xl: 10 },
 					}}
 				>
-					<Typography
-						variant='body1'
-						color='secondary'
-						align='justify'
-						maxWidth='50rem'
-						sx={{
-							fontFamily: 'Poppins',
-							color: '#fff',
-							fontWeight: '500',
-							fontSize: { xs: '0.8rem', md: '0.8rem', lg: '0.85rem', xl: '0.9rem' },
-						}}
-					>
-						Riscos e boas práticas, clique nos cards para aprendar mais sobre:
-					</Typography>
-					<Box
-						sx={{
-							display: 'flex',
-							justifyContent: 'top',
-							flexDirection: 'column',
-							alignItems: 'center',
-							padding: 0,
-							color: '#fff',
-						}}
-					>
-						<Box
-							sx={{
-								display: 'flex',
-								flexDirection: { xs: 'column', md: 'row' },
-								justifyContent: 'center',
-								alignItems: 'center',
-								gap: { xs: 2, md: 2, xl: 3 },
-								marginBottom: 5,
-							}}
-						>
-							<CardFlip
-								frontText='Perda ou Roubo de Dispositivos'
-								backText='Proteja dispositivos removíveis com criptografia e senhas fortes para evitar acesso não autorizado em caso de perda ou roubo.'
-								callback={e => addInteractics('CardFlip-8')}
-							/>
-							<CardFlip
-								frontText='Aplicativos Maliciosos'
-								backText='Evite executar arquivos ou programas desconhecidos em mídias removíveis e mantenha um antivírus atualizado no sistema.'
-								callback={e => addInteractics('CardFlip-9')}
-							/>
-							<CardFlip
-								frontText='Conexões Wi-Fi Públicas'
-								backText='Nunca conecte mídias removíveis em dispositivos que utilizam redes públicas sem proteção, pois podem ser alvos de interceptação.'
-								callback={e => addInteractics('CardFlip-10')}
-							/>
-							<CardFlip
-								frontText='Configurações Inseguras de Redes Wi-Fi'
-								backText='Garanta que redes Wi-Fi utilizadas estejam configuradas com criptografia WPA3 para minimizar riscos ao transferir dados.'
-								callback={e => addInteractics('CardFlip-11')}
-							/>
-						</Box>
-						<Box
-							sx={{
-								display: 'flex',
-								flexDirection: { xs: 'column', md: 'row' },
-								justifyContent: 'center',
-								alignItems: 'center',
-								gap: { xs: 2, md: 2, xl: 3 },
-								marginBottom: 5,
-							}}
-						>
-							<CardFlip
-								frontText='Dispositivos IoT Vulneráveis'
-								backText='Não conecte mídias removíveis a dispositivos IoT sem verificar se estão atualizados e protegidos contra ameaças conhecidas.'
-								callback={e => addInteractics('CardFlip-12')}
-							/>
-							<CardFlip
-								frontText='Falta de Atualizações'
-								backText='Certifique-se de que os sistemas e dispositivos que utilizam mídias removíveis estejam sempre atualizados para corrigir vulnerabilidades.'
-								callback={e => addInteractics('CardFlip-13')}
-							/>
-							<CardFlip
-								frontText='.Ataques de Spoofing em Redes Públicas'
-								backText='Evite conectar mídias removíveis em dispositivos desconhecidos, pois ataques de spoofing podem comprometer dados transferidos.'
-								callback={e => addInteractics('CardFlip-14')}
-							/>
-						</Box>
-					</Box>
 					<Subtitle text='Vamos Praticar!' />
 					<Typography
 						variant='body1'
@@ -519,13 +431,6 @@ const Modulo03 = () => {
 						text='Próximo Modulo'
 						page={'Menu'}
 						disable={hasAllProgress([
-							'CardFlip-8',
-							'CardFlip-9',
-							'CardFlip-10',
-							'CardFlip-11',
-							'CardFlip-12',
-							'CardFlip-13',
-							'CardFlip-14',
 							'quiz',
 						])}
 						callback={() => changeProgress(18)}

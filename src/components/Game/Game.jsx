@@ -1577,7 +1577,7 @@ export const Game = ({ Completed }) => {
 								fontSize: { xs: '0.8rem', md: '1rem', lg: '1rem' },
 							}}
 						>
-							Você percebe que há senhas anotadas em um post-it colado na parede.Como agir
+							Você percebe que há senhas anotadas em um post-it colado na parede. Como agir
 							ao identificar uma prática insegura de gestão de acessos?
 						</Typography>
 

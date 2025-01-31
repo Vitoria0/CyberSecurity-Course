@@ -659,7 +659,7 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='NO momento de proporcionar informação sigilosa (senhas, dados bancários...)em algum site, reveja a barra de navegação e confira se tem o prefixo HTTPS.'
+							texto='No momento de proporcionar informação sigilosa (senhas, dados bancários...)em algum site, reveja a barra de navegação e confira se tem o prefixo HTTPS.'
 							callback={e => addInteractics('CardDinamico-7')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
@@ -685,7 +685,7 @@ const Modulo02 = () => {
 						}}
 					>
 						<CardDinamico
-							texto='Mantenha sempre os seus equipamentos atualizados (sistemas operacionais, navegadores e aplicativos) e instale, sempre que possivel,, um antivirus.'
+							texto='Mantenha sempre os seus equipamentos atualizados (sistemas operacionais, navegadores e aplicativos) e instale, sempre que possivel, um antivirus.'
 							callback={e => addInteractics('CardDinamico-10')}
 							isActive={LoggedUser.get().progress > 8}
 						/>
@@ -730,7 +730,7 @@ const Modulo02 = () => {
 					<ImageText
 						image={image1}
 						titulo='Protegendo senhas'
-						texto='Senhas fracas podem causar grandes prejuízos. Hackers utilizam métodos como: Invasões baseadas em dicionários: programas combinam palavras comuns para adivinhar senhas simples. Ataques de força bruta: testam todas as combinações possíveis de caracteres, descobrindo senhas curtas rapidamente. Exploração de informações públicas: dados pessoais expostos em redes sociais, como nomes e aniversários, ajudam hackers a criar ataques direcionados. Proteja suas senhas escolhendo combinações fortes e únicas.'
+						texto='Senhas fracas podem causar grandes prejuízos. Hackers utilizam métodos como Invasões baseadas em dicionários (programas combinam palavras comuns para adivinhar senhas simples); Ataques de força bruta (testam todas as combinações possíveis de caracteres, descobrindo senhas curtas rapidamente); Exploração de informações públicas (dados pessoais expostos em redes sociais, como nomes e aniversários, ajudam hackers a criar ataques direcionados). Proteja suas senhas escolhendo combinações fortes e únicas.'
 					/>
 					<Subtitle text='Como criar uma senha forte' />
 					<Typography
@@ -810,7 +810,7 @@ const Modulo02 = () => {
 						reverse
 						image={redes}
 						titulo='Redes Sociais'
-						texto='As redes sociais possuem uma relevância muito alta bos dias atuais, permitindo-nos contectar ocm amigos, famili e colegas de trabalho. No entanto, é crucial utiliza-lás de forma segura para proteger nossas informações pessoais e evitar riscos online. Veremos algumas dicas simples e práticas para garantir que você possa desfrutar das redes sociais de maneira segura e conciente, clique nos cards para ver:'
+						texto='As redes sociais possuem uma relevância muito alta nos dias atuais, permitindo-nos conectar com amigos, família e colegas de trabalho. No entanto, é crucial utilizá-las de forma segura para proteger nossas informações pessoais e evitar riscos online. Veremos algumas dicas simples e práticas para garantir que você possa desfrutar das redes sociais de maneira segura e consciente. Clique nos cards para ver:'
 					/>
 					<Box
 						sx={{
