@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Box, Button, Typography, Radio, RadioGroup, FormControlLabel } from '@mui/material';
+import { Botao } from '../../components/Botao';
+import { useNavigation } from '../../hooks/NavigationContext';
+import { changeProgress } from '../../services/userService';
+import { LoggedUser } from '../../services/authService';
+
+import { jsPDF } from 'jspdf';
+import certificado from '../../assets/img/certificado.png';
 
 const ExamComponent = ({ onComplete }) => {
+	const [dowload, setDowload] = useState(false);
 	const questions = [
 		{
 			question: 'Qual é a principal preocupação relacionada à segurança dos dispositivos IoT?',
@@ -111,7 +119,6 @@ const ExamComponent = ({ onComplete }) => {
 	];
 	// 2,3,1,2,2,2,1,2,2,1
 
-
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [selectedOption, setSelectedOption] = useState('');
 	const [score, setScore] = useState(0);
@@ -145,6 +152,57 @@ const ExamComponent = ({ onComplete }) => {
 		setSelectedOption('');
 		setScore(0);
 		setIsFinished(false);
+	};
+
+	const finalize = async name => {
+		setDowload(true);
+		await generatePDF(name);
+		await changeProgress(21);
+	};
+
+	const generatePDF = async studentName => {
+		try {
+			const widthMm = 1804 / 3.78;
+			const heightMm = 1005 / 3.78;
+
+			const doc = new jsPDF({
+				orientation: 'l',
+				unit: 'mm',
+				format: [widthMm, heightMm],
+			});
+
+			const response = await fetch(certificado);
+			if (!response.ok) throw new Error('Erro ao carregar a imagem.');
+
+			const blob = await response.blob();
+
+			const backgroundImage = await new Promise((resolve, reject) => {
+				const reader = new FileReader();
+				reader.onloadend = () => resolve(reader.result);
+				reader.onerror = () => reject(new Error('Erro ao ler a imagem.'));
+				reader.readAsDataURL(blob);
+			});
+
+			doc.addImage(backgroundImage, 'PNG', 0, 0, widthMm, heightMm);
+
+			doc.setTextColor('#00CDBB');
+			doc.setFontSize(60);
+
+			// Calculando nova posição
+			const originalX = 114 / 3.78;
+			const originalY = 525 / 3.78;
+
+			const adjustedX = originalX + widthMm * 0.04;
+			const adjustedY = originalY + heightMm * 0.06;
+
+			// Inserindo o nome do aluno
+			doc.text(studentName, adjustedX, adjustedY);
+
+			doc.save('certificado.pdf');
+			setDowload(false);
+		} catch (error) {
+			console.error('Erro ao gerar o PDF:', error.message);
+		}
 	};
 
 	return (
@@ -192,12 +250,11 @@ const ExamComponent = ({ onComplete }) => {
 						onClick={handleSubmitAnswer}
 						disabled={!selectedOption}
 						sx={{
-							
 							marginTop: 3,
 							px: 6,
 							py: 1.5,
 							color: '#FFF',
-							borderRadius: '15px', 
+							borderRadius: '15px',
 							'&:hover': { color: '#FFF' },
 						}}
 					>
@@ -213,23 +270,11 @@ const ExamComponent = ({ onComplete }) => {
 						Você acertou {score} de {questions.length} perguntas. Sua nota é {score}.
 					</Typography>
 					{getPercentage() >= 70 ? (
-						<Button
-							variant='contained'
-							color='success'
-							onClick={() => {
-								alert('Prova finalizada com sucesso!');
-								onComplete(getPercentage());
-							}}
-							sx={{
-								px: 6,
-								py: 1.5,
-								borderRadius: '15px',
-								background: '#8BFF61',
-								'&:hover': { background: '#6DBE49' },
-							}}
-						>
-							Finalizar
-						</Button>
+						<Botao.Navigation
+							text={dowload ? 'Baixando...' : 'Baixar Certificado'}
+							page={'Modulo05'}
+							callback={() => finalize(LoggedUser.get().name)}
+						/>
 					) : (
 						<Button
 							variant='contained'

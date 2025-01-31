@@ -232,14 +232,14 @@ const Modulo02 = () => {
 	};
 
 	const scrollToBlock = blockRef => {
-		if (blockRef?.current) {
-			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-			setTimeout(() => {
-				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			}, 50);
-		} else {
-			console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		}
+		// if (blockRef?.current) {
+		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+		// 	setTimeout(() => {
+		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		// 	}, 50);
+		// } else {
+		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		// }
 	};
 
 	const addInteractics = item => {
@@ -1258,6 +1258,7 @@ const Modulo02 = () => {
 							'CardDinamico-20',
 							'CardDinamico-21',
 							'CardDinamico-22',
+							'video-3'
 						])}
 					/>
 				</Box>

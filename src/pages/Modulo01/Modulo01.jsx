@@ -120,14 +120,14 @@ const Modulo01 = () => {
 	}, []); // Executa apenas uma vez
 
 	const scrollToBlock = blockRef => {
-		if (blockRef?.current) {
-			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-			setTimeout(() => {
-				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			}, 50);
-		} else {
-			console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		}
+		// if (blockRef?.current) {
+		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+		// 	setTimeout(() => {
+		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		// 	}, 50);
+		// } else {
+		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		// }
 	};
 
 	const addInteractics = item => {

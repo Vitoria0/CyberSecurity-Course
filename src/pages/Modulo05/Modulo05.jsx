@@ -12,6 +12,7 @@ import { LoggedUser } from '../../services/authService';
 import { jsPDF } from 'jspdf';
 import certificado from '../../assets/img/certificado.png';
 
+
 const Modulo05 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [block1, setBlock1] = useState(false);

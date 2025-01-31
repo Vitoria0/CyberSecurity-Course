@@ -27,14 +27,13 @@ export const PhishingTest = ({callback}) => {
 	};
 
 	const handleNext = () => {
-		if (selectedScenarioIndex + 1 == phishingScenarios.length - 1) {
-			callback();
-		}
+	
 		if (selectedScenarioIndex < phishingScenarios.length - 1) {
 			setSelectedScenarioIndex(selectedScenarioIndex + 1);
 			setUserFeedback(''); // Limpa o feedback para o próximo cenário
 		} else {
 			setIsFinished(true); // Marca como finalizado quando chegar ao último cenário
+			callback();
 		}
 	};
 

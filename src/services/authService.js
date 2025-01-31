@@ -34,7 +34,11 @@ export async function loginWithEmailAndPassword(email, password) {
 		if (userDocSnap.exists()) {
 			console.log('Dados do usuário:', userDocSnap.data());
 			// Atualizar os dados do usuário logado
+
 			LoggedUser.set({ ...userDocSnap.data() });
+			if (userDocSnap.data().progress == undefined || userDocSnap.data().progress == null) {
+				LoggedUser.set({ ...userDocSnap.data(), progress: 0 });
+			}
 		} else {
 			throw new Error('Usuário não encontrado no Firestore.');
 		}

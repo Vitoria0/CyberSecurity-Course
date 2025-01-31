@@ -54,7 +54,6 @@ const Homepage = () => {
 					setError('Usuário ou senha incorretos');
 				}
 			} else {
-debugger
 				const user = await createUserWithEmailAndPassword(
 					formData.name,
 					formData.email,
@@ -148,7 +147,7 @@ debugger
 								sx={{
 									px: { xs: 1, sm: 1.5, md: 2, xl: 3 },
 									py: { xs: 1, sm: 1, md: 1.5 },
-									borderRadius: '10px'
+									borderRadius: '10px',
 								}}
 							>
 								Voltar
