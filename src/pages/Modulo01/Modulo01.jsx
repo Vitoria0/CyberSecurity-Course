@@ -66,7 +66,6 @@ const Modulo01 = () => {
 				setBlock3(true);
 				setBlock2(true);
 				setBlock1(true);
-				scrollToBlock(block4Ref);
 				setInteractics([
 					'CardDinamico-1',
 					'CardDinamico-2',
@@ -84,7 +83,6 @@ const Modulo01 = () => {
 				setBlock3(true);
 				setBlock2(true);
 				setBlock1(true);
-				scrollToBlock(block3Ref);
 				setInteractics([
 					'CardDinamico-1',
 					'CardDinamico-2',
@@ -100,7 +98,6 @@ const Modulo01 = () => {
 			if (progress === 2) {
 				setBlock2(true);
 				setBlock1(true);
-				scrollToBlock(block2Ref);
 				setInteractics([
 					'CardDinamico-1',
 					'CardDinamico-2',
@@ -114,20 +111,19 @@ const Modulo01 = () => {
 			}
 			if (progress === 1) {
 				setBlock1(true);
-				scrollToBlock(block1Ref);
 			}
 		}
 	}, []); // Executa apenas uma vez
 
 	const scrollToBlock = blockRef => {
-		// if (blockRef?.current) {
-		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-		// 	setTimeout(() => {
-		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		// 	}, 50);
-		// } else {
-		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		// }
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
 	const addInteractics = item => {
@@ -152,19 +148,16 @@ const Modulo01 = () => {
 	const handleUnlockBlock1 = index => {
 		changeProgress(2);
 		setBlock2(true);
-		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock2 = index => {
 		changeProgress(3);
 		setBlock3(true);
-		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock3 = index => {
 		changeProgress(4);
 		setBlock4(true);
-		scrollToBlock(block4Ref);
 	};
 
 	return (

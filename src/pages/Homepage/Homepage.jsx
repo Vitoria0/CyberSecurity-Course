@@ -27,7 +27,7 @@ const Homepage = () => {
 	const [isPaying, setIsPaying] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState('');
-
+	const [sucess, setSucess] = useState('');
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -45,9 +45,10 @@ const Homepage = () => {
 		try {
 			if(isResetPassword){
 				await sendResetPasswordEmail(formData.email, formData.password);
-				alert("Email enviado com sucesso!");
 				setIsResetPassword(false);
+				setSucess('');
 				setIsLogin(true);
+				setSucess('Enviamos um link para redefinir sua senha. Verifique seu email!');
 			}
 			else if (isLogin) {
 				await loginWithEmailAndPassword(formData.email, formData.password);
@@ -87,6 +88,7 @@ const Homepage = () => {
 	const toggleForm = () => {
 		setIsLogin(!isLogin);
 		setIsResetPassword(false);
+		setSucess('');
 	};
 
 	const handleClickShowPassword = () => {
@@ -163,7 +165,7 @@ const Homepage = () => {
 							<Button
 								variant='contained'
 								color='primary'
-								href='https://w.app/OVacNf'
+								href='https://wa.me/+554799855093'
 								target='_blank'
 								rel='noopener noreferrer'
 								sx={{
@@ -276,7 +278,12 @@ const Homepage = () => {
 										}}
 									/>
 								)}
-
+								{sucess && (
+									<Alert severity='success' sx={{ marginTop: 2 }}>
+										{sucess}
+									</Alert>
+								)
+								}
 								{error && (
 									<Alert severity='error' sx={{ marginTop: 2 }}>
 										{error}
@@ -313,7 +320,7 @@ const Homepage = () => {
 									component='button'
 									variant='body2'
 									color='primary'
-									onClick={() =>{ setIsResetPassword(true); setIsLogin(false); }}
+									onClick={() =>{ setIsResetPassword(true); setIsLogin(false); setSucess('') }}
 								>
 									Esqueci a senha
 								</Link>}

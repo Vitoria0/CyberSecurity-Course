@@ -72,6 +72,7 @@ const Modulo04 = () => {
 	}, []);
 	const handleUnlockBlock = index => {
 		setBlock1(true);
+		scrollToBlock(block1Ref);
 		changeProgress(19);
 	};
 	const handleUnlockBlockGame = index => {
@@ -94,14 +95,14 @@ const Modulo04 = () => {
 	};
 
 	const scrollToBlock = blockRef => {
-		// if (blockRef?.current) {
-		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-		// 	setTimeout(() => {
-		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		// 	}, 50);
-		// } else {
-		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		// }
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
 	const addInteractics = item => {
@@ -201,6 +202,7 @@ const finalize = async name => {
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
 
+			<Box ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{

@@ -155,10 +155,6 @@ const Modulo02 = () => {
 					setInteractics([...interactics, 'quiz']);
 				}
 			}
-
-			if (goRef != null) {
-				scrollToBlock(goRef);
-			}
 		}
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -172,49 +168,41 @@ const Modulo02 = () => {
 	const handleUnlockBlock2 = () => {
 		changeProgress(7);
 		setBlock2(true);
-		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock3 = () => {
 		changeProgress(8);
 		setBlock3(true);
-		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock4 = () => {
 		changeProgress(9);
 		setBlock4(true);
-		scrollToBlock(block4Ref);
 	};
 
 	const handleUnlockBlock5 = () => {
 		changeProgress(10);
 		setBlock5(true);
-		scrollToBlock(block5Ref);
 	};
 
 	const handleUnlockBlock6 = () => {
 		changeProgress(11);
 		setBlock6(true);
-		scrollToBlock(block6Ref);
 	};
 
 	const handleUnlockBlock7 = () => {
 		changeProgress(12);
 		setBlock7(true);
-		scrollToBlock(block7Ref);
 	};
 
 	const handleUnlockBlock8 = () => {
 		changeProgress(13);
 		setBlock8(true);
-		scrollToBlock(block8Ref);
 	};
 
 	const handleUnlockBlock9 = () => {
 		changeProgress(14);
 		setBlock9(true);
-		scrollToBlock(block9Ref);
 	};
 
 	const hasAllProgress = interactions => {
@@ -232,14 +220,14 @@ const Modulo02 = () => {
 	};
 
 	const scrollToBlock = blockRef => {
-		// if (blockRef?.current) {
-		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-		// 	setTimeout(() => {
-		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		// 	}, 50);
-		// } else {
-		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		// }
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
 	const addInteractics = item => {

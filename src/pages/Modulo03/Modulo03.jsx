@@ -35,11 +35,9 @@ const Modulo03 = () => {
 		const user = LoggedUser.get();
 
 		if (user && typeof user.progress === 'number') {
-			var goRef = null;
 			const progress = user.progress;
 			if (progress >= 16) {
 				setBlock1(true);
-				goRef = block1Ref;
 				if (progress > 16) {
 					setInteractics([
 						...interactics,
@@ -56,7 +54,6 @@ const Modulo03 = () => {
 			}
 			if (progress >= 17) {
 				setBlock2(true);
-				goRef = block2Ref;
 				if (progress > 17) {
 					setInteractics([
 						...interactics,
@@ -71,10 +68,6 @@ const Modulo03 = () => {
 					]);
 				}
 			}
-
-			if (goRef != null) {
-				scrollToBlock(goRef);
-			}
 		}
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -83,6 +76,7 @@ const Modulo03 = () => {
 	const handleUnlockBlock = index => {
 		changeProgress(16);
 		setBlock1(true);
+		scrollToBlock(block1Ref);
 	};
 
 	const handleUnlockBlock1 = index => {
@@ -105,14 +99,14 @@ const Modulo03 = () => {
 	};
 
 	const scrollToBlock = blockRef => {
-		// if (blockRef?.current) {
-		// 	// Adiciona um pequeno atraso para garantir que o DOM está renderizado
-		// 	setTimeout(() => {
-		// 		blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		// 	}, 50);
-		// } else {
-		// 	console.error('Bloco não encontrado ou ref inválida:', blockRef);
-		// }
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
 	};
 
 	const addInteractics = item => {
@@ -374,7 +368,6 @@ const Modulo03 = () => {
 							'CardFlip-1',
 							'CardFlip-2',
 							'CardFlip-3',
-							'CardFlip-4',
 							'CardFlip-5',
 							'CardFlip-6',
 							'CardFlip-7',

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect , useRef} from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { Botao } from '../../components/Botao';
 import backgorund from '../../assets/img/Finalizacao.png';
@@ -19,17 +19,28 @@ const Modulo05 = () => {
 	const [dowload, setDowload] = useState(false);
 	const [blockFinal, setBlockFinal] = useState(false);
 	const { navigateTo } = useNavigation();
+		const block1Ref = useRef(null);
 	useEffect(() => {
 		const timeout = setTimeout(() => setIsVisible(true), 100);
 		return () => clearTimeout(timeout);
 	}, []);
 	const handleUnlockBlock = index => {
 		setBlock1(true);
+		scrollToBlock(block1Ref);
 	};
 	const handleUnlockBlockFinal = index => {
 		setBlockFinal(true);
 	};
-
+	const scrollToBlock = blockRef => {
+		if (blockRef?.current) {
+			// Adiciona um pequeno atraso para garantir que o DOM está renderizado
+			setTimeout(() => {
+				blockRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 50);
+		} else {
+			console.error('Bloco não encontrado ou ref inválida:', blockRef);
+		}
+	};
 	const finalize = async name => {
 		setDowload(true);
 		await generatePDF(name);
@@ -167,6 +178,7 @@ const Modulo05 = () => {
 				<Botao.Primary text='Iniciar Etapa' onClick={handleUnlockBlock} />
 			</Box>
 
+			<Box ref={block1Ref}></Box>
 			{block1 && (
 				<Box
 					sx={{
