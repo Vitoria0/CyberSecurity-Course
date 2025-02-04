@@ -33,6 +33,11 @@ const Homepage = () => {
 		return () => clearTimeout(timeout);
 	}, []);
 
+	useEffect(() => {
+		const timeout = setTimeout(() => setError(''), 4000);
+		return () => clearTimeout(timeout);
+	}, [error]);
+
 	const handleChange = e => {
 		const { name, value } = e.target;
 		setFormData(prevData => ({ ...prevData, [name]: value }));

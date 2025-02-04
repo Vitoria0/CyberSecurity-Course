@@ -520,7 +520,7 @@ const Modulo02 = () => {
 							isActive={LoggedUser.get().progress > 7}
 						/>
 						<CardDinamico
-							texto='Atualizar firmware: Certifique-se de que o dispositivo esteja rodando a versão mais recente do firmware, com correções de segurança aplicadas.'
+							texto='Atualizar fireware: Certifique-se de que o dispositivo esteja rodando a versão mais recente do fireware, com correções de segurança aplicadas.'
 							callback={e => addInteractics('CardDinamico-2')}
 							isActive={LoggedUser.get().progress > 7}
 						/>

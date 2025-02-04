@@ -4,13 +4,14 @@ import { ThemeProvider } from '@mui/system';
 import { CssBaseline } from '@mui/material';
 import { theme } from './theme/theme.jsx';
 import AppWrapper from './app/App.jsx';
-
+import { Analytics } from "@vercel/analytics/react"
 ReactDOM.createRoot(document.getElementById('root')).render(
 	// <React.StrictMode>
 <>
 			<CssBaseline />
 			<ThemeProvider theme={theme}>
 				<AppWrapper />
-			</ThemeProvider></>
+			</ThemeProvider>
+ <Analytics /></>
 	// </React.StrictMode>,
 );

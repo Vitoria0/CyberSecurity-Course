@@ -1097,6 +1097,11 @@
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@types/scheduler/-/@types/scheduler-0.16.4.tgz"
   integrity sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ== sha1-/tw+WxXCbcGPqulr8TF0h8s2WM8=
 
+"@vercel/analytics@^1.4.1":
+  version "1.4.1"
+  resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@vercel/analytics/-/@vercel/analytics-1.4.1.tgz"
+  integrity sha1-ooqTEz1otuPYaISlL6eJP17Ko4E=
+
 "@vitejs/plugin-react@^4.0.3":
   version "4.1.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/@vitejs/plugin-react/-/@vitejs/plugin-react-4.1.0.tgz"
@@ -2946,7 +2951,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16.14", react@>=16.6.0, react@>=16.8, react@>=16.8.0:
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", "react@^18 || ^19 || ^19.0.0-rc", react@^18.0.0, react@^18.2.0, "react@>= 16.14", react@>=16.6.0, react@>=16.8, react@>=16.8.0:
   version "18.2.0"
   resolved "https://www.myget.org/F/megasistemas/auth/9105dcbb-9b59-4564-b33e-c663f3af8818/npm/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ== sha1-VVvZhZKIMlX6AN4U8RUakXtdd9U=

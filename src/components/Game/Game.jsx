@@ -80,7 +80,7 @@ export const Game = ({ Completed }) => {
 		<Box
 			sx={{
 				width: '100%',
-				aspectRatio: { xs: index == 3 ? '1319/1330' : '1319/805', md: '1319/805' },
+				aspectRatio: { xs:index == 16 ?'1319/2500' :index == 13 ? '1319/2000' : index >= 3  ? '1319/1800' : '1319/805', md: '1319/805' },
 				position: 'relative',
 				borderRadius: '30px',
 				overflow: 'hidden',

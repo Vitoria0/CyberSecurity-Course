@@ -163,7 +163,7 @@ const ModuloMenu = ({ onClick, image, nomeModulo, isBlocked, isIncomplete }) => 
 				gap: 2,
 				margin: '0 auto',
 				width: { xs: '40%', md: '25%' },
-				height: '50vh',
+				height: {xs:'25vh', md:'50vh'},
 				backgroundImage: `url(${image})`,
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
