@@ -216,7 +216,7 @@ const Homepage = () => {
 							<form onSubmit={handleSubmit}>
 								{!isLogin && !isResetPassword && (
 									<TextField
-										label='Nome'
+										label='Nome Completo'
 										variant='outlined'
 										color='primary'
 										fullWidth

@@ -16,7 +16,7 @@ import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
-
+import video1 from '../../assets/videos/V5-Dispositivos-IOT-e-Redes.mp4';
 const Modulo03 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const { navigateTo } = useNavigation();
@@ -82,6 +82,7 @@ const Modulo03 = () => {
 	const handleUnlockBlock1 = index => {
 		changeProgress(17);
 		setBlock2(true);
+		scrollToBlock(block2Ref);
 	};
 
 	const hasAllProgress = interactions => {
@@ -356,7 +357,7 @@ const Modulo03 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V5-Dispositivos-IOT-e-Redes.mp4'
+							video1
 						}
 						onVideoEnd={e => addInteractics('video-1')}
 					/>

@@ -26,6 +26,9 @@ import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
 import { Slider2 } from '../../components/Slider2/Slider2';
 import { useNavigation } from '../../hooks/NavigationContext';
+import video1 from '../../assets/videos/V2-Hacker-invade-baba-eletronica.mp4';
+import video2 from '../../assets/videos/V3-Phishing.mp4';
+import video3 from '../../assets/videos/V4-Antiviruz.mp4';
 
 const Modulo02 = () => {
 	const { navigateTo } = useNavigation();
@@ -168,41 +171,49 @@ const Modulo02 = () => {
 	const handleUnlockBlock2 = () => {
 		changeProgress(7);
 		setBlock2(true);
+		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock3 = () => {
 		changeProgress(8);
 		setBlock3(true);
+		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock4 = () => {
 		changeProgress(9);
 		setBlock4(true);
+		scrollToBlock(block4Ref);
 	};
 
 	const handleUnlockBlock5 = () => {
 		changeProgress(10);
 		setBlock5(true);
+		scrollToBlock(block5Ref);
 	};
 
 	const handleUnlockBlock6 = () => {
 		changeProgress(11);
 		setBlock6(true);
+		scrollToBlock(block6Ref);
 	};
 
 	const handleUnlockBlock7 = () => {
 		changeProgress(12);
 		setBlock7(true);
+		scrollToBlock(block7Ref);
 	};
 
 	const handleUnlockBlock8 = () => {
 		changeProgress(13);
 		setBlock8(true);
+		scrollToBlock(block8Ref);
 	};
 
 	const handleUnlockBlock9 = () => {
 		changeProgress(14);
 		setBlock9(true);
+		scrollToBlock(block9Ref);
 	};
 
 	const hasAllProgress = interactions => {
@@ -450,7 +461,7 @@ const Modulo02 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V2-Hacker-invade-baba-eletronica.mp4'
+							video1
 						}
 						onVideoEnd={() => addInteractics('video-1')}
 					/>
@@ -870,8 +881,7 @@ const Modulo02 = () => {
 						</b>
 					</Typography>
 					<IframePlayer
-						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V3-Phishing.mp4'
+						videoUrl={video2
 						}
 						onVideoEnd={e => addInteractics('video-2')}
 					/>
@@ -1225,8 +1235,7 @@ const Modulo02 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V4-Antiviruz.mp4'
-						}
+							video3}
 						onVideoEnd={e => addInteractics('video-3')}
 					/>
 					<Botao.Primary

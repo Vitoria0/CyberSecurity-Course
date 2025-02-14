@@ -23,7 +23,7 @@ import { LoggedUser } from '../../services/authService';
 import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
 import { Slider1 } from '../../components/Slider1/Slider1';
-
+import video1 from '../../assets/videos/V1-Seguranca-da-Informacao.mp4';
 const Modulo01 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [interactics, setInteractics] = useState([]);
@@ -148,16 +148,19 @@ const Modulo01 = () => {
 	const handleUnlockBlock1 = index => {
 		changeProgress(2);
 		setBlock2(true);
+		scrollToBlock(block2Ref);
 	};
 
 	const handleUnlockBlock2 = index => {
 		changeProgress(3);
 		setBlock3(true);
+		scrollToBlock(block3Ref);
 	};
 
 	const handleUnlockBlock3 = index => {
 		changeProgress(4);
 		setBlock4(true);
+		scrollToBlock(block4Ref);
 	};
 
 	return (
@@ -457,7 +460,7 @@ const Modulo01 = () => {
 					</Typography>
 					<IframePlayer
 						videoUrl={
-							'https://cursosmavi.nyc3.cdn.digitaloceanspaces.com/Cyberseguran%C3%A7a/V1-Seguranca-da-Informacao.mp4'
+							video1
 						}
 						onVideoEnd={() => addInteractics('video')}
 					/>
