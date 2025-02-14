@@ -32,7 +32,7 @@ const Modulo01 = () => {
 	const [block2, setBlock2] = useState(false);
 	const [block3, setBlock3] = useState(false);
 	const [block4, setBlock4] = useState(false);
-	// teste
+	//
 	const block1Ref = useRef(null);
 	const block2Ref = useRef(null);
 	const block3Ref = useRef(null);

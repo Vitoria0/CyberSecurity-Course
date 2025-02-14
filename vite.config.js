@@ -9,6 +9,7 @@ export default defineConfig({
 	test: {
 		globals: true,
 	},
+	assetsInclude: ['**/*.mp4'],
 	resolve: {
 		alias: {
 			'@src': '/src',
