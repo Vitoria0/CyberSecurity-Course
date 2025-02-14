@@ -16,7 +16,7 @@ import { HomeRounded } from '@mui/icons-material';
 import { useNavigation } from '../../hooks/NavigationContext';
 import { changeProgress } from '../../services/userService';
 import { LoggedUser } from '../../services/authService';
-import video1 from '../../assets/videos/V5-Dispositivos-IOT-e-Redes.mp4';
+import video1 from '../../assets/videos/V5-Dispositivos-IOT-e-Rede.mp4';
 const Modulo03 = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const { navigateTo } = useNavigation();
