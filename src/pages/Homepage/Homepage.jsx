@@ -59,7 +59,11 @@ const Homepage = () => {
 				await loginWithEmailAndPassword(formData.email, formData.password);
 				if (LoggedUser.get()) {
 					if (LoggedUser.get().isPaying == true) {
-						navigateTo('Menu');
+						if(LoggedUser.get().progress){
+					navigateTo('Menu');
+					}
+					setError('Usuário não contem progresso oq impede de renderizar a tela de menu');
+						
 					} else {
 						setIsPaying(true);
 					}
