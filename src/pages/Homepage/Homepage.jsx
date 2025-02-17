@@ -8,13 +8,14 @@ import {
 	InputAdornment,
 	IconButton,
 	CircularProgress,
-	Alert
+	Alert,
 } from '@mui/material';
 import background from '../../assets/img/Finalizacao.png';
 import Title from '../../components/Texts/title';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import img from '../../assets/img/login.png';
 import { useNavigation } from '../../hooks/NavigationContext';
+import { loginWithEmailAndPassword, createUserWithEmailAndPassword, LoggedUser , sendResetPasswordEmail} from '../../services/authService';
 
 const Homepage = () => {
 	const { navigateTo } = useNavigation();
@@ -44,54 +45,53 @@ const Homepage = () => {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		// setIsLoading(true);
-		// setError('');
-		// try {
-		// 	if(isResetPassword){
-		// 		await sendResetPasswordEmail(formData.email, formData.password);
-		// 		setIsResetPassword(false);
-		// 		setSucess('');
-		// 		setIsLogin(true);
-		// 		setSucess('Enviamos um link para redefinir sua senha. Verifique seu email!');
-		// 	}
-		// 	else if (isLogin) {
-		// 		await loginWithEmailAndPassword(formData.email, formData.password);
-		// 		if (LoggedUser.get()) {
-		// 			if (LoggedUser.get().isPaying == true) {
-		// 				if(LoggedUser.get().progress){
-		// 			navigateTo('Menu');
-		// 			}
-		// 			setError('Usuário não contem progresso oq impede de renderizar a tela de menu');
+		setIsLoading(true);
+		setError('');
+		try {
+			if(isResetPassword){
+				await sendResetPasswordEmail(formData.email, formData.password);
+				setIsResetPassword(false);
+				setSucess('');
+				setIsLogin(true);
+				setSucess('Enviamos um link para redefinir sua senha. Verifique seu email!');
+			}
+			else if (isLogin) {
+				await loginWithEmailAndPassword(formData.email, formData.password);
+				if (LoggedUser.get()) {
+					if (LoggedUser.get().isPaying == true) {
+						if(LoggedUser.get().progress){
+					navigateTo('Menu');
+					}
+					setError('Usuário não contem progresso oq impede de renderizar a tela de menu');
 						
-		// 			} else {
-		// 				setIsPaying(true);
-		// 			}
-		// 		} else {
-		// 			setError('Usuário ou senha incorretos');
-		// 		}
-		// 	} else {
-		// 		const user = await createUserWithEmailAndPassword(
-		// 			formData.name,
-		// 			formData.email,
-		// 			formData.password,
-		// 		);
-		// 		if (user !== null) {
-		// 			setIsLogin(true);
-		// 			setIsPaying(true);
-		// 		} else {
-		// 			setError('Erro ao criar conta. Tente novamente.');
-		// 		}
-		// 	}
-		// } catch (error) {
-		// 	if (error.code === 'auth/invalid-credential') {
-		// 		setError('Usuário ou senha incorretos');
-		// 	} else {
-		// 		setError('Ocorreu um erro. Tente novamente.');
-		// 	}
-		// } finally {
-		// 	setIsLoading(false);
-		// }
-navigateTo('Menu');
+					} else {
+						setIsPaying(true);
+					}
+				} else {
+					setError('Usuário ou senha incorretos');
+				}
+			} else {
+				const user = await createUserWithEmailAndPassword(
+					formData.name,
+					formData.email,
+					formData.password,
+				);
+				if (user !== null) {
+					setIsLogin(true);
+					setIsPaying(true);
+				} else {
+					setError('Erro ao criar conta. Tente novamente.');
+				}
+			}
+		} catch (error) {
+			if (error.code === 'auth/invalid-credential') {
+				setError('Usuário ou senha incorretos');
+			} else {
+				setError('Ocorreu um erro. Tente novamente.');
+			}
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const toggleForm = () => {
